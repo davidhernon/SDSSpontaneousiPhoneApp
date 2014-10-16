@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface SelectSongsViewController : UIViewController
+@interface SelectSongsViewController : UIViewController{
+    
+}
 
+//select Song and go to next view
 -(IBAction)donePicking;
+
 
 @end

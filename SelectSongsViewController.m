@@ -11,11 +11,14 @@
 
 @interface SelectSongsViewController ()
 
-@property(nonatomic, readonly) NSArray *songsFromMediaPlayer;
+@property NSArray *songsFromMediaPlayer;
+//@property UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation SelectSongsViewController
+//int secondsLeft;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +33,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
-	//NSArray *itemsFromQuery = [mediaPlayer items];
-    //self.songList = [NSMutableArray arrayWithArray:itemsFromQuery];
-    //[self.tableView reloadData];
+    MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
+	NSArray *itemsFromQuery = [mediaPlayer items];
+    self.songsFromMediaPlayer = [NSMutableArray arrayWithArray:itemsFromQuery];
+    [self.tableView reloadData];
     
+    //Call next view after 15 seconds
+    [NSTimer scheduledTimerWithTimeInterval:15.0
+                                    target:self
+                                   selector:@selector(donePicking)
+                                    userInfo:nil
+                                    repeats:NO];
+    
+}
+
+- (void)timerFireMethod:(NSTimer *)timer
+{
+    [self donePicking];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +58,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Go to next view
 -(IBAction)donePicking
 {
     PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
