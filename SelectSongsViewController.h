@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  SelectSongsViewController.h
 //  SDSIPhoneApp
 //
 //  Created by David Hernon on 10/11/14.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
+@interface SelectSongsViewController : UIViewController
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+-(IBAction)donePicking;
 
 @end

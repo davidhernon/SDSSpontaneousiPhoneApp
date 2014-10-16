@@ -19,6 +19,13 @@
 		1CBF98AE19E9D6C1001F643F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989619E9D6C1001F643F /* UIKit.framework */; };
 		1CBF98B619E9D6C1001F643F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98B419E9D6C1001F643F /* InfoPlist.strings */; };
 		1CBF98B819E9D6C1001F643F /* SDSIPhoneAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98B719E9D6C1001F643F /* SDSIPhoneAppTests.m */; };
+		1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98CA19E9E632001F643F /* LoginViewController.m */; };
+		1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98CB19E9E632001F643F /* LoginViewController.xib */; };
+		1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D419EA1983001F643F /* SelectSongsViewController.m */; };
+		1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */; };
+		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
+		1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */; };
+		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,16 @@
 		1CBF98B319E9D6C1001F643F /* SDSIPhoneAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSIPhoneAppTests-Info.plist"; sourceTree = "<group>"; };
 		1CBF98B519E9D6C1001F643F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1CBF98B719E9D6C1001F643F /* SDSIPhoneAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSIPhoneAppTests.m; sourceTree = "<group>"; };
+		1CBF98C919E9E632001F643F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = SDSIPhoneApp/LoginViewController.h; sourceTree = "<group>"; };
+		1CBF98CA19E9E632001F643F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = SDSIPhoneApp/LoginViewController.m; sourceTree = "<group>"; };
+		1CBF98CB19E9E632001F643F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SDSIPhoneApp/LoginViewController.xib; sourceTree = "<group>"; };
+		1CBF98D319EA1983001F643F /* SelectSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSongsViewController.h; sourceTree = "<group>"; };
+		1CBF98D419EA1983001F643F /* SelectSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSongsViewController.m; sourceTree = "<group>"; };
+		1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectSongsViewController.xib; sourceTree = "<group>"; };
+		1CBF98D819EA1C7D001F643F /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +94,16 @@
 		1CBF988619E9D6C0001F643F = {
 			isa = PBXGroup;
 			children = (
+				1CBF98DD19EA1E05001F643F /* profile_default.png */,
+				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
+				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
+				1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */,
+				1CBF98D319EA1983001F643F /* SelectSongsViewController.h */,
+				1CBF98D419EA1983001F643F /* SelectSongsViewController.m */,
+				1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */,
+				1CBF98C919E9E632001F643F /* LoginViewController.h */,
+				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
+				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
 				1CBF989819E9D6C1001F643F /* SDSIPhoneApp */,
 				1CBF98B119E9D6C1001F643F /* SDSIPhoneAppTests */,
 				1CBF989119E9D6C0001F643F /* Frameworks */,
@@ -220,7 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CBF989D19E9D6C1001F643F /* InfoPlist.strings in Resources */,
+				1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */,
 				1CBF98A519E9D6C1001F643F /* Images.xcassets in Resources */,
+				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
+				1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */,
+				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +272,9 @@
 			files = (
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
+				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
+				1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */,
+				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +473,7 @@
 				1CBF98BD19E9D6C1001F643F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CBF98BE19E9D6C1001F643F /* Build configuration list for PBXNativeTarget "SDSIPhoneAppTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +482,7 @@
 				1CBF98C019E9D6C1001F643F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
