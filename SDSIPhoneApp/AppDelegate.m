@@ -20,8 +20,37 @@
     LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+	[self GetIndex];
     return YES;
 }
+
+-(BOOL) GetIndex
+{
+	NSURLSession *defaultSession = [NSURLSession sharedSession];
+	
+	NSURL * url = [NSURL URLWithString:@"http://silentdiscosquad.com/appindex.html/"];
+	NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithURL:url
+												   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+													   if(error == nil)
+													   {
+														   self.event = [NSJSONSerialization JSONObjectWithData:data
+																										 options:kNilOptions
+																										   error:&error];
+														   for(NSDictionary *item in self.event) {
+															   NSLog (@"nsdic = %@", item);
+														   }
+														   self.returned = TRUE;
+													   }
+												   }];
+	[dataTask resume];
+	self.returned = FALSE;
+	while(self.returned == FALSE){
+		[NSThread sleepForTimeInterval:0.1f];
+	}
+	return TRUE;
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

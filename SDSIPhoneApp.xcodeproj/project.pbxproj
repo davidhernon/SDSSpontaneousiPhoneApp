@@ -26,6 +26,7 @@
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
+		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
+		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				1CBF98C919E9E632001F643F /* LoginViewController.h */,
 				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
 				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
+				FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */,
 				1CBF989819E9D6C1001F643F /* SDSIPhoneApp */,
 				1CBF98B119E9D6C1001F643F /* SDSIPhoneAppTests */,
 				1CBF989119E9D6C0001F643F /* Frameworks */,
@@ -250,6 +253,7 @@
 				1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */,
 				1CBF98A519E9D6C1001F643F /* Images.xcassets in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
+				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 			);
