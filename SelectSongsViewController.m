@@ -37,15 +37,28 @@
 	NSArray *itemsFromQuery = [mediaPlayer items];
     self.songsFromMediaPlayer = [NSMutableArray arrayWithArray:itemsFromQuery];
     [self.tableView reloadData];
-    
+    seconds.text = @"15";
+    sec = 15;
     //Call next view after 15 seconds
     [NSTimer scheduledTimerWithTimeInterval:15.0
                                     target:self
                                    selector:@selector(donePicking)
                                     userInfo:nil
                                     repeats:NO];
+    //Timer to update seconds val on screen
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(updateSecondsLabel)
+                                   userInfo:nil
+                                    repeats:YES];
     
 }
+     
+ - (void)updateSecondsLabel
+ {
+     sec--;
+     seconds.text = [NSString stringWithFormat:@"%d", sec];
+ }
 
 - (void)timerFireMethod:(NSTimer *)timer
 {

@@ -10,11 +10,14 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface SelectSongsViewController : UIViewController{
-    
+    int sec;
+    __weak IBOutlet UILabel *seconds;
 }
 
 //select Song and go to next view
 -(IBAction)donePicking;
+-(void)updateSecondsLabel;
+
 
 
 @end
