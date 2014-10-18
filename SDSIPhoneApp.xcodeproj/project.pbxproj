@@ -26,8 +26,9 @@
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
-		1CD0826E19F3162000CDA4D4 /* SongTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0826D19F3162000CDA4D4 /* SongTableView.m */; };
 		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
+		FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6F52DE19F3192A002EE6CE /* SongTableView.m */; };
+		FC6F52E219F32C47002EE6CE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6F52E119F32C47002EE6CE /* SongCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +68,11 @@
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
-		1CD0826C19F3162000CDA4D4 /* SongTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableView.h; sourceTree = "<group>"; };
-		1CD0826D19F3162000CDA4D4 /* SongTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableView.m; sourceTree = "<group>"; };
 		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
+		FC6F52DD19F3192A002EE6CE /* SongTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableView.h; sourceTree = "<group>"; };
+		FC6F52DE19F3192A002EE6CE /* SongTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableView.m; sourceTree = "<group>"; };
+		FC6F52E019F32C47002EE6CE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
+		FC6F52E119F32C47002EE6CE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +102,10 @@
 		1CBF988619E9D6C0001F643F = {
 			isa = PBXGroup;
 			children = (
-				1CD0826C19F3162000CDA4D4 /* SongTableView.h */,
-				1CD0826D19F3162000CDA4D4 /* SongTableView.m */,
+				FC6F52DD19F3192A002EE6CE /* SongTableView.h */,
+				FC6F52DE19F3192A002EE6CE /* SongTableView.m */,
+				FC6F52E019F32C47002EE6CE /* SongCell.h */,
+				FC6F52E119F32C47002EE6CE /* SongCell.m */,
 				1CBF98DD19EA1E05001F643F /* profile_default.png */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
 				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
@@ -227,9 +232,10 @@
 				ORGANIZATIONNAME = "Silent Disco Squad";
 				TargetAttributes = {
 					1CBF988E19E9D6C0001F643F = {
-						DevelopmentTeam = 72PSY3QB44;
+						DevelopmentTeam = 6ZUB2TR58V;
 					};
 					1CBF98A919E9D6C1001F643F = {
+						DevelopmentTeam = 6ZUB2TR58V;
 						TestTargetID = 1CBF988E19E9D6C0001F643F;
 					};
 				};
@@ -284,9 +290,10 @@
 			files = (
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
-				1CD0826E19F3162000CDA4D4 /* SongTableView.m in Sources */,
+				FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
 				1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */,
+				FC6F52E219F32C47002EE6CE /* SongCell.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7CA6E9D5-A5E6-4C1A-887D-49593909397A</string>
+	<string>1AE144FB-651B-428D-8A4B-9AC8ADFF85D9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SDSIPhoneApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F1910CF4-7114-4BCD-A59D-0699BE5171BA</key>
-		<string>ssh://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
+		<key>6D2FA19380A2974DA80B1E176A73194A4CB4833A</key>
+		<string>https://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SDSIPhoneApp.xcodeproj/project.xcworkspace</string>
+	<string>SDSIPhoneApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F1910CF4-7114-4BCD-A59D-0699BE5171BA</key>
+		<key>6D2FA19380A2974DA80B1E176A73194A4CB4833A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
+	<string>https://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F1910CF4-7114-4BCD-A59D-0699BE5171BA</string>
+	<string>6D2FA19380A2974DA80B1E176A73194A4CB4833A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F1910CF4-7114-4BCD-A59D-0699BE5171BA</string>
+			<string>6D2FA19380A2974DA80B1E176A73194A4CB4833A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SDSIPhoneApp</string>
+			<string>SDSSpontaneousiPhoneApp</string>
 		</dict>
 	</array>
 </dict>

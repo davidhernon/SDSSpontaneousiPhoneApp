@@ -12,13 +12,13 @@
 
 #import "SelectSongsViewController.h"
 #import "PlayerViewController.h"
+#import "SongTableView.h"
 
 @interface SelectSongsViewController ()
 
 @property NSArray *songsFromMediaPlayer;
-//@property UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+//@property (weak, nonatomic) IBOutlet SongTableView *tableView;
+@property SongTableView *tableView;
 @end
 
 @implementation SelectSongsViewController
@@ -36,12 +36,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Set up songs in table View and display it
-    MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
-	NSArray *itemsFromMediaPlayer = [mediaPlayer items];
-    self.songsFromMediaPlayer = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
-    [self.tableView reloadData];
+	NSLog(@"one");
+
+	self.tableView = [[SongTableView alloc] initWithFrame:CGRectMake(0.0,100.0,320.0,500.0) style:UITableViewStylePlain];
+	NSLog(@"two");
+	[self.view addSubview:self.tableView];
+	NSLog(@"three");
+	[self.tableView initializeSongsList];
     
     //set up variables for label and counter
     seconds.text = @"15";
