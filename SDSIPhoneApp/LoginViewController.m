@@ -39,7 +39,6 @@
 - (IBAction)login
 {
     SelectSongsViewController *selectSongsViewController = [[SelectSongsViewController alloc]initWithNibName:@"SelectSongsViewController" bundle:nil];
-    //self.selectSongsViewController = selectSongsViewController;
     [self presentViewController:selectSongsViewController animated:YES completion:nil];
 }
 
