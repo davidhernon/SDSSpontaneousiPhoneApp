@@ -19,6 +19,9 @@
 		1C2431AD19F4BD9200AAE80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AC19F4BD9200AAE80E /* QuartzCore.framework */; };
 		1C2431AF19F4BD9A00AAE80E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AE19F4BD9A00AAE80E /* Security.framework */; };
 		1C2431B119F4BE0900AAE80E /* SoundCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */; };
+		1C5D049519F734B80043290C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5D049419F734B80043290C /* MediaPlayer.framework */; };
+		1C5D049719F734BF0043290C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5D049619F734BF0043290C /* AVFoundation.framework */; };
+		1C5D049919F734C60043290C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5D049819F734C60043290C /* CoreMedia.framework */; };
 		1CBF989319E9D6C1001F643F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989219E9D6C1001F643F /* Foundation.framework */; };
 		1CBF989519E9D6C1001F643F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989419E9D6C1001F643F /* CoreGraphics.framework */; };
 		1CBF989719E9D6C1001F643F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989619E9D6C1001F643F /* UIKit.framework */; };
@@ -172,6 +175,9 @@
 		1C2431AE19F4BD9A00AAE80E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SoundCloud.bundle; path = CocoaSoundCloudUI/SoundCloud.bundle; sourceTree = "<group>"; };
 		1C2609A419F6B78F008D6CD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1C5D049419F734B80043290C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1C5D049619F734BF0043290C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C5D049819F734C60043290C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1CBF988F19E9D6C0001F643F /* SDSIPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDSIPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF989219E9D6C1001F643F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CBF989419E9D6C1001F643F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +216,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5D049919F734C60043290C /* CoreMedia.framework in Frameworks */,
+				1C5D049719F734BF0043290C /* AVFoundation.framework in Frameworks */,
+				1C5D049519F734B80043290C /* MediaPlayer.framework in Frameworks */,
 				1C2431AF19F4BD9A00AAE80E /* Security.framework in Frameworks */,
 				1C2431AD19F4BD9200AAE80E /* QuartzCore.framework in Frameworks */,
 				1C2431AB19F4BD8A00AAE80E /* CoreText.framework in Frameworks */,
@@ -328,6 +337,9 @@
 		1CBF989119E9D6C0001F643F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C5D049819F734C60043290C /* CoreMedia.framework */,
+				1C5D049619F734BF0043290C /* AVFoundation.framework */,
+				1C5D049419F734B80043290C /* MediaPlayer.framework */,
 				1C2609A419F6B78F008D6CD3 /* CoreData.framework */,
 				1C2431AE19F4BD9A00AAE80E /* Security.framework */,
 				1C2431AC19F4BD9200AAE80E /* QuartzCore.framework */,
