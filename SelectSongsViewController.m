@@ -19,6 +19,7 @@
 @property NSArray *songsFromMediaPlayer;
 //@property (weak, nonatomic) IBOutlet SongTableView *tableView;
 @property SongTableView *tableView;
+@property PlayerViewController *playerViewController;
 @end
 
 @implementation SelectSongsViewController
@@ -36,27 +37,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSLog(@"one");
+	self.playerViewController = [PlayerViewController sharedPlayerViewController];
+	self.tableView = [[SongTableView alloc] initSongsListFromMediaQuery:CGRectMake(0.0,100.0,320.0,500.0)];
 
-	self.tableView = [[SongTableView alloc] initWithFrame:CGRectMake(0.0,100.0,320.0,500.0) style:UITableViewStylePlain];
-	NSLog(@"two");
+	self.tableView.passInfoDelegate = self.playerViewController;
+	
 	[self.view addSubview:self.tableView];
-	NSLog(@"three");
-	[self.tableView initializeSongsList];
-    
+	[self.view sendSubviewToBack:self.tableView];
     //set up variables for label and counter
     seconds.text = @"15";
     sec = 15;
     
     //Call next view after 15 seconds
-    [NSTimer scheduledTimerWithTimeInterval:15.0
+    self.donePickingTimer = [NSTimer scheduledTimerWithTimeInterval:15.0
                                     target:self
                                    selector:@selector(donePicking)
                                     userInfo:nil
                                     repeats:NO];
     
     //Timer to update seconds val on screen
-    [NSTimer scheduledTimerWithTimeInterval:1.0
+    self.updateSecondsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(updateSecondsLabel)
                                    userInfo:nil
@@ -81,8 +81,11 @@
 //Go to next view, called when song selection timer goes off
 -(IBAction)donePicking
 {
-    PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
-    [self presentViewController:playerViewController animated:YES completion:nil];
+	[self.donePickingTimer invalidate];
+	[self.updateSecondsTimer invalidate];
+	seconds.text = @"";
+    [self presentViewController:self.playerViewController animated:YES completion:nil];
+	NSLog(@"Done Picking");
 }
 
 @end

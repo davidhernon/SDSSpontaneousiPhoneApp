@@ -11,5 +11,6 @@
 @interface LoginViewController : UIViewController
 
 -(IBAction)login;
+-(IBAction)testNotification:(id)sender;
 
 @end
