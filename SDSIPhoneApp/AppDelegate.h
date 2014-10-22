@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "SCUI.h"
+//#import "LoginViewController.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
