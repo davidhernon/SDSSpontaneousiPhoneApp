@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 //#import "SCSoundCloud.h"
-#import "SCUI.h"
+//#import "SCUI.h"
 
 
 @implementation AppDelegate
@@ -18,12 +18,12 @@
 // Question of where/when to call this, does it belong here?
 // Can we call it before we actually need it?
 // also what do I swap sample project out with?
-+ (void) initialize
+/*+ (void) initialize
 {
     [SCSoundCloud setClientID:@"YOUR_CLIENT_ID"
                        secret:@"YOUR_CLIENT_SECRET"
                   redirectURL:[NSURL URLWithString:@"sampleproject://oauth"]];
-}
+}*/
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
