@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PlayerViewController : UIViewController
+#import "SongTableView.h"
+#import "SelectSongsViewController.h"
+#import "PlayerView.h"
+#import "Playlist.h"
+@interface PlayerViewController : UIViewController<PassInformation>
 
 -(IBAction)pickMoreSongs;
-
+@property Playlist* playlist;
+@property SongTableView* songTableView;
+@property PlayerView* playerView;
++ (PlayerViewController*) sharedPlayerViewController;
 @end

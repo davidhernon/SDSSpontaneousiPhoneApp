@@ -7,9 +7,9 @@
 //  http://www.appcoda.com/customize-table-view-cells-for-uitableview/
 
 
-#import "SongCell.h"
+#import "baTableViewCell.h"
 
-@implementation SongCell
+@implementation baTableViewCell
 @synthesize titleLabel = _titleLabel;
 @synthesize locationLabel = _locationLabel;
 @synthesize dateLabel = _dateLabel;

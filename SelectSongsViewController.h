@@ -13,7 +13,9 @@
     int sec;
     __weak IBOutlet UILabel *seconds;
 }
-
+@property NSTimer* donePickingTimer;
+@property NSTimer* updateSecondsTimer;
+@property Boolean isSelectSongsViewController;
 //select Song and go to next view
 -(IBAction)donePicking;
 -(void)updateSecondsLabel;

@@ -17,19 +17,45 @@
     // Drawing code
 }
 */
--(void)initializeSongsList
+
+-(id)initSongsListFromMediaQuery: (CGRect)frame
 {
+	self = [super initWithFrame:frame];
 	// Set up songs in table View and display it
+	self.parentIsPlayerViewController = false;
 	self.delegate = self;
 	self.dataSource = self;
 	MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
-
 	NSArray *itemsFromMediaPlayer = [mediaPlayer items];
-
-	self.songsList = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
-	NSLog(@"4");
-	NSLog(@"%@", [[self.songsList objectAtIndex:0] valueForProperty: MPMediaItemPropertyTitle]);
+	self.playlist = [[NSMutableArray alloc]init];
+	self.playlist = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
 	[self reloadData];
+	return self;
+}
+
+-(id)initWithPlaylist: (CGRect)frame
+{
+	self = [super initWithFrame:frame];
+	self.parentIsPlayerViewController = true;
+	self.delegate = self;
+	self.dataSource = self;
+	self.playlist = [Playlist sharedPlaylist].playlist;
+	return self;
+}
+
+
+-(id)init: (CGRect)frame
+{
+	self = [super initWithFrame:frame];
+	self.delegate = self;
+	self.dataSource = self;
+	self.playlist = [[NSMutableArray alloc]init];
+	return self;
+}
+
+-(void)addTracktoTable:(MPMediaItem*)passedSong
+{
+	[self.playlist addObject:passedSong];
 }
 
 #pragma mark - Table view data source
@@ -40,22 +66,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	NSLog(@"typethisstuff");
-
-	return self.songsList.count;
+	return self.playlist.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"MusicCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	NSLog(@"5");
 
 	if (!cell){
-		NSLog(@"6");
 		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
 	}
 	
-	self->song = [self.songsList objectAtIndex:indexPath.row];
+	self->song = [self.playlist objectAtIndex:indexPath.row];
 	NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
 	NSString *durationLabel = [song valueForProperty: MPMediaItemPropertyGenre];
 	cell.textLabel.text = songTitle;
@@ -66,10 +88,12 @@
 #pragma mark - TableView Delegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	self->song = [self.songsList objectAtIndex:indexPath.row];
-	//[[self delegate] setTrack:self->song];
-	//
-	//[self.navigationController popViewControllerAnimated:YES];
+	if(self.parentIsPlayerViewController){
+	
+	}
+	else{
+		[[Playlist sharedPlaylist].playlist addObject:[self.playlist objectAtIndex:indexPath.row]];
+	}
 }
 
 @end

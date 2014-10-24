@@ -27,6 +27,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	//This is a hack to register for push notifications. registerUserNotificationSettings is the ios 8 way, and
+	//registerForRemoteNotificationTypes is the ios 7 and lower way.
+	if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+		NSLog(@"registered for notifications in the ios8 way");
+		[application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+		[application registerForRemoteNotifications];
+	} else {
+		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+		 (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+	}
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -63,7 +74,24 @@
 	return TRUE;
 }
 
+//This method is called upon succesful push notification registration. It parses the device token for this device, and sets it
+//in user defualts. Then it calls the DataUpdater (I made it) protocol that the login screen fulfills.
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+	NSString * token = [NSString stringWithFormat:@"%@", deviceToken];
+	//Format token as you need:
+	token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+	token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+	token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+	
+	[[NSUserDefaults standardUserDefaults] setObject:token forKey:@"apnsToken"]; //save token to resend it if request fails
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"apnsTokenSentSuccessfully"]; // set flag for request status
+}
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+	NSLog(@"Did Fail to Register for Remote Notifications");
+	NSLog(@"%@, %@", error, error.localizedDescription);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

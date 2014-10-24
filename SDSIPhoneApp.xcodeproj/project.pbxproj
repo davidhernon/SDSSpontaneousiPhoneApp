@@ -40,7 +40,13 @@
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
 		FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6F52DE19F3192A002EE6CE /* SongTableView.m */; };
-		FC6F52E219F32C47002EE6CE /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6F52E119F32C47002EE6CE /* SongCell.m */; };
+		FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394719F451A8001D0FE6 /* PlayerView.m */; };
+		FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394A19F45AC2001D0FE6 /* Playlist.m */; };
+		FC76395019F4765C001D0FE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76394F19F4765C001D0FE6 /* AudioToolbox.framework */; };
+		FC76395219F47682001D0FE6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395119F47682001D0FE6 /* CoreMedia.framework */; };
+		FC76395419F4768A001D0FE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395319F4768A001D0FE6 /* AVFoundation.framework */; };
+		FC76395619F47698001D0FE6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395519F47698001D0FE6 /* MediaPlayer.framework */; };
+		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,8 +207,16 @@
 		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
 		FC6F52DD19F3192A002EE6CE /* SongTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableView.h; sourceTree = "<group>"; };
 		FC6F52DE19F3192A002EE6CE /* SongTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableView.m; sourceTree = "<group>"; };
-		FC6F52E019F32C47002EE6CE /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
-		FC6F52E119F32C47002EE6CE /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
+		FC76394619F451A8001D0FE6 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		FC76394719F451A8001D0FE6 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		FC76394919F45AC2001D0FE6 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		FC76394A19F45AC2001D0FE6 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		FC76394E19F4765C001D0FE6 /* SDSIPhoneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SDSIPhoneApp.entitlements; sourceTree = "<group>"; };
+		FC76394F19F4765C001D0FE6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FC76395119F47682001D0FE6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FC76395319F4768A001D0FE6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FC76395519F47698001D0FE6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,9 +235,14 @@
 				1C2431A219F4BD6000AAE80E /* libSoundCloudAPI.a in Frameworks */,
 				1C2431A319F4BD6000AAE80E /* libSoundCloudUI.a in Frameworks */,
 				1C24319F19F4BD4A00AAE80E /* libJSONKit.a in Frameworks */,
+				FC76395619F47698001D0FE6 /* MediaPlayer.framework in Frameworks */,
+				FC76395419F4768A001D0FE6 /* AVFoundation.framework in Frameworks */,
+				FC76395219F47682001D0FE6 /* CoreMedia.framework in Frameworks */,
 				1CBF989519E9D6C1001F643F /* CoreGraphics.framework in Frameworks */,
 				1CBF989719E9D6C1001F643F /* UIKit.framework in Frameworks */,
 				1CBF989319E9D6C1001F643F /* Foundation.framework in Frameworks */,
+				FC76395019F4765C001D0FE6 /* AudioToolbox.framework in Frameworks */,
+				FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +315,14 @@
 				1C24316819F4BC6C00AAE80E /* SoundCloudAPI.xcodeproj */,
 				FC6F52DD19F3192A002EE6CE /* SongTableView.h */,
 				FC6F52DE19F3192A002EE6CE /* SongTableView.m */,
-				FC6F52E019F32C47002EE6CE /* SongCell.h */,
-				FC6F52E119F32C47002EE6CE /* SongCell.m */,
 				1CBF98DD19EA1E05001F643F /* profile_default.png */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
 				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
 				1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */,
+				FC76394619F451A8001D0FE6 /* PlayerView.h */,
+				FC76394719F451A8001D0FE6 /* PlayerView.m */,
+				FC76394919F45AC2001D0FE6 /* Playlist.h */,
+				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
 				1CBF98D319EA1983001F643F /* SelectSongsViewController.h */,
 				1CBF98D419EA1983001F643F /* SelectSongsViewController.m */,
 				1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */,
@@ -335,6 +356,11 @@
 				1C2431A819F4BD8200AAE80E /* CoreLocation.framework */,
 				1C2431A419F4BD7000AAE80E /* AddressBook.framework */,
 				1C2431A519F4BD7000AAE80E /* AddressBookUI.framework */,
+				FCC33EFE19F587E600015BA9 /* GameKit.framework */,
+				FC76395519F47698001D0FE6 /* MediaPlayer.framework */,
+				FC76395319F4768A001D0FE6 /* AVFoundation.framework */,
+				FC76395119F47682001D0FE6 /* CoreMedia.framework */,
+				FC76394F19F4765C001D0FE6 /* AudioToolbox.framework */,
 				1CBF989219E9D6C1001F643F /* Foundation.framework */,
 				1CBF989419E9D6C1001F643F /* CoreGraphics.framework */,
 				1CBF989619E9D6C1001F643F /* UIKit.framework */,
@@ -346,6 +372,7 @@
 		1CBF989819E9D6C1001F643F /* SDSIPhoneApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC76394E19F4765C001D0FE6 /* SDSIPhoneApp.entitlements */,
 				1CBF98A119E9D6C1001F643F /* AppDelegate.h */,
 				1CBF98A219E9D6C1001F643F /* AppDelegate.m */,
 				1CBF98A419E9D6C1001F643F /* Images.xcassets */,
@@ -437,6 +464,18 @@
 				TargetAttributes = {
 					1CBF988E19E9D6C0001F643F = {
 						DevelopmentTeam = 72PSY3QB44;
+						DevelopmentTeam = 6ZUB2TR58V;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					1CBF98A919E9D6C1001F643F = {
 						DevelopmentTeam = 6ZUB2TR58V;
@@ -589,12 +628,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
+				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
 				FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
 				1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */,
-				FC6F52E219F32C47002EE6CE /* SongCell.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
+				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +717,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -716,6 +757,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -738,6 +780,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SDSIPhoneApp/SDSIPhoneApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -766,6 +809,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SDSIPhoneApp/SDSIPhoneApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
