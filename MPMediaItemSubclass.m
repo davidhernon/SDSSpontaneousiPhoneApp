@@ -11,7 +11,6 @@
 @implementation MPMediaItemSubclass
 -(id)init{
 	self.song = [[MPMediaItem alloc]init];
-	self.color = [[UIColor alloc]init];
 	self.user = @"NotSet";
 	return self;
 }

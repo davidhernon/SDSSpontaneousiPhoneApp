@@ -18,58 +18,6 @@
 }
 */
 
--(id)initSongsListFromMediaQuery: (CGRect)frame
-{
-	self = [super initWithFrame:frame];
-	// Set up songs in table View and display it
-	self.parentIsPlayerViewController = false;
-	
-	self.delegate = self;
-	self.dataSource = self;
-	MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
-	NSArray *itemsFromMediaPlayer = [mediaPlayer items];
-	NSMutableArray *tempPlaylist = [[NSMutableArray alloc]init];
-	tempPlaylist = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
-	self.playlist = [[NSMutableArray alloc]init];
-	
-	for(NSUInteger j = 0 ; j < [tempPlaylist count] ; j++){
-		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
-		MPMediaItemSubclass *s = [[MPMediaItemSubclass alloc]init];
-		s.song = [tempPlaylist objectAtIndex:loopPath.row];
-		s.color = [UIColor whiteColor];
-		[self.playlist addObject:s];
-		
-		//Spoof Barbs Songs//
-		if((j==4 || j == 5) && ![Playlist sharedPlaylist].alreadySpoofed){
-			MPMediaItemSubclass *s2 = [[MPMediaItemSubclass alloc]init];
-			s2.song = [tempPlaylist objectAtIndex:loopPath.row];
-			s2.color = [UIColor orangeColor];
-			s2.user = @"Barb";
-			[[Playlist sharedPlaylist].playlist addObject:s2];
-			if(j==5){
-				[Playlist sharedPlaylist].alreadySpoofed = true;
-			}
-		}
-		
-		//end spoof//
-	}
-
-	
-	[self reloadData];
-	return self;
-}
-
--(id)initWithPlaylist: (CGRect)frame
-{
-	self = [super initWithFrame:frame];
-	self.parentIsPlayerViewController = true;
-	self.delegate = self;
-	self.dataSource = self;
-	
-	self.playlist = [Playlist sharedPlaylist].playlist;
-	return self;
-}
-
 
 -(id)init: (CGRect)frame
 {
@@ -80,14 +28,14 @@
 	return self;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 70;
+}
+
 -(void)addTracktoTable:(MPMediaItemSubclass*)passedSong
 {
 	[self.playlist addObject:passedSong];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 90;
 }
 
 #pragma mark - Table view data source
@@ -101,56 +49,5 @@
 	return self.playlist.count;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	MPMediaItemSubclass *s =[self.playlist objectAtIndex:indexPath.row];
-	cell.backgroundColor = s.color;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *cellIdentifier = @"MusicCell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-	if (!cell){
-		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
-	}
-	
-	self->songWithMetaData = [self.playlist objectAtIndex:indexPath.row];
-	NSString *songTitle = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyTitle];
-	NSString *durationLabel = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyPlaybackDuration];
-	cell.textLabel.text = songTitle;
-	cell.detailTextLabel.text = durationLabel;
-
-	return cell;
-}
-
-#pragma mark - TableView Delegate Methods
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(self.parentIsPlayerViewController){
-		
-	}
-	else{
-		if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-
-		}else{
-			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-		}
-	}
-}
-
-
--(void)addToPlaylist{
-	for(NSUInteger j = 0 ; j < [self.playlist count] ; j++){
-		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
-		if([self cellForRowAtIndexPath:loopPath].accessoryType == UITableViewCellAccessoryCheckmark){
-			MPMediaItemSubclass *s =[self.playlist objectAtIndex:loopPath.row];
-			s.user = @"You";
-			s.color = [UIColor cyanColor];
-			[[Playlist sharedPlaylist].playlist addObject:s];
-			[self cellForRowAtIndexPath:loopPath].accessoryType = UITableViewCellAccessoryNone;
-		}
-	}
-}
 
 @end

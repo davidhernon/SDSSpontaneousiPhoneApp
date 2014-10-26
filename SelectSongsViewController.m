@@ -12,13 +12,12 @@
 
 #import "SelectSongsViewController.h"
 #import "PlayerViewController.h"
-#import "SongTableView.h"
+#import "SelectASongTableView.h"
 
 @interface SelectSongsViewController ()
 
 @property NSArray *songsFromMediaPlayer;
-//@property (weak, nonatomic) IBOutlet SongTableView *tableView;
-@property SongTableView *tableView;
+@property SelectASongTableView *tableView;
 @property PlayerViewController *playerViewController;
 @end
 
@@ -38,7 +37,7 @@
 {
     [super viewDidLoad];
 	self.playerViewController = [PlayerViewController sharedPlayerViewController];
-	self.tableView = [[SongTableView alloc] initSongsListFromMediaQuery:CGRectMake(0.0,100.0,320.0,500.0)];
+	self.tableView = [[SelectASongTableView alloc] initSongsListFromMediaQuery:CGRectMake(0.0,100.0,320.0,500.0)];
 	
 	[self.view addSubview:self.tableView];
 	[self.view sendSubviewToBack:self.tableView];

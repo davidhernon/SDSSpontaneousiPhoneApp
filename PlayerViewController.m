@@ -28,7 +28,7 @@
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
 		self.playlist = [Playlist sharedPlaylist];
-		self.songTableView = [[SongTableView alloc] initWithPlaylist:CGRectMake(0.0,200.0, 320.0, 300.0)];
+		self.playerTableView = [[PlayerTableView alloc] initWithPlaylist:CGRectMake(0.0,130.0, 320.0, 300.0)];
 	}
 	return self;
 }
@@ -37,15 +37,23 @@
 {
     [super viewDidLoad];
 	NSLog(@"viewdidload");
-	[self.view addSubview:self.songTableView];
-	[self.view sendSubviewToBack:self.songTableView];
+	[self.view addSubview:self.playerTableView];
+	[self.view sendSubviewToBack:self.playerTableView];
 	[[Playlist sharedPlaylist] shuffle];
 	self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,125.0,320.0,100.0)];
 	[self.view addSubview:self.playerView];
-	[self.songTableView reloadData];
+	[self.playerTableView reloadData];
     // Do any additional setup after loading the view from its nib.
 }
 
+-(IBAction)editPlaylist:(id)sender{
+	if(self.playerTableView.editing == NO){
+		self.playerTableView.editing = YES;
+	}
+	else{
+		self.playerTableView.editing = NO;
+	}
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

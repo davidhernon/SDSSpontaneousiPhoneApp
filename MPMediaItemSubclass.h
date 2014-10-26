@@ -10,6 +10,6 @@
 
 @interface MPMediaItemSubclass : NSObject
 @property NSString* user;
-@property UIColor* color;
 @property MPMediaItem* song;
+@property UIImage* image;
 @end
