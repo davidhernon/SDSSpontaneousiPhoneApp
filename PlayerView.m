@@ -13,7 +13,6 @@
 {
 	self = [super initWithFrame:frame];
 	[self startPlayer];
-
 	return self;
 }
 

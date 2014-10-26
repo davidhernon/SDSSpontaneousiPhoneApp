@@ -85,6 +85,11 @@
 	[self.playlist addObject:passedSong];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 90;
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -111,7 +116,7 @@
 	
 	self->songWithMetaData = [self.playlist objectAtIndex:indexPath.row];
 	NSString *songTitle = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyTitle];
-	NSString *durationLabel = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyGenre];
+	NSString *durationLabel = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyPlaybackDuration];
 	cell.textLabel.text = songTitle;
 	cell.detailTextLabel.text = durationLabel;
 
@@ -122,7 +127,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(self.parentIsPlayerViewController){
-	
+		
 	}
 	else{
 		if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
