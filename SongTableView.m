@@ -27,8 +27,19 @@
 	self.dataSource = self;
 	MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
 	NSArray *itemsFromMediaPlayer = [mediaPlayer items];
+	NSMutableArray *tempPlaylist = [[NSMutableArray alloc]init];
+	tempPlaylist = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
 	self.playlist = [[NSMutableArray alloc]init];
-	self.playlist = [NSMutableArray arrayWithArray:itemsFromMediaPlayer];
+	
+	for(NSUInteger j = 0 ; j < [tempPlaylist count] ; j++){
+		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
+		MPMediaItemSubclass *s = [[MPMediaItemSubclass alloc]init];
+		s.song = [tempPlaylist objectAtIndex:loopPath.row];
+		s.color = [UIColor whiteColor];
+		[self.playlist addObject:s];
+	}
+
+	
 	[self reloadData];
 	return self;
 }
@@ -53,7 +64,7 @@
 	return self;
 }
 
--(void)addTracktoTable:(MPMediaItem*)passedSong
+-(void)addTracktoTable:(MPMediaItemSubclass*)passedSong
 {
 	[self.playlist addObject:passedSong];
 }
@@ -69,6 +80,10 @@
 	return self.playlist.count;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	//cell.backgroundColor = self->song.color;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"MusicCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -77,11 +92,12 @@
 		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
 	}
 	
-	self->song = [self.playlist objectAtIndex:indexPath.row];
-	NSString *songTitle = [song valueForProperty: MPMediaItemPropertyTitle];
-	NSString *durationLabel = [song valueForProperty: MPMediaItemPropertyGenre];
+	self->songWithMetaData = [self.playlist objectAtIndex:indexPath.row];
+	NSString *songTitle = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyTitle];
+	NSString *durationLabel = [self->songWithMetaData.song valueForProperty: MPMediaItemPropertyGenre];
 	cell.textLabel.text = songTitle;
 	cell.detailTextLabel.text = durationLabel;
+
 	return cell;
 }
 
@@ -92,7 +108,26 @@
 	
 	}
 	else{
-		[[Playlist sharedPlaylist].playlist addObject:[self.playlist objectAtIndex:indexPath.row]];
+		if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+
+		}else{
+			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+		}
+	}
+}
+
+
+-(void)addToPlaylist{
+	for(NSUInteger j = 0 ; j < [self.playlist count] ; j++){
+		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
+		if([self cellForRowAtIndexPath:loopPath].accessoryType == UITableViewCellAccessoryCheckmark){
+			MPMediaItemSubclass *s =[self.playlist objectAtIndex:loopPath.row];
+			//[s setColor:[UIColor cyanColor]];
+			//[s setUser: @"You"];
+			[[Playlist sharedPlaylist].playlist addObject:s];
+			[self cellForRowAtIndexPath:loopPath].accessoryType = UITableViewCellAccessoryNone;
+		}
 	}
 }
 

@@ -39,8 +39,6 @@
     [super viewDidLoad];
 	self.playerViewController = [PlayerViewController sharedPlayerViewController];
 	self.tableView = [[SongTableView alloc] initSongsListFromMediaQuery:CGRectMake(0.0,100.0,320.0,500.0)];
-
-	self.tableView.passInfoDelegate = self.playerViewController;
 	
 	[self.view addSubview:self.tableView];
 	[self.view sendSubviewToBack:self.tableView];
@@ -84,6 +82,7 @@
 	[self.donePickingTimer invalidate];
 	[self.updateSecondsTimer invalidate];
 	seconds.text = @"";
+	[self.tableView addToPlaylist];
     [self presentViewController:self.playerViewController animated:YES completion:nil];
 	NSLog(@"Done Picking");
 }

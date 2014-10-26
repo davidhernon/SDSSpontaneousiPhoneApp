@@ -11,7 +11,7 @@
 #import "SelectSongsViewController.h"
 #import "PlayerView.h"
 #import "Playlist.h"
-@interface PlayerViewController : UIViewController<PassInformation>
+@interface PlayerViewController : UIViewController
 
 -(IBAction)pickMoreSongs;
 @property Playlist* playlist;

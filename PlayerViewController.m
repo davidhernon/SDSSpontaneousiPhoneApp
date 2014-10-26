@@ -57,14 +57,5 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-//delegate function implemented
-//this gets called from the second viewconroller when the view disappears
-- (void) addTrack:(MPMediaItem *)song
-{
-	NSLog(@"addTrack in PlayerViewController");
-	[self.playlist addTrack:song];
-	[self.songTableView addTracktoTable:song];
-}
-
 
 @end

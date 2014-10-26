@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "MPMediaItemSubclass.h"
 @interface Playlist : NSObject{
 	NSMutableArray* playlist;
 }
 @property(nonatomic,retain)NSMutableArray *playlist;
 + (Playlist*) sharedPlaylist;
 -(int)count;
-- (void) addTrack:(MPMediaItem *)song;
+- (void) addTrack:(MPMediaItemSubclass *)song;
 - (id)objectAtIndex:(NSUInteger)index;
 
 @end
