@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "SelectSongsViewController.h"
+#import "SCUI.h"
+//#import "SCTTrackListViewController.h"
+
 
 @interface LoginViewController ()
 
@@ -86,6 +89,31 @@
 {
     SelectSongsViewController *selectSongsViewController = [[SelectSongsViewController alloc]initWithNibName:@"SelectSongsViewController" bundle:nil];
     [self presentViewController:selectSongsViewController animated:YES completion:nil];
+}
+
+- (IBAction) loginSoundCloud:(id) sender
+{
+   /* SCLoginViewControllerCompletionHandler handler = ^(NSError *error) {
+        if (SC_CANCELED(error)) {
+            NSLog(@"Canceled!");
+        } else if (error) {
+            NSLog(@"Error: %@", [error localizedDescription]);
+        } else {
+            NSLog(@"Done!");
+        }
+    };
+    
+    [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL) {
+        SCLoginViewController *loginViewController;
+        
+        loginViewController = [SCLoginViewController
+                               loginViewControllerWithPreparedURL:preparedURL
+                               completionHandler:handler];
+        [self presentModalViewController:loginViewController animated:YES];
+    }];*/
+    
+    SCTViewController *sctvViewController = [[SCTViewController alloc] initWithNibName:@"SCTViewController" bundle:nil];
+    [self presentViewController:sctvViewController animated:YES completion:nil];
 }
 
 - (IBAction)testNotification:(id)sender {

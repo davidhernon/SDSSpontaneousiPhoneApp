@@ -19,6 +19,10 @@
 		1C2431AD19F4BD9200AAE80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AC19F4BD9200AAE80E /* QuartzCore.framework */; };
 		1C2431AF19F4BD9A00AAE80E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AE19F4BD9A00AAE80E /* Security.framework */; };
 		1C2431B119F4BE0900AAE80E /* SoundCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */; };
+		1C79A51D19FB0DD000579B6A /* SCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79A51B19FB0DD000579B6A /* SCTViewController.m */; };
+		1C79A51E19FB0DD000579B6A /* SCTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C79A51C19FB0DD000579B6A /* SCTViewController.xib */; };
+		1C79A52219FB11B100579B6A /* SCTTrackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79A52019FB11B100579B6A /* SCTTrackListViewController.m */; };
+		1C79A52319FB11B100579B6A /* SCTTrackListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C79A52119FB11B100579B6A /* SCTTrackListViewController.xib */; };
 		1CBF989319E9D6C1001F643F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989219E9D6C1001F643F /* Foundation.framework */; };
 		1CBF989519E9D6C1001F643F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989419E9D6C1001F643F /* CoreGraphics.framework */; };
 		1CBF989719E9D6C1001F643F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989619E9D6C1001F643F /* UIKit.framework */; };
@@ -178,6 +182,12 @@
 		1C2431AE19F4BD9A00AAE80E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SoundCloud.bundle; path = CocoaSoundCloudUI/SoundCloud.bundle; sourceTree = "<group>"; };
 		1C2609A419F6B78F008D6CD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1C79A51A19FB0DD000579B6A /* SCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTViewController.h; sourceTree = "<group>"; };
+		1C79A51B19FB0DD000579B6A /* SCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTViewController.m; sourceTree = "<group>"; };
+		1C79A51C19FB0DD000579B6A /* SCTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCTViewController.xib; sourceTree = "<group>"; };
+		1C79A51F19FB11B100579B6A /* SCTTrackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTTrackListViewController.h; sourceTree = "<group>"; };
+		1C79A52019FB11B100579B6A /* SCTTrackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTTrackListViewController.m; sourceTree = "<group>"; };
+		1C79A52119FB11B100579B6A /* SCTTrackListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCTTrackListViewController.xib; sourceTree = "<group>"; };
 		1CBF988F19E9D6C0001F643F /* SDSIPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDSIPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF989219E9D6C1001F643F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CBF989419E9D6C1001F643F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -307,6 +317,12 @@
 		1CBF988619E9D6C0001F643F = {
 			isa = PBXGroup;
 			children = (
+				1C79A51F19FB11B100579B6A /* SCTTrackListViewController.h */,
+				1C79A52019FB11B100579B6A /* SCTTrackListViewController.m */,
+				1C79A52119FB11B100579B6A /* SCTTrackListViewController.xib */,
+				1C79A51A19FB0DD000579B6A /* SCTViewController.h */,
+				1C79A51B19FB0DD000579B6A /* SCTViewController.m */,
+				1C79A51C19FB0DD000579B6A /* SCTViewController.xib */,
 				1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */,
 				1C24317119F4BD1300AAE80E /* JSONKit.xcodeproj */,
 				1C24317419F4BD1300AAE80E /* OAuth2Client.xcodeproj */,
@@ -464,7 +480,6 @@
 				TargetAttributes = {
 					1CBF988E19E9D6C0001F643F = {
 						DevelopmentTeam = 72PSY3QB44;
-						DevelopmentTeam = 6ZUB2TR58V;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -605,6 +620,8 @@
 				1C2431B119F4BE0900AAE80E /* SoundCloud.bundle in Resources */,
 				1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */,
 				1CBF98A519E9D6C1001F643F /* Images.xcassets in Resources */,
+				1C79A52319FB11B100579B6A /* SCTTrackListViewController.xib in Resources */,
+				1C79A51E19FB0DD000579B6A /* SCTViewController.xib in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */,
@@ -633,7 +650,9 @@
 				FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
 				1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */,
+				1C79A52219FB11B100579B6A /* SCTTrackListViewController.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
+				1C79A51D19FB0DD000579B6A /* SCTViewController.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

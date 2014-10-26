@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCTViewController.h"
 
 @interface LoginViewController : UIViewController
 
 -(IBAction)login;
 -(IBAction)testNotification:(id)sender;
+-(IBAction)loginSoundCloud:(id)sender;
 
 @end
