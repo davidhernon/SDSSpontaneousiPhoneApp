@@ -23,6 +23,7 @@
 	self = [super initWithFrame:frame];
 	// Set up songs in table View and display it
 	self.parentIsPlayerViewController = false;
+	
 	self.delegate = self;
 	self.dataSource = self;
 	MPMediaQuery *mediaPlayer = [[MPMediaQuery alloc] init];
@@ -37,6 +38,20 @@
 		s.song = [tempPlaylist objectAtIndex:loopPath.row];
 		s.color = [UIColor whiteColor];
 		[self.playlist addObject:s];
+		
+		//Spoof Barbs Songs//
+		if((j==4 || j == 5) && ![Playlist sharedPlaylist].alreadySpoofed){
+			MPMediaItemSubclass *s2 = [[MPMediaItemSubclass alloc]init];
+			s2.song = [tempPlaylist objectAtIndex:loopPath.row];
+			s2.color = [UIColor orangeColor];
+			s2.user = @"Barb";
+			[[Playlist sharedPlaylist].playlist addObject:s2];
+			if(j==5){
+				[Playlist sharedPlaylist].alreadySpoofed = true;
+			}
+		}
+		
+		//end spoof//
 	}
 
 	
@@ -50,6 +65,7 @@
 	self.parentIsPlayerViewController = true;
 	self.delegate = self;
 	self.dataSource = self;
+	
 	self.playlist = [Playlist sharedPlaylist].playlist;
 	return self;
 }
@@ -81,7 +97,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	//cell.backgroundColor = self->song.color;
+	MPMediaItemSubclass *s =[self.playlist objectAtIndex:indexPath.row];
+	cell.backgroundColor = s.color;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,8 +140,8 @@
 		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
 		if([self cellForRowAtIndexPath:loopPath].accessoryType == UITableViewCellAccessoryCheckmark){
 			MPMediaItemSubclass *s =[self.playlist objectAtIndex:loopPath.row];
-			//[s setColor:[UIColor cyanColor]];
-			//[s setUser: @"You"];
+			s.user = @"You";
+			s.color = [UIColor cyanColor];
 			[[Playlist sharedPlaylist].playlist addObject:s];
 			[self cellForRowAtIndexPath:loopPath].accessoryType = UITableViewCellAccessoryNone;
 		}

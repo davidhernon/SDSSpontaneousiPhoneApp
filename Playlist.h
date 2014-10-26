@@ -13,9 +13,10 @@
 	NSMutableArray* playlist;
 }
 @property(nonatomic,retain)NSMutableArray *playlist;
+@property Boolean alreadySpoofed;
 + (Playlist*) sharedPlaylist;
 -(int)count;
 - (void) addTrack:(MPMediaItemSubclass *)song;
 - (id)objectAtIndex:(NSUInteger)index;
-
+-(void)shuffle;
 @end

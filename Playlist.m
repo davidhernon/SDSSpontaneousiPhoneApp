@@ -25,6 +25,7 @@ static Playlist *sharedPlaylist = nil;
 	dispatch_once(&onceToken, ^{
 		sharedPlaylist = [[self alloc] init];
 		sharedPlaylist.playlist = [[NSMutableArray alloc]init];
+		sharedPlaylist.alreadySpoofed = false;
 	});
 	return sharedPlaylist;
 }
@@ -43,6 +44,15 @@ static Playlist *sharedPlaylist = nil;
 - (id)objectAtIndex:(NSUInteger)index
 {
 	return [self.playlist objectAtIndex:index];
+}
+
+-(void)shuffle{
+	NSUInteger count = [self.playlist count];
+	for (NSUInteger i = 0; i < count; ++i) {
+		NSInteger remainingCount = count - i;
+		NSInteger exchangeIndex = i + arc4random_uniform((u_int32_t )remainingCount);
+		[self.playlist exchangeObjectAtIndex:i withObjectAtIndex:exchangeIndex];
+	}
 }
 
 

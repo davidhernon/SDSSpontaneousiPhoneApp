@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	self.nextScreenButton.layer.cornerRadius = 10;
 }
 
 - (IBAction)testNotification {
@@ -82,13 +82,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)login
+- (IBAction)nextScreen
 {
     SelectSongsViewController *selectSongsViewController = [[SelectSongsViewController alloc]initWithNibName:@"SelectSongsViewController" bundle:nil];
     [self presentViewController:selectSongsViewController animated:YES completion:nil];
-}
 
-- (IBAction)testNotification:(id)sender {
 }
 
 @end

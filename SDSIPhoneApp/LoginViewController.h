@@ -10,7 +10,9 @@
 
 @interface LoginViewController : UIViewController
 
--(IBAction)login;
+-(IBAction)nextScreen;
 -(IBAction)testNotification:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UIButton *nextScreenButton;
 
 @end

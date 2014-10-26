@@ -19,6 +19,7 @@
 }
 @property (strong, nonatomic) NSMutableArray *playlist;
 @property Boolean parentIsPlayerViewController;
+@property Boolean needToSpoof;
 -(id)init: (CGRect)frame;
 -(void)addTracktoTable:(MPMediaItemSubclass*)passedSong;
 -(id)initSongsListFromMediaQuery: (CGRect)frame;

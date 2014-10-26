@@ -29,7 +29,6 @@
 	if (self) {
 		self.playlist = [Playlist sharedPlaylist];
 		self.songTableView = [[SongTableView alloc] initWithPlaylist:CGRectMake(0.0,200.0, 320.0, 300.0)];
-		self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,125.0,320.0,100.0)];
 	}
 	return self;
 }
@@ -40,9 +39,10 @@
 	NSLog(@"viewdidload");
 	[self.view addSubview:self.songTableView];
 	[self.view sendSubviewToBack:self.songTableView];
+	[[Playlist sharedPlaylist] shuffle];
+	self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,125.0,320.0,100.0)];
 	[self.view addSubview:self.playerView];
 	[self.songTableView reloadData];
-
     // Do any additional setup after loading the view from its nib.
 }
 

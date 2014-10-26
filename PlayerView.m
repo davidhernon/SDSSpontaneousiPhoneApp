@@ -12,30 +12,19 @@
 -(id)init: (CGRect)frame 
 {
 	self = [super initWithFrame:frame];
-	self.playlist = [Playlist sharedPlaylist];
-	[self initializePlayer];
-	[self createUI];
+	[self startPlayer];
+
 	return self;
 }
--(void)createUI{
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[button addTarget:self
-			   action:@selector(play)
-	 forControlEvents:UIControlEventTouchUpInside];
-	[button setTitle:@"Play Button" forState:UIControlStateNormal];
-	button.frame = CGRectMake(0.0, 10.0, 160.0, 40.0);
-	[self addSubview:button];
-}
 
--(void)play{
-	MPMediaItem *song = [self.playlist objectAtIndex:0];
-	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
+-(void)startPlayer{
+	self.audioPlayer = [[AVPlayer alloc] init];
+	MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
+	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
 	NSLog(@"play");
-}
--(void)initializePlayer{
-	self.audioPlayer = [[AVPlayer alloc] init];
+
 }
 
 /*
