@@ -81,5 +81,28 @@
 	}
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	if(section == 0){
+		return 1;
+	}
+	else{
+		return self.playlist.count - 1;
+	}
+}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if(section == 0){
+		return @"Now Playing";
+	}
+	if(section == 1){
+		return @"Up Next";
+	}
+	return @"something terrible has happened";
+}
 
 @end

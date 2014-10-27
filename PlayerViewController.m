@@ -40,10 +40,13 @@
 	[self.view addSubview:self.playerTableView];
 	[self.view sendSubviewToBack:self.playerTableView];
 	[[Playlist sharedPlaylist] shuffle];
-	self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,125.0,320.0,100.0)];
+	self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,25.0,320.0,100.0)];
 	[self.view addSubview:self.playerView];
 	[self.playerTableView reloadData];
     // Do any additional setup after loading the view from its nib.
+}
+-(void)reloadData{
+	[self.playerTableView reloadData];
 }
 
 -(IBAction)editPlaylist:(id)sender{

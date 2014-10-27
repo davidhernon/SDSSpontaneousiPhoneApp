@@ -25,20 +25,19 @@
 	self.playlist = [[NSMutableArray alloc]init];
 	
 	for(NSUInteger j = 0 ; j < [tempPlaylist count] ; j++){
-		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:0];
+		NSIndexPath *loopPath = [NSIndexPath indexPathForRow:j inSection:1];
 		MPMediaItemSubclass *s = [[MPMediaItemSubclass alloc]init];
 		s.song = [tempPlaylist objectAtIndex:loopPath.row];
 		[self.playlist addObject:s];
 		
 		//Spoof Barbs Songs//
-		if((j==4 || j == 5) && ![Playlist sharedPlaylist].alreadySpoofed){
+		if((j==4 || j ==16) && ![Playlist sharedPlaylist].alreadySpoofed){
 			MPMediaItemSubclass *s2 = [[MPMediaItemSubclass alloc]init];
 			s2.song = [tempPlaylist objectAtIndex:loopPath.row];
 			s2.user = @"Barb";
 			s2.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"profile_default" ofType:@"png"]];
-
 			[[Playlist sharedPlaylist].playlist addObject:s2];
-			if(j==5){
+			if(j==16){
 				[Playlist sharedPlaylist].alreadySpoofed = true;
 			}
 		}
@@ -67,7 +66,16 @@
 	return cell;
 }
 
-#pragma mark - TableView Delegate Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return self.playlist.count;
+}
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(self.parentIsPlayerViewController){

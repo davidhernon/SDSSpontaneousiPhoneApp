@@ -14,5 +14,4 @@
 @property Playlist* playlist;
 @property (strong, nonatomic) AVPlayer *audioPlayer;
 -(id)init: (CGRect)frame;
-
 @end
