@@ -27,26 +27,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	//This is a hack to register for push notifications. registerUserNotificationSettings is the ios 8 way, and
-	//registerForRemoteNotificationTypes is the ios 7 and lower way.
-	if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-		NSLog(@"registered for notifications in the ios8 way");
-		[application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-		[application registerForRemoteNotifications];
-	} else {
-		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-		 (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-	}
-
+	[self registerForNotifications:application];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    self.window.rootViewController = viewController;
-    [self.window makeKeyAndVisible];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	[navController setNavigationBarHidden:YES animated:YES];
+	[self.window makeKeyAndVisible];
+	[self.window addSubview:navController.view];
+    self.window.rootViewController = navController;
+
 	[self GetIndex];
     return YES;
 }
+
 
 -(BOOL) GetIndex
 {
@@ -91,6 +84,19 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 	NSLog(@"Did Fail to Register for Remote Notifications");
 	NSLog(@"%@, %@", error, error.localizedDescription);
+}
+
+-(void)registerForNotifications: (UIApplication *)application{
+	//This is a hack to register for push notifications. registerUserNotificationSettings is the ios 8 way, and
+	//registerForRemoteNotificationTypes is the ios 7 and lower way.
+	if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+		NSLog(@"registered for notifications in the ios8 way");
+		[application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+		[application registerForRemoteNotifications];
+	} else {
+		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+		 (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+	}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -98,7 +98,7 @@
 	picker.prompt =
 	NSLocalizedString (@"Add songs to play",
 					   "Prompt in media item picker");
-	[self presentViewController: picker animated: YES completion:nil];    // 4
+	[self.navigationController pushViewController:picker animated: YES];    // 4
 }
 
 @end

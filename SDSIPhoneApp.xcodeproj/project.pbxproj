@@ -310,11 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */,
-				1C24317119F4BD1300AAE80E /* JSONKit.xcodeproj */,
-				1C24317419F4BD1300AAE80E /* OAuth2Client.xcodeproj */,
-				1C24317719F4BD1300AAE80E /* OHAttributedLabel.xcodeproj */,
-				1C24317A19F4BD1300AAE80E /* SoundCloudUI.xcodeproj */,
-				1C24316819F4BC6C00AAE80E /* SoundCloudAPI.xcodeproj */,
+				FCC2085B1A02C40700C88CA3 /* Submodules */,
 				FC6E2DDF19FC97180069CC83 /* PlaylistTableView.h */,
 				FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
@@ -329,10 +325,7 @@
 				1CBF98C919E9E632001F643F /* LoginViewController.h */,
 				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
 				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
-				1CBF98DD19EA1E05001F643F /* profile_default.png */,
-				FC6E2DE519FCA02F0069CC83 /* not_available.gif */,
-				FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */,
-				FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */,
+				FCC208611A02C41B00C88CA3 /* Resources */,
 				1CBF989819E9D6C1001F643F /* SDSIPhoneApp */,
 				1CBF98B119E9D6C1001F643F /* SDSIPhoneAppTests */,
 				1CBF989119E9D6C0001F643F /* Frameworks */,
@@ -411,6 +404,29 @@
 				1CBF98B419E9D6C1001F643F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCC2085B1A02C40700C88CA3 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				1C24317119F4BD1300AAE80E /* JSONKit.xcodeproj */,
+				1C24317419F4BD1300AAE80E /* OAuth2Client.xcodeproj */,
+				1C24317719F4BD1300AAE80E /* OHAttributedLabel.xcodeproj */,
+				1C24317A19F4BD1300AAE80E /* SoundCloudUI.xcodeproj */,
+				1C24316819F4BC6C00AAE80E /* SoundCloudAPI.xcodeproj */,
+			);
+			name = Submodules;
+			sourceTree = "<group>";
+		};
+		FCC208611A02C41B00C88CA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1CBF98DD19EA1E05001F643F /* profile_default.png */,
+				FC6E2DE519FCA02F0069CC83 /* not_available.gif */,
+				FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */,
+				FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
