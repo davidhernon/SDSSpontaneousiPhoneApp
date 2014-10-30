@@ -19,4 +19,5 @@
 - (void) addTrack:(MPMediaItemSubclass *)song;
 - (id)objectAtIndex:(NSUInteger)index;
 -(void)shuffle;
+-(void) addMediaCollection:(MPMediaItemCollection*)collection;
 @end

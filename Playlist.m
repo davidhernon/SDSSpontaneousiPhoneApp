@@ -55,5 +55,16 @@ static Playlist *sharedPlaylist = nil;
 	}
 }
 
+-(void) addMediaCollection:(MPMediaItemCollection*)collection{
+	for(MPMediaItem* track in collection.items){
+		MPMediaItemSubclass* m = [[MPMediaItemSubclass alloc]init];
+		m.song = track;
+		m.user = @"self";
+		m.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Uncle_Sam_(pointing_finger)" ofType:@"jpg"]];
+		[self.playlist addObject:m];
+	}
+}
+
+
 
 @end

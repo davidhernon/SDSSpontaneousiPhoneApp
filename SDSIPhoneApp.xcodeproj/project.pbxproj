@@ -33,18 +33,14 @@
 		1CBF98B819E9D6C1001F643F /* SDSIPhoneAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98B719E9D6C1001F643F /* SDSIPhoneAppTests.m */; };
 		1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98CA19E9E632001F643F /* LoginViewController.m */; };
 		1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98CB19E9E632001F643F /* LoginViewController.xib */; };
-		1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D419EA1983001F643F /* SelectSongsViewController.m */; };
-		1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */; };
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */; };
 		FC6E2DD619FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */; };
-		FC6E2DDE19FC93A90069CC83 /* SelectASongTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DDD19FC93A90069CC83 /* SelectASongTableView.m */; };
-		FC6E2DE119FC97180069CC83 /* PlayerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DE019FC97180069CC83 /* PlayerTableView.m */; };
+		FC6E2DE119FC97180069CC83 /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */; };
 		FC6E2DE619FCA02F0069CC83 /* not_available.gif in Resources */ = {isa = PBXBuildFile; fileRef = FC6E2DE519FCA02F0069CC83 /* not_available.gif */; };
 		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
-		FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6F52DE19F3192A002EE6CE /* SongTableView.m */; };
 		FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394719F451A8001D0FE6 /* PlayerView.m */; };
 		FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394A19F45AC2001D0FE6 /* Playlist.m */; };
 		FC76395019F4765C001D0FE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76394F19F4765C001D0FE6 /* AudioToolbox.framework */; };
@@ -202,9 +198,6 @@
 		1CBF98C919E9E632001F643F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = SDSIPhoneApp/LoginViewController.h; sourceTree = "<group>"; };
 		1CBF98CA19E9E632001F643F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = SDSIPhoneApp/LoginViewController.m; sourceTree = "<group>"; };
 		1CBF98CB19E9E632001F643F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SDSIPhoneApp/LoginViewController.xib; sourceTree = "<group>"; };
-		1CBF98D319EA1983001F643F /* SelectSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSongsViewController.h; sourceTree = "<group>"; };
-		1CBF98D419EA1983001F643F /* SelectSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSongsViewController.m; sourceTree = "<group>"; };
-		1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectSongsViewController.xib; sourceTree = "<group>"; };
 		1CBF98D819EA1C7D001F643F /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
@@ -212,14 +205,10 @@
 		FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItemSubclass.h; sourceTree = "<group>"; };
 		FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItemSubclass.m; sourceTree = "<group>"; };
 		FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Uncle_Sam_(pointing_finger).jpg"; path = "../../../Desktop/Uncle_Sam_(pointing_finger).jpg"; sourceTree = "<group>"; };
-		FC6E2DDC19FC93A90069CC83 /* SelectASongTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectASongTableView.h; sourceTree = "<group>"; };
-		FC6E2DDD19FC93A90069CC83 /* SelectASongTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectASongTableView.m; sourceTree = "<group>"; };
-		FC6E2DDF19FC97180069CC83 /* PlayerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableView.h; sourceTree = "<group>"; };
-		FC6E2DE019FC97180069CC83 /* PlayerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableView.m; sourceTree = "<group>"; };
+		FC6E2DDF19FC97180069CC83 /* PlaylistTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableView.h; sourceTree = "<group>"; };
+		FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableView.m; sourceTree = "<group>"; };
 		FC6E2DE519FCA02F0069CC83 /* not_available.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = not_available.gif; path = ../../../Desktop/not_available.gif; sourceTree = "<group>"; };
 		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
-		FC6F52DD19F3192A002EE6CE /* SongTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableView.h; sourceTree = "<group>"; };
-		FC6F52DE19F3192A002EE6CE /* SongTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableView.m; sourceTree = "<group>"; };
 		FC76394619F451A8001D0FE6 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		FC76394719F451A8001D0FE6 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		FC76394919F45AC2001D0FE6 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
@@ -326,12 +315,8 @@
 				1C24317719F4BD1300AAE80E /* OHAttributedLabel.xcodeproj */,
 				1C24317A19F4BD1300AAE80E /* SoundCloudUI.xcodeproj */,
 				1C24316819F4BC6C00AAE80E /* SoundCloudAPI.xcodeproj */,
-				FC6F52DD19F3192A002EE6CE /* SongTableView.h */,
-				FC6F52DE19F3192A002EE6CE /* SongTableView.m */,
-				FC6E2DDC19FC93A90069CC83 /* SelectASongTableView.h */,
-				FC6E2DDD19FC93A90069CC83 /* SelectASongTableView.m */,
-				FC6E2DDF19FC97180069CC83 /* PlayerTableView.h */,
-				FC6E2DE019FC97180069CC83 /* PlayerTableView.m */,
+				FC6E2DDF19FC97180069CC83 /* PlaylistTableView.h */,
+				FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
 				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
 				1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */,
@@ -341,9 +326,6 @@
 				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
 				FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */,
 				FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */,
-				1CBF98D319EA1983001F643F /* SelectSongsViewController.h */,
-				1CBF98D419EA1983001F643F /* SelectSongsViewController.m */,
-				1CBF98D519EA1983001F643F /* SelectSongsViewController.xib */,
 				1CBF98C919E9E632001F643F /* LoginViewController.h */,
 				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
 				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
@@ -628,7 +610,6 @@
 				FC6E2DE619FCA02F0069CC83 /* not_available.gif in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
-				1CBF98D719EA1983001F643F /* SelectSongsViewController.xib in Resources */,
 				FC6E2DD619FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 			);
@@ -650,15 +631,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */,
-				FC6E2DE119FC97180069CC83 /* PlayerTableView.m in Sources */,
+				FC6E2DE119FC97180069CC83 /* PlaylistTableView.m in Sources */,
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
-				FC6F52DF19F3192A002EE6CE /* SongTableView.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
-				1CBF98D619EA1983001F643F /* SelectSongsViewController.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
-				FC6E2DDE19FC93A90069CC83 /* SelectASongTableView.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

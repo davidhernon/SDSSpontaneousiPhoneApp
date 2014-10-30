@@ -13,15 +13,18 @@
 {
 	self = [super initWithFrame:frame];
 	[self startPlayer];
+	[self initializeUI];
+	return self;
+}
+
+-(void) initializeUI{
 	UIButton *skip = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
 	skip.titleLabel.text = @"Skip";
 	[skip setFrame:CGRectMake(20, 20, 100, 50)];
 	[skip addTarget:self action:@selector(skip:) forControlEvents:UIControlEventTouchUpInside];
-
-	
-	return self;
 }
--(void)skip:(id)sender{
+
+-(void)skip{
 	NSLog(@"button was clicked");
 
 }
@@ -31,13 +34,12 @@
 	MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
 }
 
+// Plays Next Item
 -(void)itemDidFinishPlaying:(NSNotification *) notification {
-	// Will be called when AVPlayer finishes playing playerItem
 	[[Playlist sharedPlaylist].playlist removeObjectAtIndex:0];
 	MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];

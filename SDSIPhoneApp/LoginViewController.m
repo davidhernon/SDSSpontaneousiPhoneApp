@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "SelectSongsViewController.h"
 
 @interface LoginViewController ()
 
@@ -82,11 +81,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker
+   didPickMediaItems: (MPMediaItemCollection *) collection {
+ 
+	[self dismissModalViewControllerAnimated: YES];
+	[[Playlist sharedPlaylist] addMediaCollection:collection];
+	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	[self presentViewController:playerViewController animated:YES completion:nil];
+}
+
 - (IBAction)nextScreen
 {
-    SelectSongsViewController *selectSongsViewController = [[SelectSongsViewController alloc]initWithNibName:@"SelectSongsViewController" bundle:nil];
-    [self presentViewController:selectSongsViewController animated:YES completion:nil];
-
+	MPMediaPickerController* picker = [[MPMediaPickerController alloc]initWithMediaTypes: MPMediaTypeAnyAudio];
+	[picker setDelegate: self];                                         // 2
+	[picker setAllowsPickingMultipleItems: YES];                        // 3
+	picker.prompt =
+	NSLocalizedString (@"Add songs to play",
+					   "Prompt in media item picker");
+	[self presentViewController: picker animated: YES completion:nil];    // 4
 }
 
 @end

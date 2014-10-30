@@ -6,28 +6,29 @@
 //  Copyright (c) 2014 Silent Disco Squad. All rights reserved.
 //
 
-#import "PlayerTableView.h"
+#import "PlaylistTableView.h"
 
-@implementation PlayerTableView
+@implementation PlaylistTableView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
--(id)initWithPlaylist: (CGRect)frame
+-(id)init: (CGRect)frame
 {
 	self = [super initWithFrame:frame];
-	self.parentIsPlayerViewController = true;
 	self.delegate = self;
 	self.dataSource = self;
-	
 	self.playlist = [Playlist sharedPlaylist].playlist;
 	return self;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 70;
+}
+
+-(void)addTracktoTable:(MPMediaItemSubclass*)passedSong
+{
+	[self.playlist addObject:passedSong];
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"MusicCell";
@@ -48,19 +49,7 @@
 
 #pragma mark - TableView Delegate Methods
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(self.parentIsPlayerViewController){
-		
-	}
-	else{
-		if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-			
-		}else{
-			[tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-		}
-	}
-}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {}
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -83,26 +72,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
+	return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if(section == 0){
-		return 1;
-	}
-	else{
-		return self.playlist.count - 1;
-	}
+	return self.playlist.count;
 }
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if(section == 0){
-		return @"Now Playing";
-	}
-	if(section == 1){
-		return @"Up Next";
-	}
-	return @"something terrible has happened";
+	return @"Up Next";
 }
 
 @end

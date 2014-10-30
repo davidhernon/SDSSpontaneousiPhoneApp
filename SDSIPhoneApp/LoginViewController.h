@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LoginViewController : UIViewController
+#import "PlayerViewController.h"
+@interface LoginViewController : UIViewController<MPMediaPickerControllerDelegate>
 
 -(IBAction)nextScreen;
 -(IBAction)testNotification:(id)sender;

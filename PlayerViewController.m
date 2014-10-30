@@ -27,8 +27,16 @@
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
+	
+		//init playlist table
 		self.playlist = [Playlist sharedPlaylist];
-		self.playerTableView = [[PlayerTableView alloc] initWithPlaylist:CGRectMake(0.0,130.0, 320.0, 300.0)];
+		self.playlistTableView = [[PlaylistTableView alloc] init:CGRectMake(0.0,130.0, 320.0, 300.0)];
+		[self.view addSubview:self.playlistTableView];
+		[self.view sendSubviewToBack:self.playlistTableView];
+		
+		//init player
+		self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,25.0,320.0,100.0)];
+		[self.view addSubview:self.playerView];
 	}
 	return self;
 }
@@ -36,31 +44,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSLog(@"viewdidload");
-	[self.view addSubview:self.playerTableView];
-	[self.view sendSubviewToBack:self.playerTableView];
-	[[Playlist sharedPlaylist] shuffle];
-	self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,25.0,320.0,100.0)];
-	[self.view addSubview:self.playerView];
-	[self.playerTableView reloadData];
-    // Do any additional setup after loading the view from its nib.
-}
--(void)reloadData{
-	[self.playerTableView reloadData];
+	[self.playlistTableView reloadData];
 }
 
+-(void)reloadData{
+	[self.playlistTableView reloadData];
+}
+
+-(void)shuffle{
+	[[Playlist sharedPlaylist] shuffle];
+}
 -(IBAction)editPlaylist:(id)sender{
-	if(self.playerTableView.editing == NO){
-		self.playerTableView.editing = YES;
+	if(self.playlistTableView.editing == NO){
+		self.playlistTableView.editing = YES;
 	}
 	else{
-		self.playerTableView.editing = NO;
+		self.playlistTableView.editing = NO;
 	}
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)Skip:(id)sender {
+	[self.playerView skip];
 }
 
 - (IBAction)pickMoreSongs
