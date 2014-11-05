@@ -12,8 +12,6 @@
 #import "Playlist.h"
 @interface PlayerViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *editPlaylist;
-- (IBAction)Skip:(id)sender;
-
 -(IBAction)pickMoreSongs;
 @property Playlist* playlist;
 @property PlaylistTableView* playlistTableView;

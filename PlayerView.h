@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Appdelegate.h"
 #import "Playlist.h"
-@interface PlayerView : UIView<AVAudioPlayerDelegate>
+@interface PlayerView : UIView<AVAudioPlayerDelegate, NSStreamDelegate>
 @property Playlist* playlist;
+@property NSOutputStream* audioOutputStream;
 @property (strong, nonatomic) AVPlayer *audioPlayer;
+@property MPMediaItem* currentMPMediaItem;
+@property (strong, nonatomic) IBOutlet UILabel *songTitle;
+-(void)nextSong;
+- (IBAction)send:(id)sender;
 -(id)init: (CGRect)frame;
--(void)skip;
+- (IBAction)skip:(id)sender;
 @end

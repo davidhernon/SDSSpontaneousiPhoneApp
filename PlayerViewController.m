@@ -35,8 +35,9 @@
 		[self.view sendSubviewToBack:self.playlistTableView];
 		
 		//init player
-		self.playerView = [[PlayerView alloc] init:CGRectMake(0.0,25.0,320.0,100.0)];
+		self.playerView =[[PlayerView alloc] init:CGRectMake(0.0,0.0,0.0,0.0)];
 		[self.view addSubview:self.playerView];
+		[self.view bringSubviewToFront:self.playerView];
 	}
 	return self;
 }
@@ -45,6 +46,7 @@
 {
     [super viewDidLoad];
 	[self.playlistTableView reloadData];
+	[self.playerView nextSong];
 }
 
 -(void)reloadData{
@@ -68,9 +70,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)Skip:(id)sender {
-	[self.playerView skip];
+#pragma mark - SessionControllerDelegate protocol conformance
+
+- (void)sessionDidChangeState
+{
+	NSLog(@"session did change state");
+	// Ensure UI updates occur on the main queue.
+	//dispatch_async(dispatch_get_main_queue(), ^{
+	//	[self.tableView reloadData];
+	//});
 }
+
 
 - (IBAction)pickMoreSongs
 {

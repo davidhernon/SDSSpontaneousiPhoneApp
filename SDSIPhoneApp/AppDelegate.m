@@ -27,6 +27,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	//Start looking for other apps
+	_sessionController = [[SessionController alloc] init];
+	self.sessionController.delegate = self;
+
 	[self registerForNotifications:application];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
@@ -97,6 +101,15 @@
 		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
 		 (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 	}
+}
+
+- (void)sessionDidChangeState
+{
+	NSLog(@"Multipeer Connectivity state changed");
+	// Ensure UI updates occur on the main queue.
+	//dispatch_async(dispatch_get_main_queue(), ^{
+	//	[self.tableView reloadData];
+	//});
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

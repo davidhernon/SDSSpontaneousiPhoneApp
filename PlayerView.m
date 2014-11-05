@@ -9,33 +9,102 @@
 #import "PlayerView.h"
 
 @implementation PlayerView
--(id)init: (CGRect)frame 
+
+// In MyView.m
+- (id)init:(CGRect)frame
 {
-	self = [super initWithFrame:frame];
-	[self startPlayer];
-	[self initializeUI];
+	if (self = [super initWithFrame:frame]) {
+		self = [[[NSBundle mainBundle] loadNibNamed:@"PlayerView"
+											  owner:self
+											options:nil] lastObject];
+		[self setFrame:CGRectMake(frame.origin.x,
+								  frame.origin.y,
+								  [self frame].size.width,
+								  [self frame].size.height)];
+		self.audioPlayer = [[AVPlayer alloc] init];
+		[self nextSong];
+	}
 	return self;
 }
 
--(void) initializeUI{
-	UIButton *skip = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
-	skip.titleLabel.text = @"Skip";
-	[skip setFrame:CGRectMake(20, 20, 100, 50)];
-	[skip addTarget:self action:@selector(skip:) forControlEvents:UIControlEventTouchUpInside];
+- (IBAction)skip:(id)sender {
+	NSLog(@"skip was clicked");
+	[self nextSong];
 }
 
--(void)skip{
-	NSLog(@"button was clicked");
+- (IBAction)send:(id)sender {
 
+	//This line'll do file transfers
+	//Boolean worked = [appDelegate.sessionController.session sendData:d toPeers:appDelegate.sessionController.connectedPeers withMode:MCSessionSendDataUnreliable error:nil];
+
+
+	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	// Send a data message to a list of destination peers
+	self.audioOutputStream = [appDelegate.sessionController.session startStreamWithName:appDelegate.sessionController.displayName toPeer:appDelegate.sessionController.connectedPeers[0] error:nil];
+
+	self.audioOutputStream.delegate = self;
+	NSData *d = [self convertToData:self.currentMPMediaItem];
 }
 
--(void)startPlayer{
-	self.audioPlayer = [[AVPlayer alloc] init];
-	MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
-	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
-	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
-	[self.audioPlayer play];
+-(NSData*)convertToData: (MPMediaItem*) item{
+	
+  // Get raw PCM data from the track
+  NSURL *assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
+  NSMutableData *data = [[NSMutableData alloc] init];
+  
+  const uint32_t sampleRate = 16000; // 16k sample/sec
+  const uint16_t bitDepth = 16; // 16 bit/sample/channel
+  const uint16_t channels = 2; // 2 channel/sample (stereo)
+  
+  NSDictionary *opts = [NSDictionary dictionary];
+  AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:assetURL options:opts];
+  AVAssetReader *reader = [[AVAssetReader alloc] initWithAsset:asset error:NULL];
+  NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+							[NSNumber numberWithInt:kAudioFormatLinearPCM], AVFormatIDKey,
+							[NSNumber numberWithFloat:(float)sampleRate], AVSampleRateKey,
+							[NSNumber numberWithInt:bitDepth], AVLinearPCMBitDepthKey,
+							[NSNumber numberWithBool:NO], AVLinearPCMIsNonInterleaved,
+							[NSNumber numberWithBool:NO], AVLinearPCMIsFloatKey,
+							[NSNumber numberWithBool:NO], AVLinearPCMIsBigEndianKey, nil];
+  
+  AVAssetReaderTrackOutput *output = [[AVAssetReaderTrackOutput alloc] initWithTrack:[[asset tracks] objectAtIndex:0] outputSettings:settings];
+  [reader addOutput:output];
+  [reader startReading];
+  
+  // read the samples from the asset and append them subsequently
+  while ([reader status] != AVAssetReaderStatusCompleted) {
+	  CMSampleBufferRef sampleBuffer = [output copyNextSampleBuffer];
+	  if (sampleBuffer == NULL) continue;
+	  CMBlockBufferRef blockBuffer;
+	  AudioBufferList audioBufferList;
+	  
+	  CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer, NULL, &audioBufferList, sizeof(AudioBufferList), NULL, NULL, kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment, &blockBuffer);
+	  
+	  for (NSUInteger i = 0; i < audioBufferList.mNumberBuffers; i++) {
+		  AudioBuffer audioBuffer = audioBufferList.mBuffers[i];
+		  [self.audioOutputStream write:audioBuffer.mData maxLength:audioBuffer.mDataByteSize];
+	  }
+	  
+	  CFRelease(blockBuffer);
+	  CFRelease(sampleBuffer);
+  }
+  return data;
+}
+
+-(void)nextSong{
+	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil){
+	}
+	else{
+		NSLog(@"NextSong");
+		MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
+		self.currentMPMediaItem = songWithMetadata.song;
+		[[Playlist sharedPlaylist].playlist removeObjectAtIndex:0];
+		self.songTitle = [songWithMetadata.song valueForProperty:MPMediaItemPropertyTitle];
+		AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
+		[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
+		[self.audioPlayer play];
+	}
 }
 
 // Plays Next Item

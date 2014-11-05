@@ -36,6 +36,7 @@
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
+		FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1EA4801A068C1100061041 /* PlayerView.xib */; };
 		FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */; };
 		FC6E2DD619FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */; };
 		FC6E2DE119FC97180069CC83 /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */; };
@@ -47,6 +48,8 @@
 		FC76395219F47682001D0FE6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395119F47682001D0FE6 /* CoreMedia.framework */; };
 		FC76395419F4768A001D0FE6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395319F4768A001D0FE6 /* AVFoundation.framework */; };
 		FC76395619F47698001D0FE6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC76395519F47698001D0FE6 /* MediaPlayer.framework */; };
+		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
+		FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB46A721A067CD600D8A4FA /* SessionController.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +205,7 @@
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
+		FC1EA4801A068C1100061041 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItemSubclass.h; sourceTree = "<group>"; };
 		FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItemSubclass.m; sourceTree = "<group>"; };
 		FC6E2DD519FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Uncle_Sam_(pointing_finger).jpg"; path = "../../../Desktop/Uncle_Sam_(pointing_finger).jpg"; sourceTree = "<group>"; };
@@ -218,6 +222,10 @@
 		FC76395119F47682001D0FE6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		FC76395319F4768A001D0FE6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FC76395519F47698001D0FE6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAudioOutputStreamer.h; sourceTree = "<group>"; };
+		FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAudioOutputStreamer.m; sourceTree = "<group>"; };
+		FCB46A711A067CD600D8A4FA /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionController.h; path = ../MCSessionP2P/MCSessionP2P/SessionController.h; sourceTree = "<group>"; };
+		FCB46A721A067CD600D8A4FA /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionController.m; path = ../MCSessionP2P/MCSessionP2P/SessionController.m; sourceTree = "<group>"; };
 		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -311,20 +319,8 @@
 			children = (
 				1C2431B019F4BE0900AAE80E /* SoundCloud.bundle */,
 				FCC2085B1A02C40700C88CA3 /* Submodules */,
-				FC6E2DDF19FC97180069CC83 /* PlaylistTableView.h */,
-				FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */,
-				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
-				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
-				1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */,
-				FC76394619F451A8001D0FE6 /* PlayerView.h */,
-				FC76394719F451A8001D0FE6 /* PlayerView.m */,
-				FC76394919F45AC2001D0FE6 /* Playlist.h */,
-				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
-				FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */,
-				FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */,
-				1CBF98C919E9E632001F643F /* LoginViewController.h */,
-				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
-				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
+				FCB46A7A1A067CEE00D8A4FA /* UI and Player */,
+				FCB46A791A067CDE00D8A4FA /* Networking */,
 				FCC208611A02C41B00C88CA3 /* Resources */,
 				1CBF989819E9D6C1001F643F /* SDSIPhoneApp */,
 				1CBF98B119E9D6C1001F643F /* SDSIPhoneAppTests */,
@@ -404,6 +400,39 @@
 				1CBF98B419E9D6C1001F643F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCB46A791A067CDE00D8A4FA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FCB46A711A067CD600D8A4FA /* SessionController.h */,
+				FCB46A721A067CD600D8A4FA /* SessionController.m */,
+				FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */,
+				FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		FCB46A7A1A067CEE00D8A4FA /* UI and Player */ = {
+			isa = PBXGroup;
+			children = (
+				FC6E2DDF19FC97180069CC83 /* PlaylistTableView.h */,
+				FC6E2DE019FC97180069CC83 /* PlaylistTableView.m */,
+				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
+				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
+				1CBF98DA19EA1C7D001F643F /* PlayerViewController.xib */,
+				FC76394619F451A8001D0FE6 /* PlayerView.h */,
+				FC76394719F451A8001D0FE6 /* PlayerView.m */,
+				FC1EA4801A068C1100061041 /* PlayerView.xib */,
+				FC76394919F45AC2001D0FE6 /* Playlist.h */,
+				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
+				FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */,
+				FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */,
+				1CBF98C919E9E632001F643F /* LoginViewController.h */,
+				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
+				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
+			);
+			name = "UI and Player";
 			sourceTree = "<group>";
 		};
 		FCC2085B1A02C40700C88CA3 /* Submodules */ = {
@@ -628,6 +657,7 @@
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				FC6E2DD619FC90F90069CC83 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
+				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,9 +680,11 @@
 				FC6E2DE119FC97180069CC83 /* PlaylistTableView.m in Sources */,
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
+				FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
+				FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,7 +786,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,6 +820,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -812,6 +845,7 @@
 				);
 				INFOPLIST_FILE = "SDSIPhoneApp/SDSIPhoneApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-all_load",
 					"-ObjC",
@@ -841,6 +875,7 @@
 				);
 				INFOPLIST_FILE = "SDSIPhoneApp/SDSIPhoneApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-all_load",
 					"-ObjC",

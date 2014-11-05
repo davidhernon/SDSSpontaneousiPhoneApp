@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SessionController.h"
 //#import "SCUI.h"
 //#import "LoginViewController.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate, SessionControllerDelegate>
 @property (nonatomic, retain) NSArray *event;
 @property (strong, nonatomic) UIWindow *window;
 @property BOOL returned;
+@property (nonatomic, strong) SessionController *sessionController;
 
 @end
