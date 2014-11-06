@@ -18,8 +18,11 @@
 @property (strong, nonatomic) AVPlayer *audioPlayer;
 @property MPMediaItem* currentMPMediaItem;
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
+@property (strong, nonatomic) IBOutlet UILabel *artistName;
 -(void)nextSong;
 - (IBAction)send:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *skipButton;
+@property (strong, nonatomic) IBOutlet UIImageView *albumArt;
 -(id)init: (CGRect)frame;
 - (IBAction)skip:(id)sender;
 @end

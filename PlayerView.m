@@ -22,6 +22,10 @@
 								  [self frame].size.width,
 								  [self frame].size.height)];
 		self.audioPlayer = [[AVPlayer alloc] init];
+		UIImage *btnImage = [UIImage imageNamed:@"150px-Fast_forward_font_awesome.png"];
+		[self.skipButton setImage:btnImage forState:UIControlStateNormal];
+		UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
+		self.backgroundColor = background;
 		[self nextSong];
 	}
 	return self;
@@ -99,7 +103,20 @@
 		MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
 		self.currentMPMediaItem = songWithMetadata.song;
 		[[Playlist sharedPlaylist].playlist removeObjectAtIndex:0];
-		self.songTitle = [songWithMetadata.song valueForProperty:MPMediaItemPropertyTitle];
+		self.songTitle.text = [songWithMetadata.song valueForProperty:MPMediaItemPropertyTitle];
+		self.artistName.text = [songWithMetadata.song valueForProperty:MPMediaItemPropertyArtist];
+		MPMediaItemArtwork *artWork = [songWithMetadata.song valueForProperty:MPMediaItemPropertyArtwork];
+		//self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+		
+		if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
+		{
+			self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
+		}
+		else //Otherwise set the artwork found in the library.
+		{
+			self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+		}
+
 		AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 		[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
