@@ -51,10 +51,10 @@
 		FC7A99E01A0BE67500C2BEB4 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7A99DF1A0BE67500C2BEB4 /* Play.png */; };
 		FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC7A99E11A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg */; };
 		FC9E43A11A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43A01A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */; };
-		FC9E43A31A0BF01000DE919C /* not_available.gif in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43A21A0BF01000DE919C /* not_available.gif */; };
-		FC9E43A51A0BF0F700DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43A41A0BF0F700DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */; };
-		FC9E43A91A0BFFF100DE919C /* 320x480.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43A81A0BFFF100DE919C /* 320x480.jpg */; };
 		FC9E43AB1A0C063A00DE919C /* logos-02.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AA1A0C063A00DE919C /* logos-02.png */; };
+		FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */; };
+		FC9E43B01A0C40B100DE919C /* 320x480.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AD1A0C40B100DE919C /* 320x480.jpg */; };
+		FC9E43B11A0C40B100DE919C /* not_available.gif in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AE1A0C40B100DE919C /* not_available.gif */; };
 		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
 		FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB46A721A067CD600D8A4FA /* SessionController.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
@@ -232,10 +232,10 @@
 		FC7A99DF1A0BE67500C2BEB4 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		FC7A99E11A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Uncle_Sam_(pointing_finger).jpg"; sourceTree = "<group>"; };
 		FC9E43A01A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3-in-35-Beautiful-Music-Album-Covers.jpeg"; sourceTree = "<group>"; };
-		FC9E43A21A0BF01000DE919C /* not_available.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = not_available.gif; path = "../../../Desktop/SDSSpontaneous Images/not_available.gif"; sourceTree = "<group>"; };
-		FC9E43A41A0BF0F700DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3-in-35-Beautiful-Music-Album-Covers.jpeg"; path = "../../../Desktop/SDSSpontaneous Images/3-in-35-Beautiful-Music-Album-Covers.jpeg"; sourceTree = "<group>"; };
-		FC9E43A81A0BFFF100DE919C /* 320x480.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 320x480.jpg; path = "../../../Desktop/SDSSpontaneous Images/320x480.jpg"; sourceTree = "<group>"; };
 		FC9E43AA1A0C063A00DE919C /* logos-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logos-02.png"; sourceTree = "<group>"; };
+		FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3-in-35-Beautiful-Music-Album-Covers.jpeg"; path = "SDSSpontaneous Images/3-in-35-Beautiful-Music-Album-Covers.jpeg"; sourceTree = "<group>"; };
+		FC9E43AD1A0C40B100DE919C /* 320x480.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 320x480.jpg; path = "SDSSpontaneous Images/320x480.jpg"; sourceTree = "<group>"; };
+		FC9E43AE1A0C40B100DE919C /* not_available.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = not_available.gif; path = "SDSSpontaneous Images/not_available.gif"; sourceTree = "<group>"; };
 		FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAudioOutputStreamer.h; sourceTree = "<group>"; };
 		FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAudioOutputStreamer.m; sourceTree = "<group>"; };
 		FCB46A711A067CD600D8A4FA /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionController.h; path = ../MCSessionP2P/MCSessionP2P/SessionController.h; sourceTree = "<group>"; };
@@ -468,11 +468,11 @@
 			isa = PBXGroup;
 			children = (
 				FC9E43A01A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */,
-				FC9E43A41A0BF0F700DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */,
 				1CBF98DD19EA1E05001F643F /* profile_default.png */,
+				FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */,
+				FC9E43AD1A0C40B100DE919C /* 320x480.jpg */,
+				FC9E43AE1A0C40B100DE919C /* not_available.gif */,
 				FC9E43AA1A0C063A00DE919C /* logos-02.png */,
-				FC9E43A81A0BFFF100DE919C /* 320x480.jpg */,
-				FC9E43A21A0BF01000DE919C /* not_available.gif */,
 				FC7A99E11A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg */,
 				FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */,
 			);
@@ -670,22 +670,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7A99E01A0BE67500C2BEB4 /* Play.png in Resources */,
-				FC9E43A51A0BF0F700DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				1CBF989D19E9D6C1001F643F /* InfoPlist.strings in Resources */,
-				FC9E43A91A0BFFF100DE919C /* 320x480.jpg in Resources */,
 				1C2431B119F4BE0900AAE80E /* SoundCloud.bundle in Resources */,
+				FC9E43B01A0C40B100DE919C /* 320x480.jpg in Resources */,
 				1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */,
 				1CBF98A519E9D6C1001F643F /* Images.xcassets in Resources */,
 				FC7A99D81A0BC4FF00C2BEB4 /* 150px-Fast_forward_font_awesome.png in Resources */,
+				FC9E43B11A0C40B100DE919C /* not_available.gif in Resources */,
 				FC7A99DA1A0BD4B100C2BEB4 /* playerBackground.jpg in Resources */,
 				FC9E43A11A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
+				FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
 				FC9E43AB1A0C063A00DE919C /* logos-02.png in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
-				FC9E43A31A0BF01000DE919C /* not_available.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
