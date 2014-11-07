@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-jG-BOj">
-                    <rect key="frame" x="224" y="386" width="45" height="33"/>
+                    <rect key="frame" x="224" y="386" width="45" height="34"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Skip" image="150px-Fast_forward_font_awesome.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,9 +36,9 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSL-BK-PQ8">
-                    <rect key="frame" x="52" y="389" width="35" height="30"/>
-                    <state key="normal" title="Back">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSL-BK-PQ8">
+                    <rect key="frame" x="52" y="387" width="45" height="34"/>
+                    <state key="normal" title="Back" image="150px-Rewind_font_awesome.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -64,12 +64,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cC7-Qx-QVA">
-                    <rect key="frame" x="40" y="146" width="229" height="193"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <accessibility key="accessibilityConfiguration" label="asdf"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-gI-vla">
-                    <rect key="frame" x="117" y="363" width="86" height="81"/>
+                    <rect key="frame" x="117" y="364" width="86" height="81"/>
                     <state key="normal" title="Button" image="Play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -88,6 +86,7 @@
     </objects>
     <resources>
         <image name="150px-Fast_forward_font_awesome.png" width="150" height="150"/>
+        <image name="150px-Rewind_font_awesome.png" width="150" height="150"/>
         <image name="Play.png" width="170" height="170"/>
     </resources>
 </document>

@@ -55,6 +55,7 @@
 		FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */; };
 		FC9E43B01A0C40B100DE919C /* 320x480.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AD1A0C40B100DE919C /* 320x480.jpg */; };
 		FC9E43B11A0C40B100DE919C /* not_available.gif in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43AE1A0C40B100DE919C /* not_available.gif */; };
+		FC9E43B81A0C43CD00DE919C /* 150px-Rewind_font_awesome.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43B71A0C43CD00DE919C /* 150px-Rewind_font_awesome.png */; };
 		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
 		FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB46A721A067CD600D8A4FA /* SessionController.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
@@ -236,6 +237,7 @@
 		FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "3-in-35-Beautiful-Music-Album-Covers.jpeg"; path = "SDSSpontaneous Images/3-in-35-Beautiful-Music-Album-Covers.jpeg"; sourceTree = "<group>"; };
 		FC9E43AD1A0C40B100DE919C /* 320x480.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 320x480.jpg; path = "SDSSpontaneous Images/320x480.jpg"; sourceTree = "<group>"; };
 		FC9E43AE1A0C40B100DE919C /* not_available.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = not_available.gif; path = "SDSSpontaneous Images/not_available.gif"; sourceTree = "<group>"; };
+		FC9E43B71A0C43CD00DE919C /* 150px-Rewind_font_awesome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "150px-Rewind_font_awesome.png"; path = "SDSSpontaneous Images/150px-Rewind_font_awesome.png"; sourceTree = "<group>"; };
 		FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAudioOutputStreamer.h; sourceTree = "<group>"; };
 		FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAudioOutputStreamer.m; sourceTree = "<group>"; };
 		FCB46A711A067CD600D8A4FA /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionController.h; path = ../MCSessionP2P/MCSessionP2P/SessionController.h; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				1CBF98DD19EA1E05001F643F /* profile_default.png */,
 				FC9E43AC1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg */,
 				FC9E43AD1A0C40B100DE919C /* 320x480.jpg */,
+				FC9E43B71A0C43CD00DE919C /* 150px-Rewind_font_awesome.png */,
 				FC9E43AE1A0C40B100DE919C /* not_available.gif */,
 				FC9E43AA1A0C063A00DE919C /* logos-02.png */,
 				FC7A99E11A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg */,
@@ -675,6 +678,7 @@
 				FC9E43B01A0C40B100DE919C /* 320x480.jpg in Resources */,
 				1CBF98DC19EA1C7D001F643F /* PlayerViewController.xib in Resources */,
 				1CBF98A519E9D6C1001F643F /* Images.xcassets in Resources */,
+				FC9E43B81A0C43CD00DE919C /* 150px-Rewind_font_awesome.png in Resources */,
 				FC7A99D81A0BC4FF00C2BEB4 /* 150px-Fast_forward_font_awesome.png in Resources */,
 				FC9E43B11A0C40B100DE919C /* not_available.gif in Resources */,
 				FC7A99DA1A0BD4B100C2BEB4 /* playerBackground.jpg in Resources */,
