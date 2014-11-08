@@ -42,11 +42,23 @@
 	return self;
 }
 
+//Need to not turn off audio every time we add music for this
+//to be effective
+// Use the if else block to not change song everytime
+// Should only go to next song the first time on play
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.playlistTableView reloadData];
-	[self.playerView nextSong];
+	
+    if (self.playerView.audioPlayer.rate != 0.0f)
+    {
+        NSLog(@"playing");
+    } else {
+        NSLog(@"not playing");
+       //s [self.playerView nextSong];
+    }
+    [self.playlistTableView reloadData];
+   // [self.playerView nextSong];
 }
 
 -(void)reloadData{
@@ -86,6 +98,8 @@
 {
 	[self dismissModalViewControllerAnimated:YES];
 }
+
+
 
 
 @end

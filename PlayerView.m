@@ -7,6 +7,7 @@
 //
 
 #import "PlayerView.h"
+#import "PlayerViewController.h"
 
 @implementation PlayerView
 
@@ -25,29 +26,55 @@
 		UIImage *btnImage = [UIImage imageNamed:@"150px-Fast_forward_font_awesome.png"];
 		[self.skipButton setImage:btnImage forState:UIControlStateNormal];
 		UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
-		self.backgroundColor = background;
+        self.backgroundColor = background;
 		[self nextSong];
 	}
+    
 	return self;
 }
 
+
+
 - (IBAction)skip:(id)sender {
 	NSLog(@"skip was clicked");
-	[self nextSong];
+	//[self nextSong];
+    [self removeFromSuperview];
+}
+
+- (IBAction)reverse:(id)sender {
+    NSLog(@"Close the Super View, Reverse Was Clicked");
+    //[self nextSong];
+    [self removeFromSuperview];
 }
 
 - (IBAction)send:(id)sender {
 
 	//This line'll do file transfers
 	//Boolean worked = [appDelegate.sessionController.session sendData:d toPeers:appDelegate.sessionController.connectedPeers withMode:MCSessionSendDataUnreliable error:nil];
-
-
-	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    //Call to also send playlist over
+    [self sendPlaylist:sender];
+    //Below is existing stream code, its good! bring it back!
+	/*AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	// Send a data message to a list of destination peers
 	self.audioOutputStream = [appDelegate.sessionController.session startStreamWithName:appDelegate.sessionController.displayName toPeer:appDelegate.sessionController.connectedPeers[0] error:nil];
 
 	self.audioOutputStream.delegate = self;
-	NSData *d = [self convertToData:self.currentMPMediaItem];
+	NSData *d = [self convertToData:self.currentMPMediaItem];*/
+}
+
+-(void)sendPlaylist:(id)sender
+{
+    for (int i = 0; i < [[Playlist sharedPlaylist].playlist count]; i++) {
+        //Get Each String to Send
+        NSString *s = [[Playlist sharedPlaylist].playlist objectAtIndex:(NSUInteger)i];
+        NSData *data = [s dataUsingEncoding:NSUTF8StringEncoding];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSError *error;
+        [appDelegate.sessionController.session sendData:data toPeers:[appDelegate.sessionController.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+        NSLog(@"Sending String as Data: %@", self.playlist.playlist[i]);
+        
+    }
 }
 
 -(NSData*)convertToData: (MPMediaItem*) item{
@@ -131,6 +158,11 @@
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
+}
+
+-(IBAction)closePlaylist:(id)sender
+{
+    [[PlayerViewController sharedPlayerViewController] pickMoreSongs];
 }
 
 @end

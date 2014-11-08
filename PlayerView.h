@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "Appdelegate.h"
 #import "Playlist.h"
+
 @interface PlayerView : UIView<AVAudioPlayerDelegate, NSStreamDelegate>
 @property Playlist* playlist;
 @property NSOutputStream* audioOutputStream;
@@ -21,8 +22,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *artistName;
 -(void)nextSong;
 - (IBAction)send:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UIButton *skipButton;
 @property (strong, nonatomic) IBOutlet UIImageView *albumArt;
+@property (strong, nonatomic) IBOutlet UIButton *reverseButton;
+
 -(id)init: (CGRect)frame;
 - (IBAction)skip:(id)sender;
+-(IBAction)reverse:(id)sender;
 @end

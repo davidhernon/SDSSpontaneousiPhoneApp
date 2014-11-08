@@ -190,10 +190,19 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
+    // Standard Way that Martin did it:
     // Decode the incoming data to a UTF8 encoded string
-    NSString *receivedMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //
+   /* NSString *receivedMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     NSLog(@"didReceiveData %@ from %@", receivedMessage, peerID.displayName);
+    */
+    
+    //My Code:
+    NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Received Message: %@", message);
+    
+    //NSLog(((NSMutableArray)myData)[0]);
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
