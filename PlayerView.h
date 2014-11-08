@@ -19,6 +19,8 @@
 @property MPMediaItem* currentMPMediaItem;
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel *artistName;
+- (IBAction)close:(id)sender;
+- (IBAction)showPlaylist:(id)sender;
 -(void)nextSong;
 - (IBAction)send:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *skipButton;

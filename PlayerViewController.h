@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlaylistTableView.h"
 #import "PlayerView.h"
-#import "Playlist.h"
 @interface PlayerViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIButton *editPlaylist;
--(IBAction)pickMoreSongs;
-@property Playlist* playlist;
-@property PlaylistTableView* playlistTableView;
 @property PlayerView* playerView;
 + (PlayerViewController*) sharedPlayerViewController;
 @end

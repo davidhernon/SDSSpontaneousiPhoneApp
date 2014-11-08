@@ -8,11 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="318" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-jG-BOj">
-                    <rect key="frame" x="224" y="386" width="45" height="34"/>
+                    <rect key="frame" x="222" y="377" width="45" height="34"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Skip" image="150px-Fast_forward_font_awesome.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -22,7 +22,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-b5-lrV">
-                    <rect key="frame" x="0.0" y="108" width="72" height="30"/>
+                    <rect key="frame" x="-2" y="108" width="72" height="30"/>
                     <state key="normal" title="Send Data">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,26 +31,26 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SongTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rF-4F-3g0">
-                    <rect key="frame" x="52" y="77" width="217" height="23"/>
+                    <rect key="frame" x="50" y="77" width="217" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSL-BK-PQ8">
-                    <rect key="frame" x="52" y="387" width="45" height="34"/>
+                    <rect key="frame" x="50" y="377" width="45" height="34"/>
                     <state key="normal" title="Back" image="150px-Rewind_font_awesome.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Syncrolicious" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-Ly-hHD">
-                    <rect key="frame" x="0.0" y="24" width="319" height="45"/>
+                    <rect key="frame" x="-2" y="24" width="319" height="45"/>
                     <color key="backgroundColor" red="0.0" green="0.78431372549019607" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFQ-kg-kxI">
-                    <rect key="frame" x="282" y="32" width="30" height="30"/>
+                    <rect key="frame" x="280" y="32" width="30" height="30"/>
                     <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="30"/>
                     <state key="normal" title="+">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +58,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="artistName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFs-eu-rNs">
-                    <rect key="frame" x="96" y="108" width="128" height="21"/>
+                    <rect key="frame" x="94" y="108" width="128" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -67,10 +67,28 @@
                     <accessibility key="accessibilityConfiguration" label="asdf"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-gI-vla">
-                    <rect key="frame" x="117" y="364" width="86" height="81"/>
+                    <rect key="frame" x="115" y="353" width="86" height="81"/>
                     <state key="normal" title="Button" image="Play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCh-J2-OTV">
+                    <rect key="frame" x="61" y="442" width="23" height="23"/>
+                    <state key="normal" title="Button" image="ios7-close.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="JoS-I4-3fD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evp-ff-cP8">
+                    <rect key="frame" x="150" y="444" width="19" height="18"/>
+                    <state key="normal" title="Button" image="playlist.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showPlaylist:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vil-ZV-RIV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,15 +96,18 @@
             <connections>
                 <outlet property="albumArt" destination="cC7-Qx-QVA" id="3Xe-lR-a1x"/>
                 <outlet property="artistName" destination="TFs-eu-rNs" id="tk0-qr-Cya"/>
+                <outlet property="showPlaylist" destination="evp-ff-cP8" id="p2M-WR-vNh"/>
                 <outlet property="skipButton" destination="jzH-jG-BOj" id="cJo-Bt-L8J"/>
                 <outlet property="songTitle" destination="5rF-4F-3g0" id="xH1-xY-UL1"/>
             </connections>
-            <point key="canvasLocation" x="-20" y="-812"/>
+            <point key="canvasLocation" x="-19" y="-812"/>
         </view>
     </objects>
     <resources>
         <image name="150px-Fast_forward_font_awesome.png" width="150" height="150"/>
         <image name="150px-Rewind_font_awesome.png" width="150" height="150"/>
         <image name="Play.png" width="170" height="170"/>
+        <image name="ios7-close.png" width="100" height="100"/>
+        <image name="playlist.png" width="512" height="512"/>
     </resources>
 </document>

@@ -84,9 +84,8 @@
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection {
 	[[Playlist sharedPlaylist] addMediaCollection:collection];
-	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
-	[self dismissModalViewControllerAnimated: YES];
-	[self presentViewController:playerViewController animated:YES completion:nil];
+	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithStyle:UITableViewStylePlain];
+	[self presentViewController:playlistViewController animated:YES completion:nil];
 }
 
 - (IBAction)nextScreen
@@ -94,8 +93,8 @@
 	//if there's nothing in the media library, just skip to the player
 	MPMediaQuery *everything = [MPMediaQuery songsQuery];
 	if (everything.items == nil || [everything.items count] == 0){
-		PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
-		[self presentViewController:playerViewController animated:YES completion:nil];
+		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithStyle:UITableViewStylePlain];
+		[self presentViewController:playlistViewController animated:YES completion:nil];
 	}
 	
 	//else, show a picker so they can give us songs

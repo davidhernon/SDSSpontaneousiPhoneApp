@@ -10,7 +10,6 @@
 
 @implementation PlayerView
 
-// In MyView.m
 - (id)init:(CGRect)frame
 {
 	if (self = [super initWithFrame:frame]) {
@@ -93,6 +92,14 @@
 	  CFRelease(sampleBuffer);
   }
   return data;
+}
+
+- (IBAction)close:(id)sender {
+	exit(0);
+}
+
+- (IBAction)showPlaylist:(id)sender {
+	
 }
 
 -(void)nextSong{
