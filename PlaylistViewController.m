@@ -21,6 +21,9 @@
 	[self.tableView reloadData];
 	
 	self.tableView.tableHeaderView =[[PlaylistTableViewHeader alloc]initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)];
+	//[self addSubview:[[PlaylistTableViewHeader alloc]initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)]];
+	//[window makeKeyAndVisible];
+
 	//[self.playerView nextSong];
 	
 }
@@ -44,7 +47,7 @@
 	return 70;
 }
 
--(void)addTracktoTable:(MPMediaItemSubclass*)passedSong
+-(void)addTracktoTable:(MediaItem*)passedSong
 {
 	[self.playlist.playlist addObject:passedSong];
 }
@@ -59,8 +62,8 @@
 	}
 	
 	self.songWithMetaData = [self.playlist.playlist objectAtIndex:indexPath.row];
-	NSString *songTitle = [self.songWithMetaData.song valueForProperty: MPMediaItemPropertyTitle];
-	NSString *artistLabel = [self.songWithMetaData.song valueForProperty: MPMediaItemPropertyArtist] ;
+	NSString *songTitle = [self.songWithMetaData.localMediaItem valueForProperty: MPMediaItemPropertyTitle];
+	NSString *artistLabel = [self.songWithMetaData.localMediaItem valueForProperty: MPMediaItemPropertyArtist] ;
 	cell.textLabel.text = songTitle;
 	cell.detailTextLabel.text = artistLabel;
 	cell.imageView.image = self.songWithMetaData.image;
@@ -80,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-	MPMediaItemSubclass *objToMove = [Playlist sharedPlaylist].playlist[sourceIndexPath.row];
+	MediaItem *objToMove = [Playlist sharedPlaylist].playlist[sourceIndexPath.row];
 	[[Playlist sharedPlaylist].playlist removeObjectAtIndex:sourceIndexPath.row];
 	[[Playlist sharedPlaylist].playlist insertObject:objToMove atIndex:destinationIndexPath.row];
 }

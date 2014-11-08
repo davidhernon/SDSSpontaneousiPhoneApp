@@ -8,8 +8,8 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface MPMediaItemSubclass : NSObject
+@interface MediaItem : NSObject
 @property NSString* user;
-@property MPMediaItem* song;
+@property MPMediaItem* localMediaItem;
 @property UIImage* image;
 @end

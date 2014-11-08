@@ -30,13 +30,14 @@
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1EA4801A068C1100061041 /* PlayerView.xib */; };
+		FC556D411A0ED74A00779124 /* 12193.png in Resources */ = {isa = PBXBuildFile; fileRef = FC556D401A0ED74A00779124 /* 12193.png */; };
 		FC6BBCE91A0E7402003A0113 /* ios7-close.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCE81A0E7402003A0113 /* ios7-close.png */; };
 		FC6BBCED1A0E7572003A0113 /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */; };
 		FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCEF1A0E7726003A0113 /* SoundCloud-icon.png */; };
 		FC6BBCF21A0E967A003A0113 /* PlaylistTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCF11A0E967A003A0113 /* PlaylistTableViewHeader.xib */; };
 		FC6BBCF51A0E9693003A0113 /* PlaylistTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6BBCF41A0E9693003A0113 /* PlaylistTableViewHeader.m */; };
 		FC6BBCF71A0E9837003A0113 /* NowPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCF61A0E9837003A0113 /* NowPlaying.png */; };
-		FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */; };
+		FC6E2DCF19FB2FD60069CC83 /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */; };
 		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
 		FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394719F451A8001D0FE6 /* PlayerView.m */; };
 		FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394A19F45AC2001D0FE6 /* Playlist.m */; };
@@ -101,6 +102,7 @@
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
 		FC1EA4801A068C1100061041 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		FC556D401A0ED74A00779124 /* 12193.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12193.png; path = "SDSSpontaneous Images/12193.png"; sourceTree = "<group>"; };
 		FC6BBCE81A0E7402003A0113 /* ios7-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ios7-close.png"; path = "SDSSpontaneous Images/ios7-close.png"; sourceTree = "<group>"; };
 		FC6BBCEA1A0E7572003A0113 /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
 		FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
@@ -109,8 +111,8 @@
 		FC6BBCF31A0E9693003A0113 /* PlaylistTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewHeader.h; sourceTree = "<group>"; };
 		FC6BBCF41A0E9693003A0113 /* PlaylistTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewHeader.m; sourceTree = "<group>"; };
 		FC6BBCF61A0E9837003A0113 /* NowPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NowPlaying.png; path = "SDSSpontaneous Images/NowPlaying.png"; sourceTree = "<group>"; };
-		FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItemSubclass.h; sourceTree = "<group>"; };
-		FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItemSubclass.m; sourceTree = "<group>"; };
+		FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItem.h; sourceTree = "<group>"; };
+		FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItem.m; sourceTree = "<group>"; };
 		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
 		FC76394619F451A8001D0FE6 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		FC76394719F451A8001D0FE6 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
@@ -286,8 +288,8 @@
 				FC1EA4801A068C1100061041 /* PlayerView.xib */,
 				FC76394919F45AC2001D0FE6 /* Playlist.h */,
 				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
-				FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */,
-				FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */,
+				FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */,
+				FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */,
 				1CBF98C919E9E632001F643F /* LoginViewController.h */,
 				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
 				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
@@ -306,6 +308,7 @@
 				FC7A99D71A0BC4FF00C2BEB4 /* 150px-Fast_forward_font_awesome.png */,
 				FC7A99DF1A0BE67500C2BEB4 /* Play.png */,
 				FC7A99D91A0BD4B100C2BEB4 /* playerBackground.jpg */,
+				FC556D401A0ED74A00779124 /* 12193.png */,
 				FC9E43BE1A0C460D00DE919C /* playlist.png */,
 				FC6BBCF61A0E9837003A0113 /* NowPlaying.png */,
 				FC9E43AD1A0C40B100DE919C /* 320x480.jpg */,
@@ -428,6 +431,7 @@
 				FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
+				FC556D411A0ED74A00779124 /* 12193.png in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */,
+				FC6E2DCF19FB2FD60069CC83 /* MediaItem.m in Sources */,
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */,

@@ -12,7 +12,7 @@
 
 @interface PlaylistViewController : UITableViewController
 @property Playlist* playlist;
-@property MPMediaItemSubclass *songWithMetaData;
+@property MediaItem *songWithMetaData;
 @property (strong, nonatomic) IBOutlet UIButton *editPlaylist;
 -(IBAction)pickMoreSongs;
 

@@ -17,26 +17,13 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7u-9b-1il">
-                    <rect key="frame" x="264" y="15" width="110" height="40"/>
-                    <state key="normal" title="Button" image="NowPlaying.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="NowPlaying:" destination="iN0-l3-epB" eventType="touchUpInside" id="cun-Yl-xXu"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="NowPlaying" destination="T7u-9b-1il" id="BW6-Z0-PXk"/>
                 <outlet property="SharedPlaylistLabel" destination="ceu-Cm-WZS" id="Wuw-Xe-YHj"/>
             </connections>
             <point key="canvasLocation" x="337" y="433"/>
         </view>
     </objects>
-    <resources>
-        <image name="NowPlaying.png" width="55" height="40"/>
-    </resources>
 </document>

@@ -30,10 +30,10 @@ static Playlist *sharedPlaylist = nil;
 	return sharedPlaylist;
 }
 
-- (void) addTrack:(MPMediaItem *)song
+- (void) addTrack:(MPMediaItem *)mediaItem
 {
 	NSLog(@"added to Playlist");
-	[self.playlist addObject:song];
+	[self.playlist addObject:mediaItem];
 }
 
 - (int) count
@@ -57,8 +57,8 @@ static Playlist *sharedPlaylist = nil;
 
 -(void) addMediaCollection:(MPMediaItemCollection*)collection{
 	for(MPMediaItem* track in collection.items){
-		MPMediaItemSubclass* m = [[MPMediaItemSubclass alloc]init];
-		m.song = track;
+		MediaItem* m = [[MediaItem alloc]init];
+		m.localMediaItem = track;
 		m.user = @"self";
 		m.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Uncle_Sam_(pointing_finger)" ofType:@"jpg"]];
 		[self.playlist addObject:m];

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Silent Disco Squad. All rights reserved.
 //
 
-#import "MPMediaItemSubclass.h"
+#import "MediaItem.h"
 
-@implementation MPMediaItemSubclass
+@implementation MediaItem
 -(id)init{
-	self.song = [[MPMediaItem alloc]init];
+	self.localMediaItem = [[MPMediaItem alloc]init];
 	self.user = @"NotSet";
 	return self;
 }
