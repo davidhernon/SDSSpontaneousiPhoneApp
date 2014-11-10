@@ -13,6 +13,7 @@
 		1C2431AB19F4BD8A00AAE80E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AA19F4BD8A00AAE80E /* CoreText.framework */; };
 		1C2431AD19F4BD9200AAE80E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AC19F4BD9200AAE80E /* QuartzCore.framework */; };
 		1C2431AF19F4BD9A00AAE80E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2431AE19F4BD9A00AAE80E /* Security.framework */; };
+		1C77931B1A106DAC00D851C3 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C77931A1A106DAC00D851C3 /* SessionController.m */; };
 		1CBF989319E9D6C1001F643F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989219E9D6C1001F643F /* Foundation.framework */; };
 		1CBF989519E9D6C1001F643F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989419E9D6C1001F643F /* CoreGraphics.framework */; };
 		1CBF989719E9D6C1001F643F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989619E9D6C1001F643F /* UIKit.framework */; };
@@ -30,13 +31,15 @@
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1EA4801A068C1100061041 /* PlayerView.xib */; };
+		FC42DA0F1A0EDC8B00CFF8A8 /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */; };
+		FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */; };
+		FC556D411A0ED74A00779124 /* 12193.png in Resources */ = {isa = PBXBuildFile; fileRef = FC556D401A0ED74A00779124 /* 12193.png */; };
+		FC556D471A0EDBF900779124 /* PlaylistViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FC556D461A0EDBF900779124 /* PlaylistViewController2.m */; };
 		FC6BBCE91A0E7402003A0113 /* ios7-close.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCE81A0E7402003A0113 /* ios7-close.png */; };
 		FC6BBCED1A0E7572003A0113 /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */; };
 		FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCEF1A0E7726003A0113 /* SoundCloud-icon.png */; };
-		FC6BBCF21A0E967A003A0113 /* PlaylistTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCF11A0E967A003A0113 /* PlaylistTableViewHeader.xib */; };
-		FC6BBCF51A0E9693003A0113 /* PlaylistTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6BBCF41A0E9693003A0113 /* PlaylistTableViewHeader.m */; };
 		FC6BBCF71A0E9837003A0113 /* NowPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCF61A0E9837003A0113 /* NowPlaying.png */; };
-		FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */; };
+		FC6E2DCF19FB2FD60069CC83 /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */; };
 		FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */; };
 		FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394719F451A8001D0FE6 /* PlayerView.m */; };
 		FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FC76394A19F45AC2001D0FE6 /* Playlist.m */; };
@@ -56,7 +59,6 @@
 		FC9E43B81A0C43CD00DE919C /* 150px-Rewind_font_awesome.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43B71A0C43CD00DE919C /* 150px-Rewind_font_awesome.png */; };
 		FC9E43BF1A0C460D00DE919C /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43BE1A0C460D00DE919C /* playlist.png */; };
 		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
-		FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB46A721A067CD600D8A4FA /* SessionController.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		1C2431AC19F4BD9200AAE80E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1C2431AE19F4BD9A00AAE80E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1C2609A419F6B78F008D6CD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1C7793191A106DAC00D851C3 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
+		1C77931A1A106DAC00D851C3 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		1CBF988F19E9D6C0001F643F /* SDSIPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDSIPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF989219E9D6C1001F643F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CBF989419E9D6C1001F643F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,16 +105,19 @@
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
 		FC1EA4801A068C1100061041 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		FC42DA0D1A0EDC8B00CFF8A8 /* PlaylistTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableView.h; sourceTree = "<group>"; };
+		FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableView.m; sourceTree = "<group>"; };
+		FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistViewController2.xib; sourceTree = "<group>"; };
+		FC556D401A0ED74A00779124 /* 12193.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12193.png; path = "SDSSpontaneous Images/12193.png"; sourceTree = "<group>"; };
+		FC556D451A0EDBF900779124 /* PlaylistViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController2.h; sourceTree = "<group>"; };
+		FC556D461A0EDBF900779124 /* PlaylistViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController2.m; sourceTree = "<group>"; };
 		FC6BBCE81A0E7402003A0113 /* ios7-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ios7-close.png"; path = "SDSSpontaneous Images/ios7-close.png"; sourceTree = "<group>"; };
 		FC6BBCEA1A0E7572003A0113 /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
 		FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
 		FC6BBCEF1A0E7726003A0113 /* SoundCloud-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SoundCloud-icon.png"; path = "SDSSpontaneous Images/SoundCloud-icon.png"; sourceTree = "<group>"; };
-		FC6BBCF11A0E967A003A0113 /* PlaylistTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistTableViewHeader.xib; sourceTree = "<group>"; };
-		FC6BBCF31A0E9693003A0113 /* PlaylistTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableViewHeader.h; sourceTree = "<group>"; };
-		FC6BBCF41A0E9693003A0113 /* PlaylistTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableViewHeader.m; sourceTree = "<group>"; };
 		FC6BBCF61A0E9837003A0113 /* NowPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NowPlaying.png; path = "SDSSpontaneous Images/NowPlaying.png"; sourceTree = "<group>"; };
-		FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaItemSubclass.h; sourceTree = "<group>"; };
-		FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMediaItemSubclass.m; sourceTree = "<group>"; };
+		FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItem.h; sourceTree = "<group>"; };
+		FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItem.m; sourceTree = "<group>"; };
 		FC6F52D919F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3"; sourceTree = "<group>"; };
 		FC76394619F451A8001D0FE6 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		FC76394719F451A8001D0FE6 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
@@ -134,8 +141,6 @@
 		FC9E43BE1A0C460D00DE919C /* playlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playlist.png; path = "SDSSpontaneous Images/playlist.png"; sourceTree = "<group>"; };
 		FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAudioOutputStreamer.h; sourceTree = "<group>"; };
 		FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAudioOutputStreamer.m; sourceTree = "<group>"; };
-		FCB46A711A067CD600D8A4FA /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionController.h; path = ../MCSessionP2P/MCSessionP2P/SessionController.h; sourceTree = "<group>"; };
-		FCB46A721A067CD600D8A4FA /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionController.m; path = ../MCSessionP2P/MCSessionP2P/SessionController.m; sourceTree = "<group>"; };
 		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -263,8 +268,8 @@
 		FCB46A791A067CDE00D8A4FA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				FCB46A711A067CD600D8A4FA /* SessionController.h */,
-				FCB46A721A067CD600D8A4FA /* SessionController.m */,
+				1C7793191A106DAC00D851C3 /* SessionController.h */,
+				1C77931A1A106DAC00D851C3 /* SessionController.m */,
 				FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */,
 				FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */,
 			);
@@ -274,9 +279,11 @@
 		FCB46A7A1A067CEE00D8A4FA /* UI and Player */ = {
 			isa = PBXGroup;
 			children = (
-				FC6BBCF31A0E9693003A0113 /* PlaylistTableViewHeader.h */,
-				FC6BBCF41A0E9693003A0113 /* PlaylistTableViewHeader.m */,
-				FC6BBCF11A0E967A003A0113 /* PlaylistTableViewHeader.xib */,
+				FC556D451A0EDBF900779124 /* PlaylistViewController2.h */,
+				FC556D461A0EDBF900779124 /* PlaylistViewController2.m */,
+				FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */,
+				FC42DA0D1A0EDC8B00CFF8A8 /* PlaylistTableView.h */,
+				FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */,
 				FC6BBCEA1A0E7572003A0113 /* PlaylistViewController.h */,
 				FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
@@ -286,8 +293,8 @@
 				FC1EA4801A068C1100061041 /* PlayerView.xib */,
 				FC76394919F45AC2001D0FE6 /* Playlist.h */,
 				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
-				FC6E2DCD19FB2FD60069CC83 /* MPMediaItemSubclass.h */,
-				FC6E2DCE19FB2FD60069CC83 /* MPMediaItemSubclass.m */,
+				FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */,
+				FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */,
 				1CBF98C919E9E632001F643F /* LoginViewController.h */,
 				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
 				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
@@ -306,6 +313,7 @@
 				FC7A99D71A0BC4FF00C2BEB4 /* 150px-Fast_forward_font_awesome.png */,
 				FC7A99DF1A0BE67500C2BEB4 /* Play.png */,
 				FC7A99D91A0BD4B100C2BEB4 /* playerBackground.jpg */,
+				FC556D401A0ED74A00779124 /* 12193.png */,
 				FC9E43BE1A0C460D00DE919C /* playlist.png */,
 				FC6BBCF61A0E9837003A0113 /* NowPlaying.png */,
 				FC9E43AD1A0C40B100DE919C /* 320x480.jpg */,
@@ -419,15 +427,16 @@
 				FC9E43B11A0C40B100DE919C /* not_available.gif in Resources */,
 				FC7A99DA1A0BD4B100C2BEB4 /* playerBackground.jpg in Resources */,
 				FC6BBCE91A0E7402003A0113 /* ios7-close.png in Resources */,
-				FC6BBCF21A0E967A003A0113 /* PlaylistTableViewHeader.xib in Resources */,
 				FC9E43A11A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
+				FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController2.xib in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
 				FC9E43AB1A0C063A00DE919C /* logos-02.png in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
+				FC556D411A0ED74A00779124 /* 12193.png in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,17 +456,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6E2DCF19FB2FD60069CC83 /* MPMediaItemSubclass.m in Sources */,
+				FC6E2DCF19FB2FD60069CC83 /* MediaItem.m in Sources */,
 				1CBF98A319E9D6C1001F643F /* AppDelegate.m in Sources */,
+				FC42DA0F1A0EDC8B00CFF8A8 /* PlaylistTableView.m in Sources */,
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */,
 				FC6BBCED1A0E7572003A0113 /* PlaylistViewController.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
+				FC556D471A0EDBF900779124 /* PlaylistViewController2.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
-				FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */,
+				1C77931B1A106DAC00D851C3 /* SessionController.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
-				FC6BBCF51A0E9693003A0113 /* PlaylistTableViewHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

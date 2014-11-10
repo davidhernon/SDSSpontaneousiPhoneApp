@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
-#import "PlaylistTableViewHeader.h"
 
 @interface PlaylistViewController : UITableViewController
 @property Playlist* playlist;
-@property MPMediaItemSubclass *songWithMetaData;
+@property MediaItem *songWithMetaData;
 @property (strong, nonatomic) IBOutlet UIButton *editPlaylist;
 -(IBAction)pickMoreSongs;
 

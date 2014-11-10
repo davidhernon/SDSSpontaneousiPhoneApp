@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "MPMediaItemSubclass.h"
+#import "MediaItem.h"
 @interface Playlist : NSObject{
 	NSMutableArray* playlist;
 }
@@ -16,7 +16,7 @@
 @property Boolean alreadySpoofed;
 + (Playlist*) sharedPlaylist;
 -(int)count;
-- (void) addTrack:(MPMediaItemSubclass *)song;
+- (void) addTrack:(MediaItem *)mediaItem;
 - (id)objectAtIndex:(NSUInteger)index;
 -(void)shuffle;
 -(void) addMediaCollection:(MPMediaItemCollection*)collection;

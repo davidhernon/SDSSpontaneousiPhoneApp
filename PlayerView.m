@@ -21,10 +21,8 @@
 								  [self frame].size.width,
 								  [self frame].size.height)];
 		self.audioPlayer = [[AVPlayer alloc] init];
-		UIImage *btnImage = [UIImage imageNamed:@"150px-Fast_forward_font_awesome.png"];
-		[self.skipButton setImage:btnImage forState:UIControlStateNormal];
-		UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
-		self.backgroundColor = background;
+		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
+		self.currentSongIndex = 0;
 		[self nextSong];
 	}
 	return self;
@@ -34,6 +32,8 @@
 	NSLog(@"skip was clicked");
 	[self nextSong];
 }
+
+
 
 - (IBAction)send:(id)sender {
 
@@ -47,6 +47,17 @@
 
 	self.audioOutputStream.delegate = self;
 	NSData *d = [self convertToData:self.currentMPMediaItem];
+}
+
+- (IBAction)sendPlaylistStringAsJSON:(id)sender
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.sessionController sendPlaylistAsJSON:[Playlist sharedPlaylist].playlist];
+    //SessionController *sesh = appDelegate.sessionController;
+    //[sesh returnSession];
+    //sesh.session;
+    //[sesh sendPlaylistAsJSON:[Playlist sharedPlaylist].playlist] ];
+    
 }
 
 -(NSData*)convertToData: (MPMediaItem*) item{
@@ -97,48 +108,91 @@
 - (IBAction)close:(id)sender {
 	exit(0);
 }
-
-- (IBAction)showPlaylist:(id)sender {
-	
+ 
+- (IBAction)back:(id)sender {
+	if(CMTimeGetSeconds(self.audioPlayer.currentTime) < 2.0f){
+		self.currentSongIndex--;
+		[self loadAndPlayPlayer];
+	}
+	[self.audioPlayer seekToTime:CMTimeMake(0,1000)];
 }
 
 -(void)nextSong{
-	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil){
+	//if empty
+	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil || [[Playlist sharedPlaylist].playlist count] == self.currentSongIndex){
+		return;
 	}
-	else{
-		NSLog(@"NextSong");
-		MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
-		self.currentMPMediaItem = songWithMetadata.song;
-		[[Playlist sharedPlaylist].playlist removeObjectAtIndex:0];
-		self.songTitle.text = [songWithMetadata.song valueForProperty:MPMediaItemPropertyTitle];
-		self.artistName.text = [songWithMetadata.song valueForProperty:MPMediaItemPropertyArtist];
-		MPMediaItemArtwork *artWork = [songWithMetadata.song valueForProperty:MPMediaItemPropertyArtwork];
-		//self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-		
-		if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
-		{
-			self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
-		}
-		else //Otherwise set the artwork found in the library.
-		{
-			self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-		}
+	
+	//if it's not the last song
+	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
+	self.songTitle.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyTitle];
+	self.artistName.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtist];
+	MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
+	//self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+	
+	if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
+	{
+		self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
 
-		AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
-		[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
-        
-		[self.audioPlayer play];
 	}
+	else //Otherwise set the artwork found in the library.
+	{
+		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+	}
+
+	AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
+	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
+	[self.audioPlayer play];
 }
 
 // Plays Next Item
 -(void)itemDidFinishPlaying:(NSNotification *) notification {
-	[[Playlist sharedPlaylist].playlist removeObjectAtIndex:0];
-	MPMediaItemSubclass *songWithMetadata = [[Playlist sharedPlaylist].playlist objectAtIndex:0];
-	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
+	self.currentSongIndex++;
+	[self loadAndPlayPlayer];
+}
+
+//Set Index, then call this method
+-(void)loadAndPlayPlayer{
+	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
+	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
+}
+
+- (IBAction)playPauseAction:(id)sender {
+	if(self.audioPlayer.rate == 0.0f){
+		self.audioPlayer.rate = 1.0f;
+		[sender setBackgroundImage:[UIImage imageNamed:@"Pause.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+	}
+	else{
+		self.audioPlayer.rate = 0.0f;
+		[sender setBackgroundImage:[UIImage imageNamed:@"Play.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+	}
+}
+
+-(void)sendPlaylist:(id)sender
+{
+    for (int i = 0; i < [[Playlist sharedPlaylist].playlist count]; i++) {
+        //Get Each String to Send
+        NSString *s = [[Playlist sharedPlaylist].playlist objectAtIndex:(NSUInteger)i];
+        NSData *data = [s dataUsingEncoding:NSUTF8StringEncoding];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSError *error;
+        [appDelegate.sessionController.session sendData:data toPeers:[appDelegate.sessionController.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+        NSLog(@"Sending String as Data: %@", self.playlist.playlist[i]);
+        
+    }
+}
+
+-(void)sendPlaylistAsJSON:(NSArray *)myArray
+{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:myArray options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.sessionController.session sendData:jsonData toPeers:[appDelegate.sessionController.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    NSLog(@"Sending Playlist as JSON: %@", jsonString);
 }
 
 @end

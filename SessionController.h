@@ -15,6 +15,8 @@
  */
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
+//#import "Appdelegate.h"
+//#import "Playlist.h"
 
 @protocol SessionControllerDelegate;
 
@@ -40,6 +42,7 @@ its delegate method should explicitly dispatch or schedule that work
 
 // Helper method for human readable printing of MCSessionState. This state is per peer.
 - (NSString *)stringForPeerConnectionState:(MCSessionState)state;
+-(void)sendPlaylistAsJSON:(NSArray *)myArray;
 
 @end
 
@@ -48,5 +51,7 @@ its delegate method should explicitly dispatch or schedule that work
 
 // Session changed state - connecting, connected and disconnected peers changed
 - (void)sessionDidChangeState;
+- (MCSession *) returnSession;
+
 
 @end

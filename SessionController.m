@@ -25,6 +25,7 @@
 // Manually track connecting and disconnected peers
 @property (nonatomic, strong) NSMutableOrderedSet *connectingPeersOrderedSet;
 @property (nonatomic, strong) NSMutableOrderedSet *disconnectedPeersOrderedSet;
+
 @end
 
 @implementation SessionController
@@ -94,6 +95,8 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 {
     return [self.disconnectedPeersOrderedSet array];
 }
+
+
 
 #pragma mark - Private methods
 
@@ -294,9 +297,32 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     [self updateDelegate];
 }
 
+
+
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
 {
     NSLog(@"didNotStartAdvertisingForPeers: %@", error);
 }
+
+- (void)sendPlaylistAsJSON:(NSArray *)myArray
+{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:myArray options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    //AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //MCSession * s = session;
+    //MCSession * s = [self returnSession];
+    //NSLOG(s.toString);
+    [[self returnSession] sendData:jsonData toPeers:[[self returnSession] connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    NSLog(@"Sending Playlist as JSON: %@", jsonString);
+}
+
+- (MCSession *) returnSession
+{
+    return self.session;
+}
+
+
+
 
 @end
