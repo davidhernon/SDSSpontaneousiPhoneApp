@@ -127,6 +127,7 @@
 		AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[songWithMetadata.song valueForProperty:MPMediaItemPropertyAssetURL]];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 		[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
+        
 		[self.audioPlayer play];
 	}
 }
