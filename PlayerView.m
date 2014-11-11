@@ -219,14 +219,21 @@
     return jsonData;
 }
 
+-(MCSession*)getSession
+{
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate.sessionController.session;
+}
+
 
 -(void)sendPlayListToPeers
 {
     NSData* data = [self dictionaryToJSONData: [self playListToDictionary]];
     NSError* error;
     NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.sessionController.session sendData:data toPeers:[appDelegate.sessionController.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    MCSession* currentSession = [self getSession];
+    [currentSession sendData:data toPeers:[currentSession connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    
     if(error){
         NSLog(@"[ERROR] UIAndPlayer.PlayerView.sendPlayListToPeers - sent data to session via AppDelegate but received error: %@", error);
     }

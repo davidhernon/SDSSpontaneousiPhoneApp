@@ -15,6 +15,7 @@
  */
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import "Playlist.h"
 //#import "Appdelegate.h"
 //#import "Playlist.h"
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
+#import "AppDelegate.h"
 
 @interface PlaylistTableView : UITableView<UITableViewDataSource, UITableViewDelegate>
 @property MediaItem* songWithMetaData;

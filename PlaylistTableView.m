@@ -76,6 +76,7 @@
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
 		[[Playlist sharedPlaylist].playlist removeObjectAtIndex:indexPath.row];
 		[self reloadData];
+        
     // TODO: send over revised Playlist to other player
 	}
 }
@@ -88,6 +89,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return [Playlist sharedPlaylist].playlist.count;
+}
+
+- (SessionController *)getSessionController
+{
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate.sessionController;
+    
 }
 
 @end

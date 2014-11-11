@@ -191,11 +191,28 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     [self updateDelegate];
 }
 
+// DEPRECATED: Old didReceiveData method
+/*
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
     // Decode the incoming data to a UTF8 encoded string
     NSString *receivedMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"didReceiveData %@ from %@", receivedMessage, peerID.displayName);
+}*/
+
+// UPDATED didReceiveData method
+// replaces DEPRECATED version above^
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
+{
+    NSError* error;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data   options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:&error];
+    if(error || jsonDict == nil){
+        NSLog(@"[ERROR] Networking.SessionController.session.didReceiveCallback - did not reconstruct JSON data from peer, %@", error);
+    }
+    NSLog(@"[INFO] Networking.SessionController.session.didReceiveCallback - reconstructed JSON data from peer");
+    //do Something with jsonDict
+    // set jsonDict to sharedPlaylist
+    
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
@@ -303,7 +320,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     NSLog(@"didNotStartAdvertisingForPeers: %@", error);
 }
 
-- (void)sendPlaylistAsJSON:(NSArray *)myArray
+/*- (void)sendPlaylistAsJSON:(NSArray *)myArray
 {
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:myArray options:NSJSONWritingPrettyPrinted error:&error];
@@ -342,7 +359,43 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (MCSession *) returnSession
 {
     return self.session;
+}*/
+
+-(NSMutableDictionary *)playListToDictionary
+{
+    NSMutableDictionary * playListDictionary = [[NSMutableDictionary alloc] initWithCapacity:[Playlist sharedPlaylist].count];
+    for(int i=0; i < [[Playlist sharedPlaylist] count]; i++){
+        [playListDictionary setObject:[[Playlist sharedPlaylist].playlist[i] cloneForSerialize] forKey:[NSNumber numberWithInt:1]];
+    }
+    return playListDictionary;
 }
+
+-(NSData*)dictionaryToJSONData:(NSDictionary *)dict
+{
+    NSError* error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if(!jsonData){
+        NSLog(@"[ERROR] UIAndPlayer.PlayerView.dictionaryToJSONData - tried to convert dictionary to jsonData but got error: %@", error);
+    }
+    return jsonData;
+}
+
+-(void)sendPlayListToPeers
+{
+    NSData* data = [self dictionaryToJSONData: [self playListToDictionary]];
+    NSError* error;
+    NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    MCSession* currentSession = self.session;
+    [currentSession sendData:data toPeers:[currentSession connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    
+    if(error){
+        NSLog(@"[ERROR] UIAndPlayer.PlayerView.sendPlayListToPeers - sent data to session via AppDelegate but received error: %@", error);
+    }
+    NSLog(@"[INFO] UIAndPlayer.PlayerView.sendPlayListToPeers - converted playlist to data and sent it successfully. JSON String was: %@", jsonString);
+}
+
 
 
 
