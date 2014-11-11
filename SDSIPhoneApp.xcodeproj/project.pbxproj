@@ -59,6 +59,7 @@
 		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
 		FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB46A721A067CD600D8A4FA /* SessionController.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
+		FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		FCB46A711A067CD600D8A4FA /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionController.h; path = ../MCSessionP2P/MCSessionP2P/SessionController.h; sourceTree = "<group>"; };
 		FCB46A721A067CD600D8A4FA /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionController.m; path = ../MCSessionP2P/MCSessionP2P/SessionController.m; sourceTree = "<group>"; };
 		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
 				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
+				FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */,
 				FC76394619F451A8001D0FE6 /* PlayerView.h */,
 				FC76394719F451A8001D0FE6 /* PlayerView.m */,
 				FC1EA4801A068C1100061041 /* PlayerView.xib */,
@@ -433,6 +436,7 @@
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
 				FC556D411A0ED74A00779124 /* 12193.png in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
+				FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

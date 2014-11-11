@@ -28,6 +28,10 @@
 	return self;
 }
 
+-(void)shuffle{
+	[[Playlist sharedPlaylist] shuffle];
+}
+
 - (IBAction)skip:(id)sender {
 	NSLog(@"skip was clicked");
 	[self nextSong];
@@ -62,7 +66,7 @@
 	exit(0);
 }
  
-- (IBAction)back:(id)sender {
+- (IBAction)previousSong:(id)sender {
 	if(CMTimeGetSeconds(self.audioPlayer.currentTime) < 2.0f){
 		self.currentSongIndex--;
 		[self loadAndPlayPlayer];

@@ -11,4 +11,5 @@
 @interface PlayerViewController : UIViewController
 @property PlayerView* playerView;
 + (PlayerViewController*) sharedPlayerViewController;
+-(void)hideNavBar;
 @end
