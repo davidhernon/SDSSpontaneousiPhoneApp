@@ -30,7 +30,7 @@
 
 - (IBAction)nowPlaying
 {
-	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	PlayerViewController *playerViewController = [[PlayerViewController alloc]init];
 	[self.navigationController pushViewController:playerViewController animated:YES];
 }
 

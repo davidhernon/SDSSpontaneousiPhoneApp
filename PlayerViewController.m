@@ -18,17 +18,16 @@
 	static PlayerViewController *sharedPlayerViewController = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		sharedPlayerViewController = [[self alloc] initWithNibName:@"PlayerViewController" bundle:nil];
+		sharedPlayerViewController = [[self alloc] init];
 	});
 	return sharedPlayerViewController;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	self = [super init];
 	if (self) {
-		//init player
-		self.playerView =[[PlayerView alloc] init:CGRectMake(0.0,0.0,0.0,0.0)];
+		self.view =[[PlayerView alloc] init:CGRectMake(0.0,0.0,0.0,0.0)];
 		[self.view addSubview:self.playerView];
 		[self.view bringSubviewToFront:self.playerView];
 		
