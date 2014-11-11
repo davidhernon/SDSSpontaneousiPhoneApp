@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "Appdelegate.h"
 #import "Playlist.h"
+#import "MediaItem.h"
 //#import "SessionController.h"
 
 @interface PlayerView : UIView<AVAudioPlayerDelegate, NSStreamDelegate>

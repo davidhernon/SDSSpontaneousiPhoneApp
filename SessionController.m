@@ -195,7 +195,6 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 {
     // Decode the incoming data to a UTF8 encoded string
     NSString *receivedMessage = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
     NSLog(@"didReceiveData %@ from %@", receivedMessage, peerID.displayName);
 }
 
@@ -315,6 +314,29 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     //NSLOG(s.toString);
     [[self returnSession] sendData:jsonData toPeers:[[self returnSession] connectedPeers] withMode:MCSessionSendDataReliable error:&error];
     NSLog(@"Sending Playlist as JSON: %@", jsonString);
+}
+
+- (void)sendPlaylistWithPeersAsJSON:(NSArray *)twoDArrayOfPeers withSongStrings:(NSArray *)songStrings
+{
+    //create Dictionary Object
+    NSDictionary *dictionary = [self createDictionaryFromSongListAndPeers:twoDArrayOfPeers withSongStrings:songStrings];
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    [self.session sendData:jsonData toPeers:[self.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    
+}
+
+- (NSDictionary *)createDictionaryFromSongListAndPeers:(NSArray *)twoDArrayOfPeers withSongStrings:(NSArray *)songStrings
+{
+    // create a dictionary
+    // keys: Song String
+    // Values: NSArray of Peers (NSUIntegers)
+    NSDictionary *dictSongsToPeers = [[NSDictionary alloc] init];
+    //create dictionary properly
+    return dictSongsToPeers;
+    
 }
 
 - (MCSession *) returnSession

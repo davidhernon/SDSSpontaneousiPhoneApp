@@ -14,5 +14,22 @@
 	self.user = @"NotSet";
 	return self;
 }
+-(MediaItem*)cloneForSerialize
+{
+    MediaItem* lightClone = [[MediaItem alloc] init];
+    lightClone.user = self.user;
+    lightClone.peersThatHaveMedia = self.peersThatHaveMedia;
+    lightClone.localMediaItem = nil;
+    lightClone.type = self.type;
+    lightClone.image = self.image;
+    return lightClone;
+}
+
 @end
+
+@protocol MediaItemProtocol
+- (BOOL)isType:(NSString *)type;
+
+@end
+
 

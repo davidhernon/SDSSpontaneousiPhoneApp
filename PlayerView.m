@@ -195,4 +195,43 @@
     NSLog(@"Sending Playlist as JSON: %@", jsonString);
 }
 
+//Creates a Dictionary From the Shared Playlist Object
+//uses the cloneForSerialize method of MediaItem Class to pass without reference to local data
+//self.playlist should be the same as Playlist sharedPlaylist
+-(NSMutableDictionary *)playListToDictionary
+{
+    NSMutableDictionary * playListDictionary = [[NSMutableDictionary alloc] initWithCapacity:[Playlist sharedPlaylist].count];
+    for(int i=0; i < [self.playlist count]; i++){
+        [playListDictionary setObject:[[Playlist sharedPlaylist].playlist[i] cloneForSerialize] forKey:[NSNumber numberWithInt:1]];
+    }
+    return playListDictionary;
+}
+
+-(NSData*)dictionaryToJSONData:(NSDictionary *)dict
+{
+    NSError* error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if(!jsonData){
+        NSLog(@"[ERROR] UIAndPlayer.PlayerView.dictionaryToJSONData - tried to convert dictionary to jsonData but got error: %@", error);
+    }
+    return jsonData;
+}
+
+
+-(void)sendPlayListToPeers
+{
+    NSData* data = [self dictionaryToJSONData: [self playListToDictionary]];
+    NSError* error;
+    NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.sessionController.session sendData:data toPeers:[appDelegate.sessionController.session connectedPeers] withMode:MCSessionSendDataReliable error:&error];
+    if(error){
+        NSLog(@"[ERROR] UIAndPlayer.PlayerView.sendPlayListToPeers - sent data to session via AppDelegate but received error: %@", error);
+    }
+    NSLog(@"[INFO] UIAndPlayer.PlayerView.sendPlayListToPeers - converted playlist to data and sent it successfully. JSON String was: %@", jsonString);
+}
+
+
 @end

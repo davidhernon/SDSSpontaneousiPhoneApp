@@ -15,9 +15,9 @@
 @property(nonatomic,retain)NSMutableArray *playlist;
 @property Boolean alreadySpoofed;
 + (Playlist*) sharedPlaylist;
--(int)count;
+- (int)count;
 - (void) addTrack:(MediaItem *)mediaItem;
 - (id)objectAtIndex:(NSUInteger)index;
--(void)shuffle;
--(void) addMediaCollection:(MPMediaItemCollection*)collection;
+- (void)shuffle;
+- (void) addMediaCollection:(MPMediaItemCollection*)collection;
 @end
