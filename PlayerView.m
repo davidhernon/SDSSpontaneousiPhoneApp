@@ -23,11 +23,10 @@
 		self.audioPlayer = [[AVPlayer alloc] init];
 		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
 		self.currentSongIndex = 0;
-		[self nextSong:self];
+		[self loadAndPlayPlayer];
 	}
 	return self;
 }
-
 
 // Plays Next Item
 -(void)itemDidFinishPlaying:(NSNotification *) notification {
@@ -37,6 +36,10 @@
 
 //Set Index, then call this method
 -(void)loadAndPlayPlayer{
+	//return if empty
+	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil || [[Playlist sharedPlaylist].playlist count] == self.currentSongIndex){
+		return;
+	}
 	if(self.currentSongIndex < 0){
 		self.currentSongIndex = (int)[Playlist sharedPlaylist].playlist.count - 1;
 	}
@@ -44,37 +47,30 @@
 		self.currentSongIndex = 0;
 	}
 	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
+	self.songTitle.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyTitle];
+	self.artistName.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtist];
+	
+	/*MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
+	 //self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+	 
+	 if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
+	 {
+		self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
+	 }
+	 else //Otherwise set the artwork found in the library.
+	 {
+		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
+	 }*/
+	
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
 }
 
 - (IBAction)nextSong:(id)sender {
-	//if empty
-	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil || [[Playlist sharedPlaylist].playlist count] == self.currentSongIndex){
-		return;
-	}
-	
-	//if it's not the last song
-	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
-	self.songTitle.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyTitle];
-	self.artistName.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtist];
-	MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
-	//self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	
-	if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
-	{
-		self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
-	}
-	else //Otherwise set the artwork found in the library.
-	{
-		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	}
-	
-	AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
-	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
-	[self.audioPlayer play];
+	self.currentSongIndex++;
+	[self loadAndPlayPlayer];
 }
 
 - (IBAction)playPauseAction:(id)sender {
@@ -98,10 +94,6 @@
 
 -(void)shuffle{
 	[[Playlist sharedPlaylist] shuffle];
-}
-
-- (IBAction)close:(id)sender {
-	exit(0);
 }
 
 - (IBAction)send:(id)sender {

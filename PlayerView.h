@@ -23,7 +23,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *artistName;
 @property (strong, nonatomic) IBOutlet UIButton *skipButton;
 @property (strong, nonatomic) IBOutlet UIImageView *albumArt;
-- (IBAction)close:(id)sender;
 - (IBAction)previousSong:(id)sender;
 - (IBAction)send:(id)sender;
 - (IBAction)nextSong:(id)sender;
