@@ -84,7 +84,7 @@
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection {
 	[[Playlist sharedPlaylist] addMediaCollection:collection];
-	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController2" bundle:nil];
+	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
 	[self.navigationController pushViewController:playlistViewController animated:YES];
 }
 
@@ -93,7 +93,7 @@
 	//if there's nothing in the media library, just skip to the player
 	MPMediaQuery *everything = [MPMediaQuery songsQuery];
 	if (everything.items == nil || [everything.items count] == 0){
-		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController2" bundle:nil];
+		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
 		[self.navigationController pushViewController:playlistViewController animated:YES];
 	}
 	

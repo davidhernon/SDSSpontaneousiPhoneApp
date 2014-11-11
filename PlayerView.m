@@ -20,10 +20,12 @@
 								  frame.origin.y,
 								  [self frame].size.width,
 								  [self frame].size.height)];
-		self.audioPlayer = [[AVPlayer alloc] init];
-		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
-		self.currentSongIndex = 0;
-		[self loadAndPlayPlayer];
+		if(self.alreadyRun){
+			self.audioPlayer = [[AVPlayer alloc] init];
+			self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
+			self.currentSongIndex = 0;
+			[self loadAndPlayPlayer];
+		}
 	}
 	return self;
 }

@@ -13,16 +13,6 @@
 
 @implementation PlayerViewController
 
-+ sharedPlayerViewController
-{
-	static PlayerViewController *sharedPlayerViewController = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		sharedPlayerViewController = [[self alloc] initWithNibName:@"PlayerViewController" bundle:nil];
-	});
-	return sharedPlayerViewController;
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

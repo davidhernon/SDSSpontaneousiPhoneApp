@@ -17,7 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	if (self) {
+	if (self) {		
 	}
 	return self;
 }
@@ -26,6 +26,26 @@
     [super viewDidLoad];
 }
 
+//addMoreSongs from MediaPicker (Local)
+- (IBAction)addMoreSongs:(id)sender {
+	//if there's nothing in the media library, just skip to the player
+	MPMediaQuery *everything = [MPMediaQuery songsQuery];
+	if (everything.items == nil || [everything.items count] == 0){
+		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+		[self.navigationController pushViewController:playlistViewController animated:YES];
+	}
+	
+	//else, show a picker so they can give us songs
+	MPMediaPickerController* picker = [[MPMediaPickerController alloc]initWithMediaTypes: MPMediaTypeAnyAudio];
+	[picker setDelegate: self];                                         // 2
+	[picker setAllowsPickingMultipleItems: YES];                        // 3
+	picker.prompt =
+	NSLocalizedString (@"Add songs to play",
+					   "Prompt in media item picker");
+	[self.navigationController pushViewController:picker animated: YES];    // 4
+}
+
+//Move to playerview, set navController status
 - (IBAction)nowPlaying
 {
 	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
@@ -48,6 +68,15 @@
 		self.tableView.editing = NO;
 	}
 }*/
+
+//MediaPicker returns to Playlist after done picking
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker
+   didPickMediaItems: (MPMediaItemCollection *) collection {
+	[[Playlist sharedPlaylist] addMediaCollection:collection];
+	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+	[self.navigationController pushViewController:playlistViewController animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
