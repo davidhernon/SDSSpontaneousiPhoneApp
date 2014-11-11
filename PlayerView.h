@@ -26,9 +26,8 @@
 - (IBAction)close:(id)sender;
 - (IBAction)previousSong:(id)sender;
 - (IBAction)send:(id)sender;
-- (IBAction)skip:(id)sender;
+- (IBAction)nextSong:(id)sender;
 - (IBAction)playPauseAction:(id)sender;
-- (IBAction)backToPlaylist:(id)sender;
 -(void)nextSong;
 -(id)init: (CGRect)frame;
 @end

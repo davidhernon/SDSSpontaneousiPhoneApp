@@ -23,58 +23,33 @@
 		self.audioPlayer = [[AVPlayer alloc] init];
 		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
 		self.currentSongIndex = 0;
-		[self nextSong];
+		[self nextSong:self];
 	}
 	return self;
 }
 
--(void)shuffle{
-	[[Playlist sharedPlaylist] shuffle];
+
+// Plays Next Item
+-(void)itemDidFinishPlaying:(NSNotification *) notification {
+	self.currentSongIndex++;
+	[self loadAndPlayPlayer];
 }
 
-- (IBAction)skip:(id)sender {
-	NSLog(@"skip was clicked");
-	[self nextSong];
-}
-
-- (IBAction)send:(id)sender {
-
-	//This line'll do file transfers
-	//Boolean worked = [appDelegate.sessionController.session sendData:d toPeers:appDelegate.sessionController.connectedPeers withMode:MCSessionSendDataUnreliable error:nil];
-
-
-	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-	// Send a data message to a list of destination peers
-	self.audioOutputStream = [appDelegate.sessionController.session startStreamWithName:appDelegate.sessionController.displayName toPeer:appDelegate.sessionController.connectedPeers[0] error:nil];
-
-	self.audioOutputStream.delegate = self;
-	NSData *d = [self convertToData:self.currentMPMediaItem];
-}
-
-- (IBAction)playPauseAction:(id)sender {
-	if(self.audioPlayer.rate == 0.0f){
-		self.audioPlayer.rate = 1.0f;
-		[sender setBackgroundImage:[UIImage imageNamed:@"Pause.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//Set Index, then call this method
+-(void)loadAndPlayPlayer{
+	if(self.currentSongIndex < 0){
+		self.currentSongIndex = (int)[Playlist sharedPlaylist].playlist.count - 1;
 	}
-	else{
-		self.audioPlayer.rate = 0.0f;
-		[sender setBackgroundImage:[UIImage imageNamed:@"Play.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+	else if (self.currentSongIndex >= [Playlist sharedPlaylist].playlist.count){
+		self.currentSongIndex = 0;
 	}
+	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
+	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
+	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
+	[self.audioPlayer play];
 }
 
-- (IBAction)close:(id)sender {
-	exit(0);
-}
- 
-- (IBAction)previousSong:(id)sender {
-	if(CMTimeGetSeconds(self.audioPlayer.currentTime) < 2.0f){
-		self.currentSongIndex--;
-		[self loadAndPlayPlayer];
-	}
-	[self.audioPlayer seekToTime:CMTimeMake(0,1000)];
-}
-
--(void)nextSong{
+- (IBAction)nextSong:(id)sender {
 	//if empty
 	if([[Playlist sharedPlaylist].playlist count] == 0 || [Playlist sharedPlaylist].playlist  == nil || [[Playlist sharedPlaylist].playlist count] == self.currentSongIndex){
 		return;
@@ -95,11 +70,52 @@
 	{
 		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
 	}
-
+	
 	AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
 	[self.audioPlayer play];
+}
+
+- (IBAction)playPauseAction:(id)sender {
+	if(self.audioPlayer.rate == 0.0f){
+		self.audioPlayer.rate = 1.0f;
+		self.playPause.selected = YES;
+	}
+	else{
+		self.audioPlayer.rate = 0.0f;
+		self.playPause.selected = NO;
+	}
+}
+
+- (IBAction)previousSong:(id)sender {
+	if(CMTimeGetSeconds(self.audioPlayer.currentTime) < 2.0f){
+		self.currentSongIndex--;
+		[self loadAndPlayPlayer];
+	}
+	[self.audioPlayer seekToTime:CMTimeMake(0,1000)];
+}
+
+-(void)shuffle{
+	[[Playlist sharedPlaylist] shuffle];
+}
+
+- (IBAction)close:(id)sender {
+	exit(0);
+}
+
+- (IBAction)send:(id)sender {
+	
+	//This line'll do file transfers
+	//Boolean worked = [appDelegate.sessionController.session sendData:d toPeers:appDelegate.sessionController.connectedPeers withMode:MCSessionSendDataUnreliable error:nil];
+	
+	
+	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	// Send a data message to a list of destination peers
+	self.audioOutputStream = [appDelegate.sessionController.session startStreamWithName:appDelegate.sessionController.displayName toPeer:appDelegate.sessionController.connectedPeers[0] error:nil];
+	
+	self.audioOutputStream.delegate = self;
+	NSData *d = [self convertToData:self.currentMPMediaItem];
 }
 
 -(NSData*)convertToData: (MPMediaItem*) item{
@@ -146,19 +162,4 @@
 	}
 	return data;
 }
-
-// Plays Next Item
--(void)itemDidFinishPlaying:(NSNotification *) notification {
-	self.currentSongIndex++;
-	[self loadAndPlayPlayer];
-}
-
-//Set Index, then call this method
--(void)loadAndPlayPlayer{
-	MediaItem *mediaItem = [[Playlist sharedPlaylist].playlist objectAtIndex:self.currentSongIndex];
-	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
-	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
-	[self.audioPlayer play];
-}
-
 @end
