@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlaylistViewController2.h"
+#import "PlaylistViewController.h"
 @interface LoginViewController : UIViewController<MPMediaPickerControllerDelegate>
 
 -(IBAction)nextScreen;

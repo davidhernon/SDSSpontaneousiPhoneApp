@@ -92,9 +92,6 @@
                     <state key="normal" title="Button" image="playlist.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="showPlaylist:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vil-ZV-RIV"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +100,6 @@
                 <outlet property="albumArt" destination="cC7-Qx-QVA" id="3Xe-lR-a1x"/>
                 <outlet property="artistName" destination="TFs-eu-rNs" id="tk0-qr-Cya"/>
                 <outlet property="playPause" destination="6lu-gI-vla" id="GpM-sE-ikv"/>
-                <outlet property="showPlaylist" destination="evp-ff-cP8" id="p2M-WR-vNh"/>
                 <outlet property="skipButton" destination="jzH-jG-BOj" id="cJo-Bt-L8J"/>
                 <outlet property="songTitle" destination="5rF-4F-3g0" id="xH1-xY-UL1"/>
             </connections>

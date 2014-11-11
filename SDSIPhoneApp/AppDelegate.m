@@ -34,11 +34,11 @@
 	[self registerForNotifications:application];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-	[navController setNavigationBarHidden:YES animated:YES];
+	self.navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	[self.navController setNavigationBarHidden:YES animated:YES];
 	[self.window makeKeyAndVisible];
-	[self.window addSubview:navController.view];
-    self.window.rootViewController = navController;
+	[self.window addSubview:self.navController.view];
+    self.window.rootViewController = self.navController;
 
 	[self GetIndex];
     return YES;

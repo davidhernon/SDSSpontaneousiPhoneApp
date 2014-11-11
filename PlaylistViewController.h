@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
+#import "PlaylistTableView.h"
+#import "PlayerViewController.h"
 
-@interface PlaylistViewController : UITableViewController
-@property Playlist* playlist;
-@property MediaItem *songWithMetaData;
-@property (strong, nonatomic) IBOutlet UIButton *editPlaylist;
--(IBAction)pickMoreSongs;
-
+@interface PlaylistViewController : UIViewController
+@property (strong, nonatomic) IBOutlet PlaylistTableView *playlistTableView;
 @end

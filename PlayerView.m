@@ -47,49 +47,15 @@
 	NSData *d = [self convertToData:self.currentMPMediaItem];
 }
 
--(NSData*)convertToData: (MPMediaItem*) item{
-	
-  // Get raw PCM data from the track
-  NSURL *assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
-  NSMutableData *data = [[NSMutableData alloc] init];
-  
-  const uint32_t sampleRate = 16000; // 16k sample/sec
-  const uint16_t bitDepth = 16; // 16 bit/sample/channel
-  const uint16_t channels = 2; // 2 channel/sample (stereo)
-  
-  NSDictionary *opts = [NSDictionary dictionary];
-  AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:assetURL options:opts];
-  AVAssetReader *reader = [[AVAssetReader alloc] initWithAsset:asset error:NULL];
-  NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
-							[NSNumber numberWithInt:kAudioFormatLinearPCM], AVFormatIDKey,
-							[NSNumber numberWithFloat:(float)sampleRate], AVSampleRateKey,
-							[NSNumber numberWithInt:bitDepth], AVLinearPCMBitDepthKey,
-							[NSNumber numberWithBool:NO], AVLinearPCMIsNonInterleaved,
-							[NSNumber numberWithBool:NO], AVLinearPCMIsFloatKey,
-							[NSNumber numberWithBool:NO], AVLinearPCMIsBigEndianKey, nil];
-  
-  AVAssetReaderTrackOutput *output = [[AVAssetReaderTrackOutput alloc] initWithTrack:[[asset tracks] objectAtIndex:0] outputSettings:settings];
-  [reader addOutput:output];
-  [reader startReading];
-  
-  // read the samples from the asset and append them subsequently
-  while ([reader status] != AVAssetReaderStatusCompleted) {
-	  CMSampleBufferRef sampleBuffer = [output copyNextSampleBuffer];
-	  if (sampleBuffer == NULL) continue;
-	  CMBlockBufferRef blockBuffer;
-	  AudioBufferList audioBufferList;
-	  
-	  CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer, NULL, &audioBufferList, sizeof(AudioBufferList), NULL, NULL, kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment, &blockBuffer);
-	  
-	  for (NSUInteger i = 0; i < audioBufferList.mNumberBuffers; i++) {
-		  AudioBuffer audioBuffer = audioBufferList.mBuffers[i];
-		  [self.audioOutputStream write:audioBuffer.mData maxLength:audioBuffer.mDataByteSize];
-	  }
-	  
-	  CFRelease(blockBuffer);
-	  CFRelease(sampleBuffer);
-  }
-  return data;
+- (IBAction)playPauseAction:(id)sender {
+	if(self.audioPlayer.rate == 0.0f){
+		self.audioPlayer.rate = 1.0f;
+		[sender setBackgroundImage:[UIImage imageNamed:@"Pause.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+	}
+	else{
+		self.audioPlayer.rate = 0.0f;
+		[sender setBackgroundImage:[UIImage imageNamed:@"Play.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+	}
 }
 
 - (IBAction)close:(id)sender {
@@ -132,6 +98,51 @@
 	[self.audioPlayer play];
 }
 
+-(NSData*)convertToData: (MPMediaItem*) item{
+	
+	// Get raw PCM data from the track
+	NSURL *assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
+	NSMutableData *data = [[NSMutableData alloc] init];
+	
+	const uint32_t sampleRate = 16000; // 16k sample/sec
+	const uint16_t bitDepth = 16; // 16 bit/sample/channel
+	const uint16_t channels = 2; // 2 channel/sample (stereo)
+	
+	NSDictionary *opts = [NSDictionary dictionary];
+	AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:assetURL options:opts];
+	AVAssetReader *reader = [[AVAssetReader alloc] initWithAsset:asset error:NULL];
+	NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSNumber numberWithInt:kAudioFormatLinearPCM], AVFormatIDKey,
+							  [NSNumber numberWithFloat:(float)sampleRate], AVSampleRateKey,
+							  [NSNumber numberWithInt:bitDepth], AVLinearPCMBitDepthKey,
+							  [NSNumber numberWithBool:NO], AVLinearPCMIsNonInterleaved,
+							  [NSNumber numberWithBool:NO], AVLinearPCMIsFloatKey,
+							  [NSNumber numberWithBool:NO], AVLinearPCMIsBigEndianKey, nil];
+	
+	AVAssetReaderTrackOutput *output = [[AVAssetReaderTrackOutput alloc] initWithTrack:[[asset tracks] objectAtIndex:0] outputSettings:settings];
+	[reader addOutput:output];
+	[reader startReading];
+	
+	// read the samples from the asset and append them subsequently
+	while ([reader status] != AVAssetReaderStatusCompleted) {
+		CMSampleBufferRef sampleBuffer = [output copyNextSampleBuffer];
+		if (sampleBuffer == NULL) continue;
+		CMBlockBufferRef blockBuffer;
+		AudioBufferList audioBufferList;
+		
+		CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer, NULL, &audioBufferList, sizeof(AudioBufferList), NULL, NULL, kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment, &blockBuffer);
+		
+		for (NSUInteger i = 0; i < audioBufferList.mNumberBuffers; i++) {
+			AudioBuffer audioBuffer = audioBufferList.mBuffers[i];
+			[self.audioOutputStream write:audioBuffer.mData maxLength:audioBuffer.mDataByteSize];
+		}
+		
+		CFRelease(blockBuffer);
+		CFRelease(sampleBuffer);
+	}
+	return data;
+}
+
 // Plays Next Item
 -(void)itemDidFinishPlaying:(NSNotification *) notification {
 	self.currentSongIndex++;
@@ -146,14 +157,4 @@
 	[self.audioPlayer play];
 }
 
-- (IBAction)playPauseAction:(id)sender {
-	if(self.audioPlayer.rate == 0.0f){
-		self.audioPlayer.rate = 1.0f;
-		[sender setBackgroundImage:[UIImage imageNamed:@"Pause.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-	}
-	else{
-		self.audioPlayer.rate = 0.0f;
-		[sender setBackgroundImage:[UIImage imageNamed:@"Play.jpg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-	}
-}
 @end

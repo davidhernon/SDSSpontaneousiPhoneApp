@@ -14,19 +14,27 @@
 
 @implementation PlaylistViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	//init playlist table
-	self.playlist = [Playlist sharedPlaylist];
-	[self.tableView reloadData];
-	//[self addSubview:[[PlaylistTableViewHeader alloc]initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)]];
-	//[window makeKeyAndVisible];
-
-	//[self.playerView nextSong];
-	
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		
+		//init playlist table
+	}
+	return self;
 }
 
-- (IBAction)pickMoreSongs
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (IBAction)nowPlaying
+{
+	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	[self.navigationController pushViewController:playerViewController animated:YES];
+}
+
+/*- (IBAction)pickMoreSongs
 {
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -71,7 +79,7 @@
 #pragma mark - TableView Delegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+	
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,11 +110,10 @@
 {
 	return self.playlist.playlist.count;
 }
-
+*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
