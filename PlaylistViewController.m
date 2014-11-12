@@ -14,20 +14,48 @@
 
 @implementation PlaylistViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	//init playlist table
-	self.playlist = [Playlist sharedPlaylist];
-	[self.tableView reloadData];
-    // TODO: make sure I send over the playlist data to person 2
-	//[self addSubview:[[PlaylistTableViewHeader alloc]initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)]];
-	//[window makeKeyAndVisible];
-
-	//[self.playerView nextSong];
-	
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {		
+	}
+	return self;
 }
 
-- (IBAction)pickMoreSongs
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+//addMoreSongs from MediaPicker (Local)
+- (IBAction)addMoreSongs:(id)sender {
+	//if there's nothing in the media library, just skip to the player
+	MPMediaQuery *everything = [MPMediaQuery songsQuery];
+	if (everything.items == nil || [everything.items count] == 0){
+		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+		[self.navigationController pushViewController:playlistViewController animated:YES];
+	}
+	
+	//else, show a picker so they can give us songs
+	MPMediaPickerController* picker = [[MPMediaPickerController alloc]initWithMediaTypes: MPMediaTypeAnyAudio];
+	[picker setDelegate: self];                                         // 2
+	[picker setAllowsPickingMultipleItems: YES];                        // 3
+	picker.prompt =
+	NSLocalizedString (@"Add songs to play",
+					   "Prompt in media item picker");
+	[self.navigationController pushViewController:picker animated: YES];    // 4
+}
+
+//Move to playerview, set navController status
+- (IBAction)nowPlaying
+{
+	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	self.navigationController.navigationBarHidden = FALSE;
+	playerViewController.navigationItem.hidesBackButton = YES;
+	playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:playerViewController action:@selector(hideNavBar)];
+	[self.navigationController pushViewController:playerViewController animated:YES];
+}
+
+/*- (IBAction)pickMoreSongs
 {
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -35,81 +63,24 @@
 -(IBAction)editPlaylist:(id)sender{
 	if(self.tableView.editing == NO){
 		self.tableView.editing = YES;
+>>>>>>> origin/martin
 	}
 	else{
 		self.tableView.editing = NO;
 	}
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 70;
-}
-
-/*-(void)addTracktoTable:(MediaItem*)passedSong
-{
-    [self.playlist.playlist addObject:passedSong];
-    // TODO:make sure bullshit
 }*/
 
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *cellIdentifier = @"MusicCell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	
-	if (!cell){
-		cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: cellIdentifier];
-	}
-	
-	self.songWithMetaData = [self.playlist.playlist objectAtIndex:indexPath.row];
-	NSString *songTitle = [self.songWithMetaData.localMediaItem valueForProperty: MPMediaItemPropertyTitle];
-	NSString *artistLabel = [self.songWithMetaData.localMediaItem valueForProperty: MPMediaItemPropertyArtist] ;
-	cell.textLabel.text = songTitle;
-	cell.detailTextLabel.text = artistLabel;
-	cell.imageView.image = self.songWithMetaData.image;
-	return cell;
-}
-
-#pragma mark - TableView Delegate Methods
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return YES;
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-	MediaItem *objToMove = [Playlist sharedPlaylist].playlist[sourceIndexPath.row];
-	[[Playlist sharedPlaylist].playlist removeObjectAtIndex:sourceIndexPath.row];
-	[[Playlist sharedPlaylist].playlist insertObject:objToMove atIndex:destinationIndexPath.row];
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		[[Playlist sharedPlaylist].playlist removeObjectAtIndex:indexPath.row];
-		[self.tableView reloadData];
-        // TODO: send over playlist data to other person?
-	}
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return self.playlist.playlist.count;
+//MediaPicker returns to Playlist after done picking
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker
+   didPickMediaItems: (MPMediaItemCollection *) collection {
+	[[Playlist sharedPlaylist] addMediaCollection:collection];
+	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+	[self.navigationController pushViewController:playlistViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

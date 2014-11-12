@@ -13,15 +13,18 @@
 	self.localMediaItem = [[MPMediaItem alloc]init];
 	self.user = @"NotSet";
 	return self;
+    //TODO: update line below to reflect reality of peers
+    self.peersThatHaveMedia = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], nil];
 }
--(MediaItem*)cloneForSerialize
+-(NSDictionary*)cloneForSerialize
 {
-    MediaItem* lightClone = [[MediaItem alloc] init];
-    lightClone.user = self.user;
-    lightClone.peersThatHaveMedia = self.peersThatHaveMedia;
-    lightClone.localMediaItem = nil;
-    lightClone.type = self.type;
-    lightClone.image = self.image;
+    NSMutableDictionary* lightClone = [[NSMutableDictionary alloc] init];
+    [lightClone setObject:self.user forKey:@"user"];
+    // TODO: fix peer issues
+   // [lightClone setObject:self.peersThatHaveMedia forKey:@"peers"];
+    [lightClone setObject:@"FROM_PEER" forKey:@"type"];
+    [lightClone setObject:[self.localMediaItem  valueForProperty:MPMediaItemPropertyTitle] forKey:@"songName"];
+    [lightClone setObject:[self.localMediaItem  valueForProperty:MPMediaItemPropertyArtist] forKey:@"artistName"];
     return lightClone;
 }
 

@@ -14,11 +14,11 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-jG-BOj">
                     <rect key="frame" x="222" y="377" width="45" height="34"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Skip" image="150px-Fast_forward_font_awesome.png">
+                    <state key="normal" title="nextSong" image="150px-Fast_forward_font_awesome.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="skip:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Xm-e8-jnh"/>
+                        <action selector="nextSong:" destination="iN0-l3-epB" eventType="touchUpInside" id="3Rd-jf-epZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-b5-lrV">
@@ -42,7 +42,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="back:" destination="iN0-l3-epB" eventType="touchUpInside" id="pyQ-bQ-Nqf"/>
+                        <action selector="previousSong:" destination="iN0-l3-epB" eventType="touchUpInside" id="2v2-Cp-jcy"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Syncrolicious" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-Ly-hHD">
@@ -52,14 +52,6 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFQ-kg-kxI">
-                    <rect key="frame" x="280" y="32" width="30" height="30"/>
-                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="30"/>
-                    <state key="normal" title="+">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="artistName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFs-eu-rNs">
                     <rect key="frame" x="94" y="108" width="128" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -71,29 +63,10 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-gI-vla">
                     <rect key="frame" x="115" y="353" width="86" height="81"/>
-                    <state key="normal" title="Button" image="Play.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" title="Button" image="Play.png"/>
+                    <state key="selected" image="pausebutton.png"/>
                     <connections>
                         <action selector="playPauseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="rIN-RD-eWZ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCh-J2-OTV">
-                    <rect key="frame" x="61" y="442" width="23" height="23"/>
-                    <state key="normal" title="Button" image="ios7-close.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="JoS-I4-3fD"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evp-ff-cP8">
-                    <rect key="frame" x="150" y="444" width="19" height="18"/>
-                    <state key="normal" title="Button" image="playlist.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="showPlaylist:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vil-ZV-RIV"/>
                     </connections>
                 </button>
             </subviews>
@@ -103,7 +76,6 @@
                 <outlet property="albumArt" destination="cC7-Qx-QVA" id="3Xe-lR-a1x"/>
                 <outlet property="artistName" destination="TFs-eu-rNs" id="tk0-qr-Cya"/>
                 <outlet property="playPause" destination="6lu-gI-vla" id="GpM-sE-ikv"/>
-                <outlet property="showPlaylist" destination="evp-ff-cP8" id="p2M-WR-vNh"/>
                 <outlet property="skipButton" destination="jzH-jG-BOj" id="cJo-Bt-L8J"/>
                 <outlet property="songTitle" destination="5rF-4F-3g0" id="xH1-xY-UL1"/>
             </connections>
@@ -114,7 +86,6 @@
         <image name="150px-Fast_forward_font_awesome.png" width="150" height="150"/>
         <image name="150px-Rewind_font_awesome.png" width="150" height="150"/>
         <image name="Play.png" width="170" height="170"/>
-        <image name="ios7-close.png" width="100" height="100"/>
-        <image name="playlist.png" width="512" height="512"/>
+        <image name="pausebutton.png" width="64" height="64"/>
     </resources>
 </document>

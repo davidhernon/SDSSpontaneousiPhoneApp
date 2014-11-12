@@ -33,6 +33,7 @@
 -(void)addTracktoTable:(MediaItem*)passedSong
 {
 	[[Playlist sharedPlaylist].playlist addObject:passedSong];
+    NSLog(@"[INFO] UIAndPlayer.PlaylistTableView.addTrackToTable - adding track to shared Playlist");
     //TODO: send data to peers
 }
 

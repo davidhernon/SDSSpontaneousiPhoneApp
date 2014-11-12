@@ -32,11 +32,10 @@
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1EA4801A068C1100061041 /* PlayerView.xib */; };
 		FC42DA0F1A0EDC8B00CFF8A8 /* PlaylistTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */; };
-		FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */; };
+		FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController.xib */; };
 		FC556D411A0ED74A00779124 /* 12193.png in Resources */ = {isa = PBXBuildFile; fileRef = FC556D401A0ED74A00779124 /* 12193.png */; };
-		FC556D471A0EDBF900779124 /* PlaylistViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FC556D461A0EDBF900779124 /* PlaylistViewController2.m */; };
+		FC556D471A0EDBF900779124 /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC556D461A0EDBF900779124 /* PlaylistViewController.m */; };
 		FC6BBCE91A0E7402003A0113 /* ios7-close.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCE81A0E7402003A0113 /* ios7-close.png */; };
-		FC6BBCED1A0E7572003A0113 /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */; };
 		FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCEF1A0E7726003A0113 /* SoundCloud-icon.png */; };
 		FC6BBCF71A0E9837003A0113 /* NowPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = FC6BBCF61A0E9837003A0113 /* NowPlaying.png */; };
 		FC6E2DCF19FB2FD60069CC83 /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */; };
@@ -60,6 +59,8 @@
 		FC9E43BF1A0C460D00DE919C /* playlist.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9E43BE1A0C460D00DE919C /* playlist.png */; };
 		FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */; };
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
+		FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */; };
+		FCC8F2731A12A8F100FF5316 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC8F2721A12A8F100FF5316 /* pausebutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,13 +108,11 @@
 		FC1EA4801A068C1100061041 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		FC42DA0D1A0EDC8B00CFF8A8 /* PlaylistTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistTableView.h; sourceTree = "<group>"; };
 		FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistTableView.m; sourceTree = "<group>"; };
-		FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistViewController2.xib; sourceTree = "<group>"; };
+		FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
 		FC556D401A0ED74A00779124 /* 12193.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12193.png; path = "SDSSpontaneous Images/12193.png"; sourceTree = "<group>"; };
-		FC556D451A0EDBF900779124 /* PlaylistViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController2.h; sourceTree = "<group>"; };
-		FC556D461A0EDBF900779124 /* PlaylistViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController2.m; sourceTree = "<group>"; };
+		FC556D451A0EDBF900779124 /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
+		FC556D461A0EDBF900779124 /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
 		FC6BBCE81A0E7402003A0113 /* ios7-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ios7-close.png"; path = "SDSSpontaneous Images/ios7-close.png"; sourceTree = "<group>"; };
-		FC6BBCEA1A0E7572003A0113 /* PlaylistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
-		FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistViewController.m; sourceTree = "<group>"; };
 		FC6BBCEF1A0E7726003A0113 /* SoundCloud-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SoundCloud-icon.png"; path = "SDSSpontaneous Images/SoundCloud-icon.png"; sourceTree = "<group>"; };
 		FC6BBCF61A0E9837003A0113 /* NowPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NowPlaying.png; path = "SDSSpontaneous Images/NowPlaying.png"; sourceTree = "<group>"; };
 		FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaItem.h; sourceTree = "<group>"; };
@@ -142,6 +141,8 @@
 		FCA843B41A06CFE600BD8713 /* TDAudioOutputStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAudioOutputStreamer.h; sourceTree = "<group>"; };
 		FCA843B51A06CFE600BD8713 /* TDAudioOutputStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAudioOutputStreamer.m; sourceTree = "<group>"; };
 		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		FCC8F2721A12A8F100FF5316 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pausebutton.png; path = "SDSSpontaneous Images/pausebutton.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,15 +280,14 @@
 		FCB46A7A1A067CEE00D8A4FA /* UI and Player */ = {
 			isa = PBXGroup;
 			children = (
-				FC556D451A0EDBF900779124 /* PlaylistViewController2.h */,
-				FC556D461A0EDBF900779124 /* PlaylistViewController2.m */,
-				FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController2.xib */,
+				FC556D451A0EDBF900779124 /* PlaylistViewController.h */,
+				FC556D461A0EDBF900779124 /* PlaylistViewController.m */,
+				FC42DA151A0EEE4C00CFF8A8 /* PlaylistViewController.xib */,
 				FC42DA0D1A0EDC8B00CFF8A8 /* PlaylistTableView.h */,
 				FC42DA0E1A0EDC8B00CFF8A8 /* PlaylistTableView.m */,
-				FC6BBCEA1A0E7572003A0113 /* PlaylistViewController.h */,
-				FC6BBCEB1A0E7572003A0113 /* PlaylistViewController.m */,
 				1CBF98D819EA1C7D001F643F /* PlayerViewController.h */,
 				1CBF98D919EA1C7D001F643F /* PlayerViewController.m */,
+				FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */,
 				FC76394619F451A8001D0FE6 /* PlayerView.h */,
 				FC76394719F451A8001D0FE6 /* PlayerView.m */,
 				FC1EA4801A068C1100061041 /* PlayerView.xib */,
@@ -318,6 +318,7 @@
 				FC6BBCF61A0E9837003A0113 /* NowPlaying.png */,
 				FC9E43AD1A0C40B100DE919C /* 320x480.jpg */,
 				FC9E43B71A0C43CD00DE919C /* 150px-Rewind_font_awesome.png */,
+				FCC8F2721A12A8F100FF5316 /* pausebutton.png */,
 				FC9E43AE1A0C40B100DE919C /* not_available.gif */,
 				FC9E43AA1A0C063A00DE919C /* logos-02.png */,
 				FC7A99E11A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg */,
@@ -374,7 +375,7 @@
 				ORGANIZATIONNAME = "Silent Disco Squad";
 				TargetAttributes = {
 					1CBF988E19E9D6C0001F643F = {
-						DevelopmentTeam = 6ZUB2TR58V;
+						DevelopmentTeam = 72PSY3QB44;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -388,7 +389,7 @@
 						};
 					};
 					1CBF98A919E9D6C1001F643F = {
-						DevelopmentTeam = 6ZUB2TR58V;
+						DevelopmentTeam = 72PSY3QB44;
 						TestTargetID = 1CBF988E19E9D6C0001F643F;
 					};
 				};
@@ -429,15 +430,17 @@
 				FC6BBCE91A0E7402003A0113 /* ios7-close.png in Resources */,
 				FC9E43A11A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
-				FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController2.xib in Resources */,
+				FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController.xib in Resources */,
 				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
 				FC9E43AB1A0C063A00DE919C /* logos-02.png in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */,
 				1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */,
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
+				FCC8F2731A12A8F100FF5316 /* pausebutton.png in Resources */,
 				FC556D411A0ED74A00779124 /* 12193.png in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
+				FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,10 +464,9 @@
 				FC42DA0F1A0EDC8B00CFF8A8 /* PlaylistTableView.m in Sources */,
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */,
-				FC6BBCED1A0E7572003A0113 /* PlaylistViewController.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
 				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
-				FC556D471A0EDBF900779124 /* PlaylistViewController2.m in Sources */,
+				FC556D471A0EDBF900779124 /* PlaylistViewController.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
 				1C77931B1A106DAC00D851C3 /* SessionController.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,
@@ -601,7 +603,7 @@
 					"$PROJECT_DIR/**",
 				);
 				INFOPLIST_FILE = "SDSIPhoneApp/SDSIPhoneApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-all_load",
@@ -631,7 +633,7 @@
 					"$PROJECT_DIR/**",
 				);
 				INFOPLIST_FILE = "SDSIPhoneApp/SDSIPhoneApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-all_load",

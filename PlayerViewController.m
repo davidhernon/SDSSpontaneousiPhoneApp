@@ -13,54 +13,29 @@
 
 @implementation PlayerViewController
 
-+ sharedPlayerViewController
-{
-	static PlayerViewController *sharedPlayerViewController = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		sharedPlayerViewController = [[self alloc] initWithNibName:@"PlayerViewController" bundle:nil];
-	});
-	return sharedPlayerViewController;
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		//init player
-		self.playerView =[[PlayerView alloc] init:CGRectMake(0.0,0.0,0.0,0.0)];
-		[self.view addSubview:self.playerView];
-		[self.view bringSubviewToFront:self.playerView];
-		
+		self.view =[[PlayerView alloc] init:CGRectMake(0.0,0.0,0.0,0.0)];
 	}
 	return self;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
--(void)shuffle{
-	[[Playlist sharedPlaylist] shuffle];
+-(void)hideNavBar{
+	self.navigationController.navigationBarHidden = TRUE;
+	[self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - SessionControllerDelegate protocol conformance
-
-- (void)sessionDidChangeState
-{
-	NSLog(@"session did change state");
-	// Ensure UI updates occur on the main queue.
-	//dispatch_async(dispatch_get_main_queue(), ^{
-	//	[self.tableView reloadData];
-	//});
-}
-
-
-
 
 @end

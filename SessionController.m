@@ -209,7 +209,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     if(error || jsonDict == nil){
         NSLog(@"[ERROR] Networking.SessionController.session.didReceiveCallback - did not reconstruct JSON data from peer, %@", error);
     }
-    NSLog(@"[INFO] Networking.SessionController.session.didReceiveCallback - reconstructed JSON data from peer");
+    NSLog(@"[INFO] Networking.SessionController.session.didReceiveCallback - reconstructed JSON data from peer: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     //do Something with jsonDict
     // set jsonDict to sharedPlaylist
     
@@ -365,7 +365,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 {
     NSMutableDictionary * playListDictionary = [[NSMutableDictionary alloc] initWithCapacity:[Playlist sharedPlaylist].count];
     for(int i=0; i < [[Playlist sharedPlaylist] count]; i++){
-        [playListDictionary setObject:[[Playlist sharedPlaylist].playlist[i] cloneForSerialize] forKey:[NSNumber numberWithInt:1]];
+        [playListDictionary setObject:[[Playlist sharedPlaylist].playlist[i] cloneForSerialize] forKey:[NSString stringWithFormat:@"%d",i]];
     }
     return playListDictionary;
 }

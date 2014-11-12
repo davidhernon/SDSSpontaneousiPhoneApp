@@ -46,6 +46,7 @@ its delegate method should explicitly dispatch or schedule that work
 -(void)sendPlaylistAsJSON:(NSArray *)myArray;
 - (NSDictionary *)createDictionaryFromSongListAndPeers:(NSArray *)twoDArrayOfPeers withSongStrings:(NSArray *)songStrings;
 - (MCSession *) returnSession;
+- (void) sendPlayListToPeers;
 
 @end
 
@@ -54,7 +55,5 @@ its delegate method should explicitly dispatch or schedule that work
 
 // Session changed state - connecting, connected and disconnected peers changed
 - (void)sessionDidChangeState;
-
-
 
 @end

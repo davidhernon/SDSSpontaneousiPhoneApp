@@ -34,6 +34,7 @@ static Playlist *sharedPlaylist = nil;
 {
 	NSLog(@"added to Playlist");
 	[self.playlist addObject:mediaItem];
+    NSLog(@"[INFO] UIAndPlayer.PlaylistTableView.addTrack - adding track to shared Playlist");
     //TODO: send over playlist to peers
 }
 
@@ -63,8 +64,17 @@ static Playlist *sharedPlaylist = nil;
 		m.localMediaItem = track;
 		m.user = @"self";
 		m.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Uncle_Sam_(pointing_finger)" ofType:@"jpg"]];
+        NSLog(@"[INFO] UIAndPlayer.Playlist.addMediaCollection - adding track to shared Playlist");
 		[self.playlist addObject:m];
+        [[self getSessionController] sendPlayListToPeers];
 	}
+}
+
+- (SessionController *)getSessionController
+{
+    AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate.sessionController;
+    
 }
 
 

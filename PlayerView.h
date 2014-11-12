@@ -21,15 +21,15 @@
 @property (strong, nonatomic) AVPlayer *audioPlayer;
 @property MPMediaItem* currentMPMediaItem;
 @property int currentSongIndex;
+@property bool alreadyRun;
 @property (strong, nonatomic) IBOutlet UIButton *playPause;
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel *artistName;
 @property (strong, nonatomic) IBOutlet UIButton *skipButton;
 @property (strong, nonatomic) IBOutlet UIImageView *albumArt;
-- (IBAction)close:(id)sender;
-- (IBAction)back:(id)sender;
+- (IBAction)previousSong:(id)sender;
 - (IBAction)send:(id)sender;
-- (IBAction)skip:(id)sender;
+- (IBAction)nextSong:(id)sender;
 - (IBAction)playPauseAction:(id)sender;
 -(void)nextSong;
 -(id)init: (CGRect)frame;

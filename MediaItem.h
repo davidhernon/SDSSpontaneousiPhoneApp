@@ -12,10 +12,7 @@
 @property NSString* user;
 @property NSArray* peersThatHaveMedia;
 @property MPMediaItem* localMediaItem;
-@property enum MediaType type;
+@property NSString* type;
 @property UIImage* image;
--(MediaItem*)cloneForSerialize;
+-(NSDictionary*)cloneForSerialize;
 @end
-
-//enum MEDIATYPE (LOCAL, FROMPEER, SOUNDCLOUD);
-enum MediaType {Local, FromPeers, SoundCloud};
