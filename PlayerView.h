@@ -18,7 +18,6 @@
 @property (strong, nonatomic) AVPlayer *audioPlayer;
 @property MPMediaItem* currentMPMediaItem;
 @property int currentSongIndex;
-@property bool alreadyRun;
 @property (strong, nonatomic) IBOutlet UIButton *playPause;
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel *artistName;

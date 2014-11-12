@@ -13,4 +13,5 @@
 
 @interface PlaylistViewController : UIViewController
 @property (strong, nonatomic) IBOutlet PlaylistTableView *playlistTableView;
+@property PlayerViewController *playerViewController;
 @end

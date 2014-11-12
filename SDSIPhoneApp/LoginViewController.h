@@ -14,5 +14,5 @@
 -(IBAction)testNotification:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UIButton *nextScreenButton;
-
+@property PlaylistViewController *playlistViewController;
 @end
