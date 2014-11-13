@@ -50,18 +50,19 @@
 	self.songTitle.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyTitle];
 	self.artistName.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtist];
 	
-	/*MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
-	 //self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	 
-	 if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
-	 {
+	MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
+	UIImage *albumArtworkImage = NULL;
+	if (artWork != nil) {
+		albumArtworkImage = [artWork imageWithSize:CGSizeMake(250.0, 250.0)];
+	}
+	if (albumArtworkImage) {
+		self.albumArt.image = albumArtworkImage;
+	}
+	else{
+		NSLog(@"No ALBUM ARTWORK");
 		self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
-	 }
-	 else //Otherwise set the artwork found in the library.
-	 {
-		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	 }*/
-	
+	}
+
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
