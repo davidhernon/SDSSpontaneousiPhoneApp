@@ -63,8 +63,8 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lu-gI-vla">
                     <rect key="frame" x="115" y="353" width="86" height="81"/>
-                    <state key="normal" title="Button" image="Play.png"/>
-                    <state key="selected" image="pausebutton.png"/>
+                    <state key="normal" title="Button" image="pausebutton.png"/>
+                    <state key="selected" image="Play.png"/>
                     <connections>
                         <action selector="playPauseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="rIN-RD-eWZ"/>
                     </connections>

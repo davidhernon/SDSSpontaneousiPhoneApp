@@ -18,7 +18,6 @@
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		self.playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
 	}
 	return self;
 }
@@ -50,6 +49,9 @@
 {
 	self.navigationController.navigationBarHidden = FALSE;
 	self.playerViewController.navigationItem.hidesBackButton = YES;
+	if(!self.playerViewController){
+	   self.playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	}
 	self.playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.playerViewController action:@selector(hideNavBar)];
 	[self.navigationController pushViewController:self.playerViewController animated:YES];
 }

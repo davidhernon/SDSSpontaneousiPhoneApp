@@ -76,11 +76,11 @@
 - (IBAction)playPauseAction:(id)sender {
 	if(self.audioPlayer.rate == 0.0f){
 		self.audioPlayer.rate = 1.0f;
-		self.playPause.selected = YES;
+		self.playPause.selected = NO;
 	}
 	else{
 		self.audioPlayer.rate = 0.0f;
-		self.playPause.selected = NO;
+		self.playPause.selected = YES;
 	}
 }
 
