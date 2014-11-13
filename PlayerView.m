@@ -23,6 +23,7 @@
 		self.audioPlayer = [[AVPlayer alloc] init];
 		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
 		self.currentSongIndex = 0;
+		[self prepareAudioSession];
 		[self loadAndPlayPlayer];
 	}
 	return self;
@@ -154,5 +155,17 @@
 		CFRelease(sampleBuffer);
 	}
 	return data;
+}
+
+-(void) prepareAudioSession{
+	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+ 
+	NSError *setCategoryError = nil;
+	BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+	if (!success) { /* handle the error condition */ }
+ 
+	NSError *activationError = nil;
+	success = [audioSession setActive:YES error:&activationError];
+	if (!success) { /* handle the error condition */ }
 }
 @end
