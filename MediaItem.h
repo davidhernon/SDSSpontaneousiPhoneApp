@@ -15,4 +15,7 @@
 @property NSString* type;
 @property UIImage* image;
 -(NSDictionary*)cloneForSerialize;
+-(id)initWithDictionary:(NSDictionary*)dict;
 @end
+
+enum MediaType {LOCAL, PEER};

@@ -90,11 +90,15 @@
 
 - (IBAction)nextScreen
 {
+    /*AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.sessionController sendTestString];
+    return;*/
 	//if there's nothing in the media library, just skip to the player
 	MPMediaQuery *everything = [MPMediaQuery songsQuery];
 	if (everything.items == nil || [everything.items count] == 0){
 		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
 		[self.navigationController pushViewController:playlistViewController animated:YES];
+        return;
 	}
 	
 	//else, show a picker so they can give us songs
@@ -105,6 +109,12 @@
 	NSLocalizedString (@"Add songs to play",
 					   "Prompt in media item picker");
 	[self.navigationController pushViewController:picker animated: YES];    // 4
+}
+
+-(IBAction)sendTest
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.sessionController sendTestString];
 }
 
 @end

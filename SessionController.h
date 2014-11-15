@@ -16,6 +16,7 @@
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "Playlist.h"
+#import "MediaItem.h"
 //#import "Appdelegate.h"
 //#import "Playlist.h"
 
@@ -47,6 +48,7 @@ its delegate method should explicitly dispatch or schedule that work
 - (NSDictionary *)createDictionaryFromSongListAndPeers:(NSArray *)twoDArrayOfPeers withSongStrings:(NSArray *)songStrings;
 - (MCSession *) returnSession;
 - (void) sendPlayListToPeers;
+- (void) sendTestString;
 
 @end
 

@@ -12,9 +12,21 @@
 -(id)init{
 	self.localMediaItem = [[MPMediaItem alloc]init];
 	self.user = @"NotSet";
-	return self;
     //TODO: update line below to reflect reality of peers
     self.peersThatHaveMedia = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], nil];
+    return self;
+}
+
+//TODO: update self.user to be user that set the song this requires a change to how Dictionary is built
+-(id)initWithDictionary:(NSDictionary *)dict
+{
+    self.localMediaItem = nil;
+    self.user = @"NotSet";
+    self.peersThatHaveMedia = [[NSArray alloc] initWithObjects:[dict objectForKey:@"user"], nil];
+    self.type = @"FROM_PEER";
+    self.image = [[UIImage alloc] init];
+    
+    return self;
 }
 -(NSDictionary*)cloneForSerialize
 {
@@ -27,6 +39,7 @@
     [lightClone setObject:[self.localMediaItem  valueForProperty:MPMediaItemPropertyArtist] forKey:@"artistName"];
     return lightClone;
 }
+
 
 @end
 

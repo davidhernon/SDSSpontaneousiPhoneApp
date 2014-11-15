@@ -58,6 +58,7 @@ static Playlist *sharedPlaylist = nil;
     // TODO:send over playlist to peers
 }
 
+//Send Playlist Of Peers
 -(void) addMediaCollection:(MPMediaItemCollection*)collection{
 	for(MPMediaItem* track in collection.items){
 		MediaItem* m = [[MediaItem alloc]init];
