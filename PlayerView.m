@@ -20,12 +20,11 @@
 								  frame.origin.y,
 								  [self frame].size.width,
 								  [self frame].size.height)];
-		if(self.alreadyRun){
-			self.audioPlayer = [[AVPlayer alloc] init];
-			self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
-			self.currentSongIndex = 0;
-			[self loadAndPlayPlayer];
-		}
+		self.audioPlayer = [[AVPlayer alloc] init];
+		self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"320x480.jpg"]];
+		self.currentSongIndex = 0;
+		[self prepareAudioSession];
+		[self loadAndPlayPlayer];
 	}
 	return self;
 }
@@ -52,18 +51,19 @@
 	self.songTitle.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyTitle];
 	self.artistName.text = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtist];
 	
-	/*MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
-	 //self.albumArt.image = [artWork imageWithSize:CGSizeMake(self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	 
-	 if (CGSizeEqualToSize(artWork.bounds.size, CGSizeZero))
-	 {
+	MPMediaItemArtwork *artWork = [mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyArtwork];
+	UIImage *albumArtworkImage = NULL;
+	if (artWork != nil) {
+		albumArtworkImage = [artWork imageWithSize:CGSizeMake(250.0, 250.0)];
+	}
+	if (albumArtworkImage) {
+		self.albumArt.image = albumArtworkImage;
+	}
+	else{
+		NSLog(@"No ALBUM ARTWORK");
 		self.albumArt.image = [UIImage imageNamed:@"logos-02.png"];
-	 }
-	 else //Otherwise set the artwork found in the library.
-	 {
-		self.albumArt.image = [artWork imageWithSize: CGSizeMake (self.albumArt.frame.size.width, self.albumArt.frame.size.height)];
-	 }*/
-	
+	}
+
 	AVPlayerItem * currentItem = [AVPlayerItem playerItemWithURL:[mediaItem.localMediaItem valueForProperty:MPMediaItemPropertyAssetURL]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:currentItem];
 	[self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
@@ -78,11 +78,11 @@
 - (IBAction)playPauseAction:(id)sender {
 	if(self.audioPlayer.rate == 0.0f){
 		self.audioPlayer.rate = 1.0f;
-		self.playPause.selected = YES;
+		self.playPause.selected = NO;
 	}
 	else{
 		self.audioPlayer.rate = 0.0f;
-		self.playPause.selected = NO;
+		self.playPause.selected = YES;
 	}
 }
 
@@ -226,5 +226,16 @@
     NSLog(@"[INFO] UIAndPlayer.PlayerView.sendPlayListToPeers - converted playlist to data and sent it successfully. JSON String was: %@", jsonString);
 }
 
+-(void) prepareAudioSession{
+	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+ 
+	NSError *setCategoryError = nil;
+	BOOL success = [audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+	if (!success) { /* handle the error condition */ }
+ 
+	NSError *activationError = nil;
+	success = [audioSession setActive:YES error:&activationError];
+	if (!success) { /* handle the error condition */ }
+}
 
 @end

@@ -17,7 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	if (self) {		
+	if (self) {
 	}
 	return self;
 }
@@ -31,8 +31,7 @@
 	//if there's nothing in the media library, just skip to the player
 	MPMediaQuery *everything = [MPMediaQuery songsQuery];
 	if (everything.items == nil || [everything.items count] == 0){
-		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
-		[self.navigationController pushViewController:playlistViewController animated:YES];
+		[self.navigationController pushViewController:self.playerViewController animated:YES];
 	}
 	
 	//else, show a picker so they can give us songs
@@ -48,11 +47,13 @@
 //Move to playerview, set navController status
 - (IBAction)nowPlaying
 {
-	PlayerViewController *playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
 	self.navigationController.navigationBarHidden = FALSE;
-	playerViewController.navigationItem.hidesBackButton = YES;
-	playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:playerViewController action:@selector(hideNavBar)];
-	[self.navigationController pushViewController:playerViewController animated:YES];
+	self.playerViewController.navigationItem.hidesBackButton = YES;
+	if(!self.playerViewController){
+	   self.playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
+	}
+	self.playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.playerViewController action:@selector(hideNavBar)];
+	[self.navigationController pushViewController:self.playerViewController animated:YES];
 }
 
 /*- (IBAction)pickMoreSongs

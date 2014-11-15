@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 Silent Disco Squad. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "SpontanouesLobbyController.h"
 
-@interface LoginViewController ()
+@interface SpontanouesLobbyController ()
 
 @end
 
-@implementation LoginViewController
+@implementation SpontanouesLobbyController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+		self.playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+		self.loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     }
     return self;
 }
@@ -84,8 +85,7 @@
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection {
 	[[Playlist sharedPlaylist] addMediaCollection:collection];
-	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
-	[self.navigationController pushViewController:playlistViewController animated:YES];
+	[self.navigationController pushViewController:self.playlistViewController animated:YES];
 }
 
 - (IBAction)nextScreen
@@ -96,8 +96,7 @@
 	//if there's nothing in the media library, just skip to the player
 	MPMediaQuery *everything = [MPMediaQuery songsQuery];
 	if (everything.items == nil || [everything.items count] == 0){
-		PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
-		[self.navigationController pushViewController:playlistViewController animated:YES];
+		[self.navigationController pushViewController:self.playlistViewController animated:YES];
         return;
 	}
 	
@@ -111,10 +110,15 @@
 	[self.navigationController pushViewController:picker animated: YES];    // 4
 }
 
+
 -(IBAction)sendTest
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.sessionController sendTestString];
+}
+
+- (IBAction)testLogin:(id)sender {
+	[self.navigationController pushViewController:self.loginViewController animated:YES];
 }
 
 @end
