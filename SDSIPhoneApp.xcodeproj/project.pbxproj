@@ -25,8 +25,8 @@
 		1CBF98AE19E9D6C1001F643F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBF989619E9D6C1001F643F /* UIKit.framework */; };
 		1CBF98B619E9D6C1001F643F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98B419E9D6C1001F643F /* InfoPlist.strings */; };
 		1CBF98B819E9D6C1001F643F /* SDSIPhoneAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98B719E9D6C1001F643F /* SDSIPhoneAppTests.m */; };
-		1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98CA19E9E632001F643F /* LoginViewController.m */; };
-		1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98CB19E9E632001F643F /* LoginViewController.xib */; };
+		1CBF98CC19E9E632001F643F /* SpontanouesLobbyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98CA19E9E632001F643F /* SpontanouesLobbyController.m */; };
+		1CBF98CD19E9E632001F643F /* SpontanouesLobbyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98CB19E9E632001F643F /* SpontanouesLobbyController.xib */; };
 		1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF98D919EA1C7D001F643F /* PlayerViewController.m */; };
 		1CBF98DE19EA1E05001F643F /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF98DD19EA1E05001F643F /* profile_default.png */; };
 		FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1EA4801A068C1100061041 /* PlayerView.xib */; };
@@ -61,6 +61,9 @@
 		FCC33EFF19F587E600015BA9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC33EFE19F587E600015BA9 /* GameKit.framework */; };
 		FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */; };
 		FCC8F2731A12A8F100FF5316 /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = FCC8F2721A12A8F100FF5316 /* pausebutton.png */; };
+		FCD72C2D1A153DF600A579CD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD72C2B1A153DF600A579CD /* LoginViewController.m */; };
+		FCD72C2E1A153DF600A579CD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD72C2C1A153DF600A579CD /* LoginViewController.xib */; };
+		FCE87E511A1536D60047EDC7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FCE87E501A1536D60047EDC7 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,9 +100,9 @@
 		1CBF98B319E9D6C1001F643F /* SDSIPhoneAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SDSIPhoneAppTests-Info.plist"; sourceTree = "<group>"; };
 		1CBF98B519E9D6C1001F643F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1CBF98B719E9D6C1001F643F /* SDSIPhoneAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDSIPhoneAppTests.m; sourceTree = "<group>"; };
-		1CBF98C919E9E632001F643F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = SDSIPhoneApp/LoginViewController.h; sourceTree = "<group>"; };
-		1CBF98CA19E9E632001F643F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = SDSIPhoneApp/LoginViewController.m; sourceTree = "<group>"; };
-		1CBF98CB19E9E632001F643F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = SDSIPhoneApp/LoginViewController.xib; sourceTree = "<group>"; };
+		1CBF98C919E9E632001F643F /* SpontanouesLobbyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpontanouesLobbyController.h; path = SDSIPhoneApp/SpontanouesLobbyController.h; sourceTree = "<group>"; };
+		1CBF98CA19E9E632001F643F /* SpontanouesLobbyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpontanouesLobbyController.m; path = SDSIPhoneApp/SpontanouesLobbyController.m; sourceTree = "<group>"; };
+		1CBF98CB19E9E632001F643F /* SpontanouesLobbyController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpontanouesLobbyController.xib; path = SDSIPhoneApp/SpontanouesLobbyController.xib; sourceTree = "<group>"; };
 		1CBF98D819EA1C7D001F643F /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		1CBF98D919EA1C7D001F643F /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		1CBF98DD19EA1E05001F643F /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile_default.png; path = SDSIPhoneApp/Images.xcassets/profile_default.png; sourceTree = "<group>"; };
@@ -143,6 +146,10 @@
 		FCC33EFE19F587E600015BA9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		FCC8F2721A12A8F100FF5316 /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pausebutton.png; path = "SDSSpontaneous Images/pausebutton.png"; sourceTree = "<group>"; };
+		FCD72C2A1A153DF600A579CD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FCD72C2B1A153DF600A579CD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FCD72C2C1A153DF600A579CD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		FCE87E501A1536D60047EDC7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,14 +297,18 @@
 				FCC8F2701A125EA100FF5316 /* PlayerViewController.xib */,
 				FC76394619F451A8001D0FE6 /* PlayerView.h */,
 				FC76394719F451A8001D0FE6 /* PlayerView.m */,
+				FCE87E501A1536D60047EDC7 /* Settings.bundle */,
 				FC1EA4801A068C1100061041 /* PlayerView.xib */,
 				FC76394919F45AC2001D0FE6 /* Playlist.h */,
 				FC76394A19F45AC2001D0FE6 /* Playlist.m */,
 				FC6E2DCD19FB2FD60069CC83 /* MediaItem.h */,
 				FC6E2DCE19FB2FD60069CC83 /* MediaItem.m */,
-				1CBF98C919E9E632001F643F /* LoginViewController.h */,
-				1CBF98CA19E9E632001F643F /* LoginViewController.m */,
-				1CBF98CB19E9E632001F643F /* LoginViewController.xib */,
+				FCD72C2A1A153DF600A579CD /* LoginViewController.h */,
+				FCD72C2B1A153DF600A579CD /* LoginViewController.m */,
+				FCD72C2C1A153DF600A579CD /* LoginViewController.xib */,
+				1CBF98C919E9E632001F643F /* SpontanouesLobbyController.h */,
+				1CBF98CA19E9E632001F643F /* SpontanouesLobbyController.m */,
+				1CBF98CB19E9E632001F643F /* SpontanouesLobbyController.xib */,
 			);
 			name = "UI and Player";
 			sourceTree = "<group>";
@@ -431,7 +442,7 @@
 				FC9E43A11A0BEF8F00DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				FC9E43AF1A0C40B100DE919C /* 3-in-35-Beautiful-Music-Album-Covers.jpeg in Resources */,
 				FC42DA161A0EEE4C00CFF8A8 /* PlaylistViewController.xib in Resources */,
-				1CBF98CD19E9E632001F643F /* LoginViewController.xib in Resources */,
+				1CBF98CD19E9E632001F643F /* SpontanouesLobbyController.xib in Resources */,
 				FC9E43AB1A0C063A00DE919C /* logos-02.png in Resources */,
 				FC6F52DA19F1D474002EE6CE /* [FDM] Clean Bandit feat. Jess Glynne-Rather Be (Steve James Remix) [320 kbps] [vk.comfreshdancemusic] -www.mrtzcmp3.net - 1A - 125.mp3 in Resources */,
 				FC6BBCF01A0E7726003A0113 /* SoundCloud-icon.png in Resources */,
@@ -439,6 +450,8 @@
 				FC1EA4811A068C1100061041 /* PlayerView.xib in Resources */,
 				FCC8F2731A12A8F100FF5316 /* pausebutton.png in Resources */,
 				FC556D411A0ED74A00779124 /* 12193.png in Resources */,
+				FCD72C2E1A153DF600A579CD /* LoginViewController.xib in Resources */,
+				FCE87E511A1536D60047EDC7 /* Settings.bundle in Resources */,
 				FC7A99E21A0BE6DA00C2BEB4 /* Uncle_Sam_(pointing_finger).jpg in Resources */,
 				FCC8F2711A125EA100FF5316 /* PlayerViewController.xib in Resources */,
 			);
@@ -465,8 +478,9 @@
 				FC76394819F451A8001D0FE6 /* PlayerView.m in Sources */,
 				FCA843B61A06CFE600BD8713 /* TDAudioOutputStreamer.m in Sources */,
 				1CBF989F19E9D6C1001F643F /* main.m in Sources */,
-				1CBF98CC19E9E632001F643F /* LoginViewController.m in Sources */,
+				1CBF98CC19E9E632001F643F /* SpontanouesLobbyController.m in Sources */,
 				FC556D471A0EDBF900779124 /* PlaylistViewController.m in Sources */,
+				FCD72C2D1A153DF600A579CD /* LoginViewController.m in Sources */,
 				1CBF98DB19EA1C7D001F643F /* PlayerViewController.m in Sources */,
 				FCB46A731A067CD600D8A4FA /* SessionController.m in Sources */,
 				FC76394B19F45AC2001D0FE6 /* Playlist.m in Sources */,

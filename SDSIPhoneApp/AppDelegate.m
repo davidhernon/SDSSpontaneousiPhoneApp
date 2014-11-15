@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+#import "SpontanouesLobbyController.h"
 //#import "SCSoundCloud.h"
 //#import "SCUI.h"
 
@@ -33,7 +33,7 @@
 
 	[self registerForNotifications:application];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    SpontanouesLobbyController *viewController = [[SpontanouesLobbyController alloc] initWithNibName:@"SpontanouesLobbyController" bundle:nil];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	[navController setNavigationBarHidden:YES animated:YES];
 	[self.window makeKeyAndVisible];
@@ -70,6 +70,46 @@
 	}
 	return TRUE;
 }
+
+-(NSData*) sendHTTPGet:(NSString*)URL
+{
+	NSURLSession *defaultSession = [NSURLSession sharedSession];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]
+														   cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+													   timeoutInterval:10];
+	
+	[request setHTTPMethod: @"GET"];
+	
+	NSError *requestError;
+	NSURLResponse *urlResponse = nil;
+	
+	
+	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+	return response;
+}
+
++(NSData *)sendHTTPPost:(NSString*)urlString:(NSString*)jsonString
+{
+	NSData* responseData = nil;
+	NSURL *url=[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	responseData = [NSMutableData data] ;
+	NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
+	NSString *bodydata=[NSString stringWithFormat:@"data=%@",jsonString];
+	
+	[request setHTTPMethod:@"POST"];
+	NSData *req=[NSData dataWithBytes:[bodydata UTF8String] length:[bodydata length]];
+	[request setHTTPBody:req];
+	NSURLResponse* response;
+	NSError* error = nil;
+	responseData = [NSURLConnection sendSynchronousRequest:request     returningResponse:&response error:&error];
+	NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"the final output is:%@",responseString);
+	
+	return responseData;
+}
+
+
 
 //This method is called upon succesful push notification registration. It parses the device token for this device, and sets it
 //in user defualts. Then it calls the DataUpdater (I made it) protocol that the login screen fulfills.

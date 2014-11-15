@@ -6,19 +6,20 @@
 //  Copyright (c) 2014 Silent Disco Squad. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "SpontanouesLobbyController.h"
 
-@interface LoginViewController ()
+@interface SpontanouesLobbyController ()
 
 @end
 
-@implementation LoginViewController
+@implementation SpontanouesLobbyController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		self.playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
+		self.loginViewController = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     }
     return self;
 }
@@ -105,4 +106,7 @@
 	[self.navigationController pushViewController:picker animated: YES];    // 4
 }
 
+- (IBAction)testLogin:(id)sender {
+	[self.navigationController pushViewController:self.loginViewController animated:YES];
+}
 @end

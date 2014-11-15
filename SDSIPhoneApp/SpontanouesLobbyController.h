@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PlaylistViewController.h"
-@interface LoginViewController : UIViewController<MPMediaPickerControllerDelegate>
-
+#import "LoginViewController.h"
+@interface SpontanouesLobbyController : UIViewController<MPMediaPickerControllerDelegate>
 -(IBAction)nextScreen;
 -(IBAction)testNotification:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UIButton *nextScreenButton;
+- (IBAction)testLogin:(id)sender;
 @property PlaylistViewController *playlistViewController;
+@property LoginViewController *loginViewController;
 @end
