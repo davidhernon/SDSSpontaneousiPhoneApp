@@ -10,6 +10,10 @@
 	<string>SDSIPhoneApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++505</key>
+		<string>svn://cserg0.site.uottawa.ca/projetseg/trunk</string>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++5101</key>
+		<string>svn://cserg0.site.uottawa.ca/projetseg/trunk/SDSSpontaneousiPhoneApp</string>
 		<key>6D2FA19380A2974DA80B1E176A73194A4CB4833A</key>
 		<string>https://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
 	</dict>
@@ -17,8 +21,19 @@
 	<string>SDSIPhoneApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++505</key>
+		<string>../../..</string>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++5101</key>
+		<string>../../../SDSSpontaneousiPhoneApp</string>
 		<key>6D2FA19380A2974DA80B1E176A73194A4CB4833A</key>
 		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++505</key>
+		<string>svn://cserg0.site.uottawa.ca/projetseg</string>
+		<key>1d5a7336-c65e-6947-a78c-d4236001c669++5101</key>
+		<string>svn://cserg0.site.uottawa.ca/projetseg</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/davidhernon/SDSSpontaneousiPhoneApp.git</string>
@@ -30,11 +45,27 @@
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1d5a7336-c65e-6947-a78c-d4236001c669++505</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6D2FA19380A2974DA80B1E176A73194A4CB4833A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SDSIPhoneApp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1d5a7336-c65e-6947-a78c-d4236001c669++5101</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SDSSpontaneousiPhoneApp</string>
 		</dict>
 	</array>
 </dict>

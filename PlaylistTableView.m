@@ -20,7 +20,6 @@
 -(id)init
 {
 	self = [super initWithFrame:CGRectMake(0.0,0.0,0.0,0.0)];
-	self.delegate = self;
 	self.dataSource = self;
 	return self;
 }
@@ -58,7 +57,8 @@
 #pragma mark - TableView Delegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	id<pushPlayerVCDelegate> strongDelegate = self.delegate;
+	[strongDelegate pushPlayerVC:indexPath];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,7 +96,6 @@
 {
     AppDelegate* appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return appDelegate.sessionController;
-    
 }
 
 @end

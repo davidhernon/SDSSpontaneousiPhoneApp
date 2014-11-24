@@ -30,6 +30,7 @@
 - (IBAction)send:(id)sender;
 - (IBAction)nextSong:(id)sender;
 - (IBAction)playPauseAction:(id)sender;
+-(void)setCurrentSong:(int)songIndex;
 -(void)nextSong;
 -(id)init: (CGRect)frame;
 @end

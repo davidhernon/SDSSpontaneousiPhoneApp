@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
-#import "PlaylistTableView.h"
 #import "PlayerViewController.h"
+#import "PlaylistTableView.h"
 
-@interface PlaylistViewController : UIViewController
-@property (strong, nonatomic) IBOutlet PlaylistTableView *playlistTableView;
+@interface PlaylistViewController : UIViewController<pushPlayerVCDelegate>
+@property PlaylistTableView *playlistTableView;
 @property PlayerViewController *playerViewController;
+-(void) pushPlayerVC:(NSIndexPath*)songIndex;
+- (IBAction)nowPlaying;
 @end

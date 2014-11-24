@@ -386,7 +386,7 @@
 				ORGANIZATIONNAME = "Silent Disco Squad";
 				TargetAttributes = {
 					1CBF988E19E9D6C0001F643F = {
-						DevelopmentTeam = 72PSY3QB44;
+						DevelopmentTeam = 6ZUB2TR58V;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -400,7 +400,7 @@
 						};
 					};
 					1CBF98A919E9D6C1001F643F = {
-						DevelopmentTeam = 72PSY3QB44;
+						DevelopmentTeam = 6ZUB2TR58V;
 						TestTargetID = 1CBF988E19E9D6C0001F643F;
 					};
 				};

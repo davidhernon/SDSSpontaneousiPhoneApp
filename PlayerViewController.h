@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "PlayerView.h"
 @interface PlayerViewController : UIViewController
++ (PlayerViewController*) sharedPlayerViewController;
 -(void)hideNavBar;
 @end

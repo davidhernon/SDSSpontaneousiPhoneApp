@@ -18,12 +18,16 @@
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
+		self.playerViewController = [PlayerViewController sharedPlayerViewController];
+		self.playerViewController.navigationItem.hidesBackButton = YES;
+		self.playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.playerViewController action:@selector(hideNavBar)];
 	}
 	return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.playlistTableView.delegate = self;
 }
 
 //addMoreSongs from MediaPicker (Local)
@@ -44,15 +48,15 @@
 	[self.navigationController pushViewController:picker animated: YES];    // 4
 }
 
+-(void) pushPlayerVC:(NSIndexPath*)songIndex{
+	self.navigationController.navigationBarHidden = FALSE;
+	[self.navigationController pushViewController:self.playerViewController animated:YES];
+}
+
 //Move to playerview, set navController status
 - (IBAction)nowPlaying
 {
 	self.navigationController.navigationBarHidden = FALSE;
-	self.playerViewController.navigationItem.hidesBackButton = YES;
-	if(!self.playerViewController){
-	   self.playerViewController = [[PlayerViewController alloc]initWithNibName:@"PlayerViewController" bundle:nil];
-	}
-	self.playerViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.playerViewController action:@selector(hideNavBar)];
 	[self.navigationController pushViewController:self.playerViewController animated:YES];
 }
 
@@ -75,13 +79,11 @@
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker
    didPickMediaItems: (MPMediaItemCollection *) collection {
 	[[Playlist sharedPlaylist] addMediaCollection:collection];
-	PlaylistViewController *playlistViewController = [[PlaylistViewController alloc]initWithNibName:@"PlaylistViewController" bundle:nil];
-	[self.navigationController pushViewController:playlistViewController animated:YES];
+	[self.navigationController pushViewController:self animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

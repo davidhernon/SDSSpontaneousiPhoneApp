@@ -27,18 +27,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	//Start looking for other apps
-	_sessionController = [[SessionController alloc] init];
-	self.sessionController.delegate = self;
 
+	
 	[self registerForNotifications:application];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     SpontanouesLobbyController *viewController = [[SpontanouesLobbyController alloc] initWithNibName:@"SpontanouesLobbyController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-	[navController setNavigationBarHidden:YES animated:YES];
+	self.navControl = [[UINavigationController alloc] initWithRootViewController:viewController];
+	[self.navControl setNavigationBarHidden:YES animated:YES];
 	[self.window makeKeyAndVisible];
-	[self.window addSubview:navController.view];
-    self.window.rootViewController = navController;
+	[self.window addSubview:self.navControl.view];
+    self.window.rootViewController = self.navControl;
 
 	[self GetIndex];
     return YES;
@@ -162,6 +160,39 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+	//Start looking for other apps
+	if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
+	{
+		NSLog(@"Multitasking Supported");
+		__block UIBackgroundTaskIdentifier background_task;
+		background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
+			//Clean up code. Tell the system that we are done.
+			[application endBackgroundTask: background_task];
+			background_task = UIBackgroundTaskInvalid;
+		}];
+		
+		//To make the code block asynchronous
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+			
+			//### background task starts
+			NSLog(@"Running in the background\n");
+			_sessionController = [[SessionController alloc] init];
+			self.sessionController.delegate = self;
+			while(TRUE)
+			{
+				NSLog(@"Background time Remaining: %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+				[NSThread sleepForTimeInterval:1]; //wait for 1 sec
+			}
+			//#### background task ends
+			//Clean up code. Tell the system that we are done.
+			[application endBackgroundTask: background_task];
+			background_task = UIBackgroundTaskInvalid;
+		});
+	}
+	else
+	{
+		    NSLog(@"Multitasking Not Supported");
+	}
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

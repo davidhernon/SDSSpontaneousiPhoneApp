@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
 #import "AppDelegate.h"
+#import "PlayerViewController.h"
+@protocol pushPlayerVCDelegate;
 
 @interface PlaylistTableView : UITableView<UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, assign) id<pushPlayerVCDelegate> delegate;
 @property MediaItem* songWithMetaData;
+@end
+
+@protocol pushPlayerVCDelegate <NSObject>
+- (void)pushPlayerVC:(NSIndexPath*)index;
 @end
